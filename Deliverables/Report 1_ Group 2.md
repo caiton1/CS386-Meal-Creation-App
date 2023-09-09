@@ -1,4 +1,4 @@
-﻿Report for Week 2 Meeting
+# ﻿Report for Week 2 Meeting
 Group 2: Pick My Meals
 Date and location: 9/8/2023 - The Union NAU
 Present participants:
@@ -11,7 +11,7 @@ Present participants:
 
 Missing participants: N/A
 Project repo: https://github.com/caiton1/CS386-Meal-Creation-App
-1. Summary of activities
+## 1. Summary of activities
 
 
 Introduction:
@@ -38,7 +38,7 @@ Set up Communication:
 
 
 
-2. Project retrospective
+## 2. Project retrospective
 
 
 Appreciations:
@@ -61,7 +61,7 @@ Try Next Time:
 * Ask clarifying questions in class to clear up any confusion. 
 
 
-3. Next Steps
+## 3. Next Steps
 
 
 Meeting schedule: Wednesday’s at 12:00
