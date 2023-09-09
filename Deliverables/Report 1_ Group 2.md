@@ -22,7 +22,7 @@ Introduction:
 
 
 Availability and Time Slot for Group Meetings:
-* We came to a general consensus that we will meet at 12:00 every Wednesday (availability)[https://docs.google.com/spreadsheets/d/19H0FCcl0OkJb6MYnxc555mT9r2Mq847Nzj2VdNO-nx0/edit?usp=sharing].
+* We came to a general consensus that we will meet at 12:00 every Wednesday [availability](https://docs.google.com/spreadsheets/d/19H0FCcl0OkJb6MYnxc555mT9r2Mq847Nzj2VdNO-nx0/edit?usp=sharing).
 
 
 Roles for the week:
