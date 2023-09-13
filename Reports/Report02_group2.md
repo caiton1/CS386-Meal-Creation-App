@@ -1,18 +1,18 @@
-Report 2 for Week 3 Meeting
+#Report 2 for Week 3 Meeting
 Group 2: Pick My Meals
 Date and location: 9/13/2023 - The Union NAU
 Present participants:
-Connor Aiton (Archivist)
-Aiden Seay (Minute Taker)
-Jared Brotamonte (Presenter)
-Sophia Ingram (Product Owner)
-Elleana Negrelli (Quality Assurance)
+*Connor Aiton (Archivist)
+*Aiden Seay (Minute Taker)
+*Jared Brotamonte (Presenter)
+*Sophia Ingram (Product Owner)
+*Elleana Negrelli (Quality Assurance)
 
 Missing participants: Isaiah Swank (Manager)
 Project repo: https://github.com/caiton1/CS386-Meal-Creation-App
 
 
-1. Summary of activities
+##1. Summary of activities
 
 Aiden Seay - Sent out the interview questions to my group. I am awaiting responses. Should get responses by the end of the week to complete the deliverable due this Sunday.
 
@@ -26,7 +26,7 @@ Jared Brotamonte - I have sent out a variety of questions via google forms to a 
 
 During this meeting we discussed the results of our interviews and decided what we should change about our idea based on the feedback. We also worked on our first deliverable.We were also working on setting up git on everyone's computers so we can work on the deliverables
 
-2. Project retrospective
+##2. Project retrospective
 
 Appreciations: Connor helped everyone get their GitHub repos set-up since he knows the most about it, he was able to resolve a lot of the errors team members were receiving
 Successes: We were able to get all of the team to clone the repository to their local device, and create and pull a new branch. We also worked on Deliverable 1 and discussed the interviewing process thus far.
@@ -35,7 +35,7 @@ Barriers: One of the barriers has been getting everyone set up on GitHub since m
 What we should try next time: Next time we will try to be more familiar with GitHub and start on setting up a website. We could try finding resources to familiarize ourselves with the programs we will be using going forward with this project.
 
 
-3. Next Steps
+##3. Next Steps
 Meeting schedule: Wednesday’s at 12:00
 
 Decision making process: Majority by ⅔’s
