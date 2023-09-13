@@ -10,6 +10,7 @@ Present participants:
 * Elleana Negrelli (Quality Assurance)
 
 Missing participants: N/A
+
 Project repo: https://github.com/caiton1/CS386-Meal-Creation-App
 
 ## 1. Summary of activities
