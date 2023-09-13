@@ -9,6 +9,7 @@ Present participants:
 * Elleana Negrelli (Quality Assurance)
 
 Missing participants: Isaiah Swank (Manager)
+
 Project repo: https://github.com/caiton1/CS386-Meal-Creation-App
 
 
