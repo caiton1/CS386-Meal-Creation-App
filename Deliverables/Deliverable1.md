@@ -18,9 +18,14 @@ Pick My Meals is a free website, aimed to help the user be as personal as possib
 ## Interviews summary:
 Some ideas to add to our project were to add a feature for what a person is craving, for example, if someone wants a meal with a specific ingredient such as chicken, potatoes, lemon, etc. they can specify that and get recipes with those specific ingredients. 
 
-Interview 1: Nat H. is a college student who loves to cook. They said the website would be “nice to have”. They suggested that we should also give people snack recipes, in case someone just wants to eat something small, or in case they have a party coming up and want to make snacks or themed snacks (Halloween, Christmas, summer, etc.).
+**Interview 1:** Interviewed by Sophia Ingram, 09/12/23  
+Nat H. is a college student who loves to cook. They said the website would be “nice to have”. They suggested that we should also give people snack recipes, in case someone just wants to eat something small, or in case they have a party coming up and want to make snacks or themed snacks (Halloween, Christmas, summer, etc.).  
+<ins> Direct Quote</ins> : “I think adding snacks would be a good idea because a lot of the times I don’t want a meal, I just want something small”
 
-Interview 2: Michael C. is a college student who does not like cooking and goes to the gym. He said the website would be “nice to have”. He suggested that we create a feature for cravings. For example, if someone wants a dish with chicken, potatoes, lemon, peanut butter, etc. they can specify that. The website will then recommend dishes with one or more specified ingredients.
+
+**Interview 2:** Interviewed by Sophia Ingram, 09/12/23  
+Michael C. is a college student who does not like cooking and goes to the gym. He said the website would be “nice to have”. He suggested that we create a feature for cravings. For example, if someone wants a dish with chicken, potatoes, lemon, peanut butter, etc. they can specify that. The website will then recommend dishes with one or more specified ingredients.  
+<ins> Direct Quote</ins> : “You should make a feature that will allow people to add what they are craving”
 
 Interview 3: McKaela A. is a college student who prefers to cook at home over eating out. She has an interest in our product because it could help her find meals that avoid her allergies of nuts. When asked about the various elements that our product would have, she had a positive opinion towards the filtering element of our product. But when it came to the grocery element of the product, she was concerned on if our website/app would be able to take into consideration that the user may want specific ingredients, for example a regular bell pepper versus an organic one.
 
