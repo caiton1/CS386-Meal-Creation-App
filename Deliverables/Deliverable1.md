@@ -1,11 +1,11 @@
 ## Introduction:
+  Pick My Meals is a meal customization and organization website emphasizing user customization. The target customer for our product is generally for people who cook at home that struggle with all the parts that lead up to cooking such as planning what meals to eat as well as what and how much to buy at the grocery store. The value our product provides is the personal customization that people desire when cooking and eating. While they are easily able to filter different allergies or dietary restrictions, the product will find the item the customer needs at the grocery store and add it to a list so they don’t have to. There may be some websites and apps that help people organize what they eat, and some services like “Hello Fresh” that give people pre-packaged meals. But what they lack and what makes our product unique is the mixture of the two. Our product combines the organization of the apps with the convenience of the grocery services, while also letting the customer be as personal as possible with what they are eating. With so many different options to choose from when fueling your body, why limit yourself?
 
 
-
-Initial value proposition and customer segments:
+## Initial Value Proposition and Customer Segments:
 
 ### (i) Value Proposition: 
-Our product is a meal customization and organization website emphasizing user customization. The target customer for our product is generally for people who cook at home that struggle with all the parts that lead up to cooking such as planning what meals to eat as well as what and how much to buy at the grocery store. This would probably lean towards the 18 – 30-year-old range as they have less cooking experience. The value our product provides is the personal customization that people desire when cooking and eating. While they are easily able to filter different allergies or dietary restrictions, the product will find the item the customer needs at the grocery store and add it to a list so they don’t have to. There may be some websites and apps that help people organize what they eat, and some services like “Hello Fresh” that give people pre-packaged meals. But what they lack and what makes our product unique is the mixture of the two. Our product combines the organization of the apps with the convenience of the grocery services, while also letting the customer be as personal as possible with what they are eating.
+Pick My Meals is a free website, aimed to help the user be as personal as possible when planning their meals, while eliminating the challenges that come with it.  
 
 ### (ii) Customer segment:
 * People Who Cook for Themselves/Family 
@@ -28,10 +28,24 @@ Interview 4: Marc M. is a college student who prefers to cook at home over out. 
 
 Interview 5: Marquez R. is a college student who likes to save money by cooking at home. He said he has interest in the product because it would help him find meals that have high amounts of protein with low amounts of calories because he is an avid lifter attempting to lose body fat through a cut. He was especially interested in the meal planning aspect of our product but was intrigued by how it would function.
 
-Interview 6:
-Interview 7:
-Interview 8:
-Interview 9:
+Interview 6: Ryan O. is a college student who actively ice skates and lives in an apartment off campus. She showed interest in the website as she is new to living on her own and is cooking for herself for the first time. She mentioned that she has a little cooking experience but has a hard time trying to make new things while balancing other parts of her life. Her “must haves” were that the recipes be easy to follow, and that there be a nutritional facts part to make sure she is eating semi-healthy. She liked the idea of a filtering system and said we should add a section for favorite ingredients or food, not just foods you don’t like. Overall she said the website is “nice to have” at the moment.
 
-Final value proposition and consumer segments: 
+Interview 7: Ethan M. is a college student who is currently living in the dorms. At the moment he said an application like this wouldn’t be of much use because of his living situation but he sees the value if he were to have a kitchen. He says that having access to a resource like this would encourage him to cook more on his own as it would take away the dead time and thinking between meals. If he were to use the website, something that he considers a “need to have” is a nutrient section showing the calories and such for each meal. Without the nutrition part yet and lack of kitchen, he considers the product to be a “nice to have” at the moment with “must have” potential. 
+
+Interview 8: Abbie M. is a 30 year old mother to be, living in Flagstaff. She plans to be a stay at home mom while raising her kids and cooks for her husband currently. She sees the website as “nice to have” as she already uses Pintrest quite often to find recipes and is adept at cooking. She mentioned that this would’ve been more useful when she was younger and learning to budget and cook. She liked the filtering for the dietary options and mentioned that it would be nice to have a feature to pertain to babies for new mothers. 
+
+Interview 9: Nate B. is a third year college student living off campus while working and going to school. He said the website makes him skeptical since he in not online all the time and would prefer it to be in the form of an app instead to be on the go. He emphasized that the product would help his busy lifestyle as he has little time to plan his meals and grocery store trips. Nate mentioned as a “must have” that there be nutritional facts listed, and the total cost of the grocery bill be on there to help people budget. The filtering for diets, allergies, and non liked foods was a big aspect for him as well because he has some different allergies which can make shopping and cooking repetitive. 
+
+## Final Value Proposition and Consumer Segments
+
+### Final Value Proposition :
+Pick My Meals is a free website aimed at helping younger generations effectively plan their meals to best fit their success and schedule.
+
+### Consumer Segments :
+* Young adults living on their own
+* People wanting to consciously watch what they eat
+* Couples learning to cook for a family
+* People with busy schedules
+* People with allergy or dietary factors
+
 
