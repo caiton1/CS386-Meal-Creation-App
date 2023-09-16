@@ -27,7 +27,11 @@ Nat H. is a college student who loves to cook. They said the website would be �
 Michael C. is a college student who does not like cooking and goes to the gym. He said the website would be “nice to have”. He suggested that we create a feature for cravings. For example, if someone wants a dish with chicken, potatoes, lemon, peanut butter, etc. they can specify that. The website will then recommend dishes with one or more specified ingredients.  
 <ins> Direct Quote</ins> : “You should make a feature that will allow people to add what they are craving”
 
-Interview 3: McKaela A. is a college student who prefers to cook at home over eating out. She has an interest in our product because it could help her find meals that avoid her allergies of nuts. When asked about the various elements that our product would have, she had a positive opinion towards the filtering element of our product. But when it came to the grocery element of the product, she was concerned on if our website/app would be able to take into consideration that the user may want specific ingredients, for example a regular bell pepper versus an organic one.
+**Interview 3:** Interviewed by Connor Aiton, 09/13/23
+McKaela A. is a college student who prefers to cook at home over eating out. She has an interest in our product because it could help her find meals that avoid her allergies of 
+nuts. When asked about the various elements that our product would have, she had a positive opinion towards the filtering element of our product. But when it came to the grocery element of the product, she was concerned on if our website/app would be able to take into consideration that the user may want specific ingredients, for example a regular bell pepper versus an organic one.
+<ins> Direct Quote</ins> : "How will you select the right or best groceries?"
+Assessment: Nice to have.
 
 Interview 4: Marc M. is a college student who prefers to cook at home over out. He said he does have interest in the product because it could potentially help him pick meals that would fufill his macro needs, more specifically calorically dense meals with high amounts of protein. When asked about the various elements or our product, he said that he was specifically interested in the filtering element for it would help him quickly find a recipe that he would want to use, but he was concerned about the functionality of our product and how it would be able to adequate give the user accurate information about the recipes and ingredients.
 
