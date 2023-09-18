@@ -36,7 +36,6 @@ Assessment: Nice to have.
 Marc M. is a college student who prefers to cook at home over out. He said he does have interest in the product because it could potentially help him pick meals that would fufill his macro needs, more specifically calorically dense meals with high amounts of protein. When asked about the various elements or our product, he said that he was specifically interested in the filtering element for it would help him quickly find a recipe that he would want to use, but he was concerned about the functionality of our product and how it would be able to adequate give the user accurate information about the recipes and ingredients.  
 <ins> Direct Quote</ins>: “I am conscious of the foods I take in and having a busy schedule, thus having an app that filters out options for me would be beneficial to me both in giving me an appropriate recipe and saving me time.”
 
-
 **Interview 5:** Interviewed by Jared Brotamonte, 9/12/23  
 Marquez R. is a college student who likes to save money by cooking at home. He said he has interest in the product because it would help him find meals that have high amounts of protein with low amounts of calories because he is an avid lifter attempting to lose body fat through a cut. He was especially interested in the meal planning aspect of our product but was intrigued by how it would function.  
 <ins> Direct Quote</ins>: “I wonder if your app would be able to take into account the total macros of multiple meals throughout the day because as you said, the app would allow a user to input the number of meals they wanted to get.”
@@ -68,5 +67,3 @@ Pick My Meals is a free website aimed at helping younger generations effectively
 * Couples learning to cook for a family
 * People with busy schedules
 * People with allergy or dietary factors
-
-
