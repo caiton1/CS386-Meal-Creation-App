@@ -28,7 +28,7 @@ Michael C. is a college student who does not like cooking and goes to the gym. H
 
 **Interview 3:** Interviewed by Connor Aiton, 09/13/23
 McKaela A. is a college student who prefers to cook at home over eating out. She has an interest in our product because it could help her find meals that avoid her allergies of 
-nuts. When asked about the various elements that our product would have, she had a positive opinion towards the filtering element of our product. But when it came to the grocery element of the product, she was concerned on if our website/app would be able to take into consideration that the user may want specific ingredients, for example a regular bell pepper versus an organic one.
+nuts. When asked about the various elements that our product would have, she had a positive opinion towards the filtering element of our product. But when it came to the grocery element of the product, she was concerned on if our website/app would be able to take into consideration that the user may want specific ingredients, for example a regular bell pepper versus an organic one.  
 <ins> Direct Quote</ins> : "How will you select the right or best groceries?"
 Assessment: Nice to have.
 
