@@ -1,8 +1,9 @@
 # Report for Week 3 Meeting
 Group 2: Pick My Meals  
-Date and location: September 20th, 2023, Cline Library  
 
-Present participants: 
+Date and location: September 20th, 2023, Cline Library 
+
+Present participants:   
 * Connor Aiton (Archivist)
 * Aiden Seay (Minute Taker)
 * Jared Brotamonte (Presenter)
