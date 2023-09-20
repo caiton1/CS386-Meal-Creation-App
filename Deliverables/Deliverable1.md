@@ -66,4 +66,4 @@ Pick My Meals is a free website aimed at helping younger generations effectively
 * People wanting to consciously watch what they eat
 * Couples learning to cook for a family
 * People with busy schedules
-* People with allergy or dietary factors
+* People with allergy or dietary factors 
