@@ -69,3 +69,5 @@ They will then compare the prices to the second closest stores prices to find th
 
 ## Issue Tracker
 The link to our issue tracker is [here](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/issues)
+![IssuesPic](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/Deliverables/Deliverable2/IssuesPic.jpg?raw=true)
+
