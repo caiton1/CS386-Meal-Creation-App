@@ -1,8 +1,8 @@
 # Report for Week 4 Meeting  
-Group 2: Pick My Meals  
-Date and location: September 27th, 2023, Cline Library  
+**Group 2:** Pick My Meals  
+**Date and location:** September 27th, 2023, Cline Library  
 
-Present participants:   
+**Present participants:**   
 * Connor Aiton (Archivist)
 * Aiden Seay (Minute Taker)
 * Jared Brotamonte (Presenter)
@@ -10,8 +10,8 @@ Present participants:
 * Elleana Negrelli (Quality Assurance)
 * Isaiah Swank (Manager)
 
-Missing participants:  None  
-Project repo: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-  
+**Missing participants:**  None  
+**Project repo:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-  
 # 1. Summary of activities
    
 **Sophia I:** I worked on creating the UML diagrams for our use cases, I also worked on writing some case descriptions for the actors  
