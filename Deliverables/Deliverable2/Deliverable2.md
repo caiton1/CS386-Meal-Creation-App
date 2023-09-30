@@ -43,25 +43,43 @@ and gives the user one recipe at a time with the option to add it to the list or
 ### Case Descriptions and Interface Sketch
 The customers will have the ability to upload their own recipes. They can do this by uploading either a PDF document, or entering a text box. They will then have the option to include recipe specifications such as 
 “vegetarian” or “keto” that way it is easier for other customers to get recommended their recipes.
+
+
 ![sketch 1](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/Deliverables/Deliverable2/sketch%201.png)
+
 
 The developers will create a system that is easy for consumers to use. They will do this by having each new customer complete a quick questionnaire. Questions will ask about the user's specific diet, such as; vegan,
 peanut allergy, high protein, keto, etc.
+
+
 ![sketch 2](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/Deliverables/Deliverable2/sketch%202.png)
+
 
 The developers will use the customer’s location, if the customer permits, by having the customer allow the location permission in settings. Once the customer’s have shared their 
 location with the website it will use that information to find the closest store to the customer.
+
+
 ![sketch 3](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/Deliverables/Deliverable2/sketch%203.png)
+
 
 The developers will implement a system to find stores close to the customer using their location, they will then look through the closest stores stock and see what ingredients they have. 
 They will then compare the prices to the second closest stores prices to find the most affordable ingredients.
+
+
 ![sketch 4](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/Deliverables/Deliverable2/sketch%204.png)
 
+
 The web developers will create the Pick My Meals website. They will use different programming languages in order to create the website and make it look nice. They will also program the site so that it is accessible and easy for everyone to use. They will do this by including descriptions of each photo, that way users can use a screen reader if necessary.
+
+
 ![sketch 5](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/Deliverables/Deliverable2/sketch%205.png)
 
+
 The developers will create an easy way to search for recipes. They will do this by creating a search bar and adding a filter option. The search bar will allow users to search for specific things. The filter will have set options for users to select things such specific ingredients or diet specifications. After that recipes will be shown to the users for them to pick and choose from.
+
+
 ![sketch 6](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/Deliverables/Deliverable2/sketch%206.png)
+
 
 ## User Stories
 1. As a former student leaving college with loans, I want to organize what I eat so that I can be financially smart with my grocery purchases.
