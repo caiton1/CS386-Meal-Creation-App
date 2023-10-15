@@ -15,7 +15,7 @@
 ## 1. Summary of Activities  
 **Group:** Created a list of classes with attributes that are associated with them on the whiteboard so we can start making the UML class diagram. 
 
-**Connor Aiton:** Suggested classes for the diagram and related attributes for the deliverable. Will be working on setting up a cost effective/simple infrastructure to run the website and database on.  
+**Connor Aiton:** Suggested classes for the diagram and related attributes for the deliverable. Will be working on setting up a cost effective/simple infrastructure to run the stack on, we will be using firebase after a consensus. Reformatted, proof-read and updated the key requirnments to be consistant with our new model and uploaded deliverable 3 to github. Updated Deliverable 2 stakeholders to be consistant more consistant with the diagram and key requirnments.
 
 **Jared Brotamonte:** Helped the team create lists of classes and a list of attributes towards those classes for deliverable 3. 
 
