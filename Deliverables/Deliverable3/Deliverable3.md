@@ -9,3 +9,6 @@ Our product will have a few key requirements in order to make our product user f
 **Users** will also have the ability to ***upload*** their own **post** to be shown as a **recipe**. In the **post**, one can add their own tags in the *description* such as “high protein”, “vegetarian”, “quick and easy”, etc. This will allow our website to have thousands of unique **recipes** to ***choose*** from. Our website will also include a **filter** that allows the **user** to easily ***find*** what they are looking for, whether it is a **recipe** with a specific *ingredient*, a holiday themed food, or a quick snack on the go.
 
 These features make our product stand out from our competitors such as Hello Fresh or Blue Apron. Our product will allow for 100x the amount of selectable **recipes**, eliminates the need to pay for shipping and a subscription, eliminates the worry of ingredients being shipped fresh, allows for unlimited meal customization, and gives the customer the choice to ***choose*** where their *ingredients* are coming from. 
+
+## 2. Model :
+![UML diagram](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/Deliverables/Deliverable3/uml_diagram_cs386.drawio.png)
