@@ -16,82 +16,89 @@ These features make our product stand out from our competitors such as Hello Fre
 
 ## 3. Class Responsibilities
 
-Classes: 
-**User**
-- User_id
-    * Specific key that uniquely identifies each user
-- User_password
-    * Unique password for each user
-- User_location
+### Classes:  
+**User** 
+- User_id 
+    * Specific key that uniquely identifies each user 
+- User_password 
+    * Unique password for each user 
+- User_location 
     * Location of user
-**Recipe**
-- directions
-    * Instructions on how to make the recipes. Values: peel, cut, bake, etc
-- serving_size
-    * The serving size of the recipe. So the amount of ingredients will correspond  to the serving size
-- ingredients
-    * The items necessary to make the meal
-- rating
+ 
+**Recipe** 
+- directions 
+    * Instructions on how to make the recipes. Values: peel, cut, bake, etc 
+- serving_size 
+    * The serving size of the recipe. So the amount of ingredients will correspond  to the serving size 
+- ingredients 
+    * The items necessary to make the meal 
+- rating 
     * Ratings given by users who have made the recipe before
-**Store** 
-- Distance
-    * How close/far the store is from the customer. Will be used to determine which stores will shown to the customer
-- Pricing
-    * Will help determine if the store is cheap or expensive
-- Website
-    * We need to access the stores website in order to add things to the customer’s shopping cart
-- Priority
-    * We will prioritize stores that have partnerships with us. For example if we have a partnership with Walmart they will take high-priority so they will be recommended to customers
-- Pickup
-    * How the user wants to get their ingredients. Values: curbside, in-store, delivery, in-person
-- Store_id
+  
+**Store**  
+- Distance 
+    * How close/far the store is from the customer. Will be used to determine which stores will shown to the customer 
+- Pricing 
+    * Will help determine if the store is cheap or expensive 
+- Website 
+    * We need to access the stores website in order to add things to the customer’s shopping cart 
+- Priority 
+    * We will prioritize stores that have partnerships with us. For example if we have a partnership with Walmart they will take high-priority so they will be recommended to customers 
+- Pickup 
+    * How the user wants to get their ingredients. Values: curbside, in-store, delivery, in-person 
+- Store_id 
     * Specific key that uniquely identifies the store
-**Cart**
-- ingredients
-    * Items necessary to create the recipe, will be added to the user’s shopping cart. Values can include garlic, pasta, chicken, lemon, pepper, etc.
-- num_people
-    * The amount of people that the user wants the recipe to feed. Will determine the serving size, thus determining the amount of needed ingredients
-- cost
-    * The cost of all the ingredients, the total of the user’s shopping cart, will be determined after the user chooses a store from the list presented to them 
-**Filter**
-- dietary_restriction
-    * Examples of this include vegetarian, vegan, gluten free etc. 
-- meal_type
-    * Breakfast, lunch, dinner, snacks
-- food_type
-    * Ex. Chinese, Mexican
-- needed_utilities
-    * Ex. Stove, pot, pan, microwave, 
-- preference
-    * does the user like the ingredients in this recipe or not, difficulty level of the recipe
-- budget
+  
+**Cart**  
+- ingredients 
+    * Items necessary to create the recipe, will be added to the user’s shopping cart. Values can include garlic, pasta, chicken, lemon, pepper, etc. 
+- num_people 
+    * The amount of people that the user wants the recipe to feed. Will determine the serving size, thus determining the amount of needed ingredients 
+- cost 
+    * The cost of all the ingredients, the total of the user’s shopping cart, will be determined after the user chooses a store from the list presented to them
+   
+**Filter**  
+- dietary_restriction 
+    * Examples of this include vegetarian, vegan, gluten free etc.  
+- meal_type 
+    * Breakfast, lunch, dinner, snacks 
+- food_type 
+    * Ex. Chinese, Mexican 
+- needed_utilities 
+    * Ex. Stove, pot, pan, microwave,  
+- preference 
+    * does the user like the ingredients in this recipe or not, difficulty level of the recipe 
+- budget 
     * How much is the user willing to pay for their recipe
-**Order**
-- Store_id
-    * The identification of the store selected for the order
-- User_location
-    * Location of the user
-- Cost
-    * Total cost of the ingredients based off of the prices of the specific store
-- Date
-    * Date of the order/pickup
-- Pick_up
-    * Type of pickup
+  
+**Order**  
+- Store_id 
+    * The identification of the store selected for the order 
+- User_location 
+    * Location of the user 
+- Cost 
+    * Total cost of the ingredients based off of the prices of the specific store 
+- Date 
+    * Date of the order/pickup 
+- Pick_up 
+    * Type of pickup 
         * Ex. curbside, instore, etc.
-**Sponsor**
-- Store_id
-    * Identification of the store that is sponsoring our product
-- Priority
-    * Priority given to the sponsors based off of contracts with the company
-- Company
+      
+**Sponsor**  
+- Store_id 
+    * Identification of the store that is sponsoring our product 
+- Priority 
+    * Priority given to the sponsors based off of contracts with the company 
+- Company 
     * The name and information of the companies that sponsor our product.
-**Post**
-- Ingredients
-    * Items necessary for the recipe that is being posted
-- Directions
-    * Instructions and steps for making the recipe
-- Serving_size
-    * Serving size of the recipe. How many servings will be made/how many people can be fed
-- User_id
-    * Unique identification number for a user
+  
+**Post**  
+- Ingredients 
+    * Items necessary for the recipe that is being posted 
+- Directions 
+    * Instructions and steps for making the recipe 
+- Serving_size 
+    * Serving size of the recipe. How many servings will be made/how many people can be fed 
+- User_id 
+    * Unique identification number for a user 
 
