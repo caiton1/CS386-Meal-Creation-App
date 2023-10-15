@@ -15,11 +15,12 @@ Pick-My-Meals is a (i) meal planning app that allows (ii) those with busy lives 
 allowing users to sort through the various presented meal choices and givings them with a detailed grocery list for the meals they selected.
 
 ## 2. Stakeholders
--**Users:** Users are the stakeholders who utilize the Pick-My-Meals product to help with their daily lives.
--**Stores**: Stores are stakeholders that may buy a sponsorship in our application. This app will bring more people to the Users local stores.
--**Clients:** Clients are the stakeholders who invest into our product with hope that it’ll both become successful as well as useful for their business in the long run.
--**Developers:** Developers are the stakeholders who produce and create the product.
--**Competitors:** Competitors are the stakeholders who have similar products to ours thus occupying the same market as us.
+**Users:** Users are the stakeholders who utilize the Pick-My-Meals product to help with their daily lives.  
+**Stores**: Stores are stakeholders that may buy a sponsorship in our application. This app will bring more people to the Users local stores.  
+**Clients:** Clients are the stakeholders who invest into our product with hope that it’ll both become successful as well as useful for their business in the long run.  
+**Developers:** Developers are the stakeholders who produce and create the product.  
+**Competitors:** Competitors are the stakeholders who have similar products to ours thus occupying the same market as us.  
+
 
 ## 3. Functional Requirements
 1. Organize meals by dietary needs
