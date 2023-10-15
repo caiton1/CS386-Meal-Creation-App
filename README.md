@@ -11,6 +11,10 @@ So far we have decided on using firebase as our backend and use mainly python fo
 
 ## Authors
 Connor Aiton - [caiton1](https://github.com/caiton1)
+Aiden Seay - [aidenseay](https://github.com/aidenseay)
+Sophia Ingram - [2502sophia](https://github.com/2502sophia)
+Isaiah Swank - [Isaiah-Swank](https://github.com/Isaiah-Swank)
+Jared Brotamonte - [JKBrotamonte](https://github.com/JKBrotamonte)
 
 ## License
 This projected is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file.
