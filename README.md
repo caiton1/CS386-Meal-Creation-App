@@ -15,6 +15,7 @@ So far we have decided on using firebase as our backend and use mainly python fo
 - **Sophia Ingram** - [2502sophia](https://github.com/2502sophia) 
 - **Isaiah Swank** - [Isaiah-Swank](https://github.com/Isaiah-Swank) 
 - **Jared Brotamonte** - [JKBrotamonte](https://github.com/JKBrotamonte) 
+- **Elleana Negrelli** - [enegrelli](https://github.com/enegrelli)
 
 ### License
 This projected is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file.
