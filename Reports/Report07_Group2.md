@@ -1,4 +1,4 @@
-# Report for Week 8 Meeting  
+# Report 7 for Week 8 Meeting  
 **Group 2:** Pick My Meals  
 **Date and location:** October 18th, 2023, Cline Library  
 **Present Participants:**   
