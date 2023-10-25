@@ -116,4 +116,4 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 ## Demo
 
-# insert a link to a video of the system working here
+insert a link to a video of the system working here
