@@ -8,86 +8,89 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 ## Implemented Requirements
 
-Requirement:
+### Implemented Requirement #1
 
-Issue:
+**Requirement:**
 
-Pull request:
+**Issue:**
 
-Implemented by:
+**Pull request:**
 
-Approved by:
+**Implemented by:**
 
-Print screen:
+**Approved by:**
 
+**Print screen:**
 
+### Implemented Requirement #2
 
-Requirement:
+**Requirement:**
 
-Issue:
+**Issue:**
 
-Pull request:
+**Pull request:**
 
-Implemented by:
+**Implemented by:**
 
-Approved by:
+**Approved by:**
 
-Print screen:
+**Print screen:**
 
+### Implemented Requirement #3
 
+**Requirement:**
 
-Requirement:
+**Issue:**
 
-Issue:
+**Pull request:**
 
-Pull request:
+**Implemented by:**
 
-Implemented by:
+**Approved by:**
 
-Approved by:
+**Print screen:**
 
-Print screen:
+### Implemented Requirement #4
 
+**Requirement:**
 
+**Issue:**
 
-Requirement:
+**Pull request:**
 
-Issue:
+**Implemented by:**
 
-Pull request:
+**Approved by:**
 
-Implemented by:
+**Print screen:**
 
-Approved by:
+### Implemented Requirement #5
 
-Print screen:
+**Requirement:**
 
+**Issue:**
 
-Requirement:
+**Pull request:**
 
-Issue:
+**Implemented by:**
 
-Pull request:
+**Approved by:**
 
-Implemented by:
+**Print screen:**
 
-Approved by:
+### Implemented Requirement #6
 
-Print screen:
+**Requirement:**
 
+**Issue:**
 
-Requirement:
+**Pull request:**
 
-Issue:
+**Implemented by:**
 
-Pull request:
+**Approved by:**
 
-Implemented by:
-
-Approved by:
-
-Print screen:
-
+**Print screen:**
 
 ## Tests
 
@@ -101,8 +104,16 @@ Print screen:
 
 ## README File
 
+**README File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/README.md
+
+**CONTRIBUTING File:** https://github.com/caiton1/CS386-Meal-Creation-App WIP-/blob/main/CONTRIBUTING.md
+
+**CODE_OF_CONDUCT File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/LICENSE.md 
+
 ## Look and Feel
 
 ## Lessons Learned
 
 ## Demo
+
+# insert a link to a video of the system working here
