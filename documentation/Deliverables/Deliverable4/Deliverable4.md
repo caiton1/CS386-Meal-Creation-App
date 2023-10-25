@@ -38,13 +38,13 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 ### Implemented Requirement #3
 
-**Requirement:**
+**Requirement:** As a person with a nut allergy, I hope to be able to find recipes that avoid my allergies so that I don’t accidentally incur an allergic reaction.
 
-**Issue:**
+**Issue:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/issues/34
 
 **Pull request:**
 
-**Implemented by:**
+**Implemented by:** Isaiah Swank
 
 **Approved by:**
 
