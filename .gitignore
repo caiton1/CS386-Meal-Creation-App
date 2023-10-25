@@ -1,5 +1,14 @@
-# Created by https://www.toptal.com/developers/gitignore/api/python,pycharm,windows,macos,linux,visualstudio,visualstudiocode,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm,windows,macos,linux,visualstudio,visualstudiocode,node
+# Created by https://www.toptal.com/developers/gitignore/api/python,pycharm,windows,macos,linux,visualstudio,visualstudiocode,node,firebase
+# Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm,windows,macos,linux,visualstudio,visualstudiocode,node,firebase
+
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
 
 ### Linux ###
 *~
@@ -902,4 +911,4 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/python,pycharm,windows,macos,linux,visualstudio,visualstudiocode,node
+# End of https://www.toptal.com/developers/gitignore/api/python,pycharm,windows,macos,linux,visualstudio,visualstudiocode,node,firebase
