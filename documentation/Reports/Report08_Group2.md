@@ -1,6 +1,6 @@
 # Report 8 for Week 9 Meeting  
 **Group 2:** Pick My Meals  
-**Date and location:** October 18th, 2023, Cline Library  
+**Date and location:** October 25th, 2023, Cline Library  
 **Present Participants:**   
 * Connor Aiton (Archivist)  
 * Jared Brotamonte (Presenter)  
@@ -11,6 +11,8 @@
 
 **Missing participants:**  None  
 **Project repo:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP- 
+
+# 1. Summary of Activities
 
 # 2. Project Retrospective  
 1. Appreciations: highlights of contributions from team members  
@@ -27,3 +29,10 @@
 
 1. What we should try next time.  
     * Working on the deliverable earlier  
+  
+# 3. Next Steps
+**We will:**
+* Get our website deployed
+* Work on our assigned issues
+* Finish deliverable #4
+
