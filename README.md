@@ -5,7 +5,7 @@ Our product Pick-My-Meals is a free website that allows users to personally cura
 Our meal creation app is still being developed. We are currently working on creating a backend infastructure for our website.
 
 ## Setup
-So far we have decided on using firebase as our backend and use mainly python for this project for its ease of use and versatility. However we will use JS and C as we see fit either due to requrinments or better support. We are hoping that the Firebase Admin Python SDK will have the features that we need.
+So far we have decided on using google cloud as our backend and use mainly python for this project for its ease of use and versatility. However we will use JS and C as we see fit either due to requrinments or better support.
 
 *More details and information to come later as development progresses.*
 
