@@ -106,7 +106,7 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **README File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/README.md
 
-**CONTRIBUTING File:** https://github.com/caiton1/CS386-Meal-Creation-App WIP-/blob/main/CONTRIBUTING.md
+**CONTRIBUTING File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/CONTRIBUTING.md
 
 **CODE_OF_CONDUCT File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/LICENSE.md 
 
