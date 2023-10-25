@@ -12,7 +12,12 @@
 **Missing participants:**  None  
 **Project repo:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP- 
 
-# 1. Summary of Activities  
+# 1. Summary of Activities 
+
+**Connor Aiton:** Working on creating the infrastructure and framework for our project, will be solving the “favoriting issue” in the deliverable. Restructured the git repo in preparation for deploying the web hosting. 
+
+**Jared Brotamonte:** I worked on creating some code for deliverable #4.
+
 **Sophia Ingram:** I worked on the introduction for deliverable #4 and made the project description on our readme file more descriptive, worked on the report, and made sure to assign each member to their corresponding issue.  
 
 **Elleana Negrelli:** I worked on the deliverable document and attached appropriate links to the files in our github as well as each designated issue that we will be implementing for this deliverable. I started working on how to implement my assigned issue.   
