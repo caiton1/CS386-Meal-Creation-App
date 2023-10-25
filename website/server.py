@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from firebase import firebase
 
 app = Flask(__name__)
 # Defining the home page of our site
