@@ -1,7 +1,0 @@
-1. npm
-2. firebase CLI
-https://firebase.google.com/docs/cli?authuser=0#mac-linux-auto-script
-https://firebase.google.com/docs/cli?authuser=0#install-cli-windows
-3. python / pip
-
-
