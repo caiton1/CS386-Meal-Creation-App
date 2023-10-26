@@ -1,6 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from firebase import firebase
 from flask_session import Session
+
+
+firebaseConfig={
+     "apiKey": "AIzaSyA73NPIvm3n5aDntTnMe97SLsZOaJ9tUbU",
+     "databaseURL": "https://cspickmymeals-default-rtdb.firebaseio.com",
+     "authDomain": "cspickmymeals.firebaseapp.com",
+     "projectId": "cspickmymeals",
+     "storageBucket": "cspickmymeals.appspot.com",
+     "messagingSenderId": "906324121880",
+     "appId": "1:906324121880:web:982c7aebf232653692266d",
+     "measurementId": "G-P805WYYVH1"
+}
+
 # TODO: impliment cryptography if adding passwords ALSO look into flask_login
 
 app = Flask(__name__)
@@ -9,8 +22,8 @@ SESSION_TYPE = "filesystem"
 app.config.from_object(__name__)
 Session(app)
 
-firebase = firebase.FirebaseApplication\
-    ('https://cspickmymeals-default-rtdb.firebaseio.com/', None)
+database = firebase.FirebaseApplication(firebaseConfig['databaseURL'], None)
+
 
 # TODO: testing session IGNORE
 @app.route("/set/<value>")
@@ -59,7 +72,7 @@ def route():
 def recipe():
     # TODO: to reduce database reads and "cost", 
     # impliment sessions and store the database data
-    result = firebase.get('/Recipes', None) 
+    result = database.get('/Recipes', None) 
     recipeList = {}
 
     for key, value in result.items():
@@ -88,7 +101,7 @@ def search():
 @app.route("/recipe/<selection>")
 def viewRecipe(selection):
      selection = selection.replace("+", " ")
-     result = firebase.get('/Recipes', None)
+     result = database.get('/Recipes', None)
      data = result[selection]
      return render_template("selection.html", 
                             dataInput=data, recipeName=selection)
