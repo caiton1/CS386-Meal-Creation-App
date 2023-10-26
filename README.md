@@ -17,8 +17,17 @@ So far we have decided on using google cloud as our backend and use mainly pytho
 - **Jared Brotamonte** - [JKBrotamonte](https://github.com/JKBrotamonte) 
 - **Elleana Negrelli** - [enegrelli](https://github.com/enegrelli)
 
+
+
 ## Testing
-We have not yet started testing our product. We first need to get it created on the backend
+Testing on our product will begin soon
+
+## installation
+1. install python3 if you do not have it 
+2. execute: pip -r requirements.txt 
+3. Depending on your system you will run:
+    * windows: python website/views.py
+    * linux:  python3 website/views.py
 
 ### License
 This projected is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file.
