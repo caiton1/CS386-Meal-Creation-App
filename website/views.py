@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+import requests
 import pyrebase
 from flask_session import Session
 
@@ -31,9 +32,6 @@ auth = firebase.auth()
 # database refernce
 db = firebase.database()
 
-
-
-
 # TODO: testing session IGNORE
 @app.route("/set/<value>")
 def set_session(value):
@@ -59,21 +57,52 @@ def index():
 # TODO: create a signup page
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
-     return "<h1>signup page is a work in progress</h1>"
+     if request.method == "POST":
+          email = request.form["email"]
+          password = request.form["pass"]
+          try:
+               user_token=auth.create_user_with_email_and_password(email, password)
+               data = {user_token["localId"]:{
+                    "favorites":"",
+                    "meal_plan":""
+               }}
+               db.child("user").push(data)
+               return redirect(url_for("login"))
+          except:
+               error = "Invalid email or email already exists! Please also make sure password is atleast 6 characters long."
+               return render_template('signup.html', msg=error)
+     else:
+          return render_template('signup.html', msg="")
+     
+
 
 # TODO: create a login page 
 @app.route("/login", methods=["GET","POST"])
 def login():
-     return "<h1>login page is a work in progress</h1>"
+     if request.method == "POST":
+          email = request.form["email"]
+          password = request.form["pass"]
+          try:
+               user_token=auth.sign_in_with_email_and_password(email, password)
+               session["token"] = user_token["localId"]
+               return redirect(url_for("dashboard"))
+          except:
+               error = "invalid email or password"
+               return render_template('login.html', msg=error)
+     else:
+          return render_template('login.html', msg="")
 
 # TODO: create logout page, look into ending session
 @app.route("/logout")
 def logout():
+     session.remove()
      return "<h1>logout page is a work in progress</h1>"
 
 # TODO: create dashboard page 
 @app.route("/dashboard")
-def route():
+def dashboard():
+     token = session.get("token", "session error")
+     print(token)
      return "<h1>dashboard page is a work in progress</h1>"
 
 # view list of recpies
@@ -81,16 +110,16 @@ def route():
 def recipe():
     # TODO: to reduce db reads and "cost", 
     # impliment sessions and store the db data
-    recipeList = db.child("Recipes").get()
-    titleList = {}
+    recipe_list = db.child("Recipes").get()
+    title_list = {}
 
-    for recipe in recipeList:
-        titleList.update({recipe.key():{
+    for recipe in recipe_list:
+        title_list.update({recipe.key():{
              "href":recipe.key().replace(" ", "+"),
              "caption":recipe.key()
         }})
           
-    return render_template('recipe.html', recipes=titleList)
+    return render_template('recipe.html', recipes=title_list)
 
 
 # search page, need to fix and impliment error handling.
@@ -99,9 +128,9 @@ def recipe():
 @app.route("/search", methods=["POST", "GET"])
 def search():
     if request.method == "POST":
-        searchRecipe = request.form["nm"]
-        searchRecipe = searchRecipe.replace(" ", "+")
-        return redirect(f"/recipe/{searchRecipe}")
+        search_recipe = request.form["nm"]
+        search_recipe = search_recipe.replace(" ", "+")
+        return redirect(f"/recipe/{search_recipe}")
     else:      
         return render_template("search.html")
     
