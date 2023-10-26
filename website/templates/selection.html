@@ -1,0 +1,13 @@
+<h1>{{recipeName}}</h1>
+<h2>Ingredients</h2>
+<ul>
+  {% for ingredient in dataInput.Ingredients %}
+  <li>{{ingredient}}</li>
+  {% endfor %}
+</ul>
+<h2>Directions</h2>
+<ol>
+  {% for direction in dataInput.Directions %}
+  <li>{{direction}}</li>
+  {% endfor %}
+</ol>

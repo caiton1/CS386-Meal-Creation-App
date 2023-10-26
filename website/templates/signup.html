@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title></title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <form action="#" method="post">
+      <p>Signup:</p>
+      <p><input type="text" name="email" \ /></p>
+      <p><input type="password" name="pass" \ /></p>
+      <p><input type="submit" value="submit" \ /></p>
+    </form>
+    <p>{{msg}}<p>
+  </body>
+</html>
