@@ -11,7 +11,7 @@ for key, value in testdict.items():
          "caption":key
     }})
 
-#print(recipeList["2 Meat Meatloaf"]["href"])
+print(recipeList["2 Meat Meatloaf"]["href"])
 
 app = Flask(__name__)
 firebase = firebase.FirebaseApplication('https://cspickmymeals-default-rtdb.firebaseio.com/', None)
