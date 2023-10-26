@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from firebase import firebase
 from flask_session import Session
-
+# TODO: impliment cryptography if adding passwords
 
 app = Flask(__name__)
 
@@ -32,12 +32,15 @@ def index():
 	return render_template('index.html')
 
 
-# TODO: create a login page 
 # need to add and/or read users from database and session store
+# impliment passwords and cryptogrophy later
+# TODO: create a signup page
+
+# TODO: create a login page 
 
 # TODO: create logout page
 
-# TODO: create favorites page
+# TODO: create dashboard page
 
 # view list of recpies
 @app.route("/recipe", methods=["GET"])
