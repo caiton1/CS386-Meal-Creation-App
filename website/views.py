@@ -123,5 +123,6 @@ def viewRecipe(selection):
      return render_template('selection.html', 
                             dataInput=data.val(), recipeName=selection)
 
+
 if __name__ == '__main__':
     app.run()

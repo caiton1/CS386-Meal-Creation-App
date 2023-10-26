@@ -1,5 +1,9 @@
+import os
+# TODO: change key storage approach when deploying to server 
+secret = os.environ['FIREBASEKEY']
+
 firebaseConf = {
-     'apiKey': 'AIzaSyA73NPIvm3n5aDntTnMe97SLsZOaJ9tUbU',
+     'apiKey': secret,
      'authDomain': 'cspickmymeals.firebaseapp.com',
      'databaseURL': 'https://cspickmymeals-default-rtdb.firebaseio.com',
      'projectId': 'cspickmymeals',
