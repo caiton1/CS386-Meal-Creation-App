@@ -37,15 +37,17 @@ def signup():
           password = request.form['pass']
           try:
                user_token=auth.create_user_with_email_and_password(email, password)
-               data = {user_token['localId']:{
+               print(user_token)
+               data = {
                     'favorites':'',
                     'meal_plan':''
-               }}
-               db.child('user').push(data)
+               }
+               db.child('user').push(data, user_token['idToken'])
                return redirect(url_for('login'))
           except:
                error = 'Invalid email or email already exists! Please also make sure password is atleast 6 characters long.'
                return render_template('signup.html', msg=error)
+          
      else:
           return render_template('signup.html', msg='')
      
@@ -57,13 +59,23 @@ def login():
      if request.method == 'POST':
           email = request.form['email']
           password = request.form['pass']
-          try:
-               user_token=auth.sign_in_with_email_and_password(email, password)
-               session['token'] = user_token['localId']
-               return redirect(url_for('dashboard'))
-          except:
-               error = 'invalid email or password'
-               return render_template('login.html', msg=error)
+          if(session['token'] == ""):
+               try:
+                    user_token=auth.sign_in_with_email_and_password(email, password)
+                    session['token'] = user_token['idToken']
+                    return redirect(url_for('dashboard'))
+               except:
+                    error = 'invalid email or password'
+                    return render_template('login.html', msg=error)
+          else:
+               try:
+                    user_token=auth.sign_in_with_email_and_password(email, password)
+                    user_token=auth.refresh(user_token['refreshToken'])
+                    return redirect(url_for('dashboard'))
+               except:
+                    error = 'invalid email or password'
+                    return render_template('login.html', msg=error)
+
      else:
           return render_template('login.html', msg='')
 
@@ -82,7 +94,9 @@ def dashboard():
      if token == '':
           return redirect(url_for('login'))
      else:
-          return render_template('dashboard.html')
+          user = db.child("user").get()
+          return f"<h1>{user}</h1>"
+          #return render_template('dashboard.html')
 
 
 # view list of recpies
