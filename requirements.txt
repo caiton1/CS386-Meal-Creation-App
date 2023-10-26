@@ -1,5 +1,5 @@
 flask
 requests
-git+https://github.com/ozgur/python-firebase
+#git+https://github.com/ozgur/python-firebase
 flask_session
-#pyrebase
+pyrebase4  

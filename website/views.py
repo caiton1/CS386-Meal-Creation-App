@@ -1,28 +1,37 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-from firebase import firebase
+import pyrebase
 from flask_session import Session
 
-
-firebaseConfig={
+# TODO: move to config file
+config = {
      "apiKey": "AIzaSyA73NPIvm3n5aDntTnMe97SLsZOaJ9tUbU",
-     "databaseURL": "https://cspickmymeals-default-rtdb.firebaseio.com",
      "authDomain": "cspickmymeals.firebaseapp.com",
+     "databaseURL": "https://cspickmymeals-default-rtdb.firebaseio.com",
      "projectId": "cspickmymeals",
      "storageBucket": "cspickmymeals.appspot.com",
      "messagingSenderId": "906324121880",
-     "appId": "1:906324121880:web:982c7aebf232653692266d",
-     "measurementId": "G-P805WYYVH1"
+     "appId": "1:906324121880:web:9ff3c7693d9b124192266d",
+     "measurementId": "G-DVZP5XDVHR"
 }
+
 
 # TODO: impliment cryptography if adding passwords ALSO look into flask_login
 
 app = Flask(__name__)
 
-SESSION_TYPE = "filesystem"
+SESSION_TYPE = "filesystem" # TODO: put in config file
 app.config.from_object(__name__)
-Session(app)
+Session(app) # user sessions stored server side for now
 
-database = firebase.FirebaseApplication(firebaseConfig['databaseURL'], None)
+# connect app to firebase
+firebase = pyrebase.initialize_app(config)
+
+# auth reference
+auth = firebase.auth()
+# database refernce
+db = firebase.database()
+
+
 
 
 # TODO: testing session IGNORE
@@ -45,7 +54,7 @@ def index():
 	return render_template('index.html')
 
 
-# need to add and/or read users from database and store session accross pages
+# need to add and/or read users from db and store session accross pages
 # impliment passwords and cryptogrophy later
 # TODO: create a signup page
 @app.route("/signup", methods=["GET", "POST"])
@@ -70,18 +79,18 @@ def route():
 # view list of recpies
 @app.route("/recipe", methods=["GET"])
 def recipe():
-    # TODO: to reduce database reads and "cost", 
-    # impliment sessions and store the database data
-    result = database.get('/Recipes', None) 
-    recipeList = {}
+    # TODO: to reduce db reads and "cost", 
+    # impliment sessions and store the db data
+    recipeList = db.child("Recipes").get()
+    titleList = {}
 
-    for key, value in result.items():
-        recipeList.update({key:{
-            "href":key.replace(" ", "+"),
-            "caption":key
-    }})
+    for recipe in recipeList:
+        titleList.update({recipe.key():{
+             "href":recipe.key().replace(" ", "+"),
+             "caption":recipe.key()
+        }})
           
-    return render_template('recipe.html', recipes=recipeList)
+    return render_template('recipe.html', recipes=titleList)
 
 
 # search page, need to fix and impliment error handling.
@@ -101,10 +110,9 @@ def search():
 @app.route("/recipe/<selection>")
 def viewRecipe(selection):
      selection = selection.replace("+", " ")
-     result = database.get('/Recipes', None)
-     data = result[selection]
+     data = db.child("Recipes").child(selection).get()
      return render_template("selection.html", 
-                            dataInput=data, recipeName=selection)
+                            dataInput=data.val(), recipeName=selection)
 
 if __name__ == "__main__":
     app.run()
