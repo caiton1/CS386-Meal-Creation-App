@@ -9,13 +9,15 @@ SESSION_TYPE = "filesystem"
 app.config.from_object(__name__)
 Session(app)
 
-firebase = firebase.FirebaseApplication('https://cspickmymeals-default-rtdb.firebaseio.com/', None)
+firebase = firebase.FirebaseApplication\
+    ('https://cspickmymeals-default-rtdb.firebaseio.com/', None)
 
-# TODO: testing session
+# TODO: testing session IGNORE
 @app.route("/set/<value>")
 def set_session(value):
      session["key"] = value
      return "<h1>Ok</h1>"
+
 
 @app.route("/get/")
 def get_session():
@@ -29,22 +31,20 @@ def get_session():
 def index():
 	return render_template('index.html')
 
-# TODO: create a login page will need to add and/or read users from database and session store
+
+# TODO: create a login page 
+# need to add and/or read users from database and session store
 
 # TODO: create logout page
 
 # TODO: create favorites page
 
-# home page
-@app.route('/results')  # this sets the route to this page
-def results():
-    result = firebase.get('/Recipes', None) # returns dictionary
-    return str(result)
-
 # view list of recpies
 @app.route("/recipe", methods=["GET"])
 def recipe():
-    result = firebase.get('/Recipes', None) # TODO: to reduce database reads and "cost", impliment sessions and store the database data
+    # TODO: to reduce database reads and "cost", 
+    # impliment sessions and store the database data
+    result = firebase.get('/Recipes', None) 
     recipeList = {}
 
     for key, value in result.items():
@@ -52,10 +52,12 @@ def recipe():
             "href":key.replace(" ", "+"),
             "caption":key
     }})
-        
+          
     return render_template('recipe.html', recipes=recipeList)
 
-# search page, need to fix and impliment error handling (will fall on its face if it is not exact match)
+
+# search page, need to fix and impliment error handling.
+# (will fall on its face if it is not exact match)
 @app.route("/search", methods=["POST", "GET"])
 def search():
     if request.method == "POST":
@@ -65,13 +67,15 @@ def search():
     else:      
         return render_template("search.html")
     
+
 # view recipe
 @app.route("/recipe/<selection>")
 def viewRecipe(selection):
      selection = selection.replace("+", " ")
      result = firebase.get('/Recipes', None)
      data = result[selection]
-     return render_template("selection.html", dataInput=data, recipeName=selection)
+     return render_template("selection.html", 
+                            dataInput=data, recipeName=selection)
 
 if __name__ == "__main__":
     app.run()
