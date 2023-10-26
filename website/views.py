@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from firebase import firebase
 from flask_session import Session
-# TODO: impliment cryptography if adding passwords
+# TODO: impliment cryptography if adding passwords ALSO look into flask_login
 
 app = Flask(__name__)
 
@@ -32,15 +32,27 @@ def index():
 	return render_template('index.html')
 
 
-# need to add and/or read users from database and session store
+# need to add and/or read users from database and store session accross pages
 # impliment passwords and cryptogrophy later
 # TODO: create a signup page
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+     return "<h1>signup page is a work in progress</h1>"
 
 # TODO: create a login page 
+@app.route("/login", methods=["GET","POST"])
+def login():
+     return "<h1>login page is a work in progress</h1>"
 
-# TODO: create logout page
+# TODO: create logout page, look into ending session
+@app.route("/logout")
+def logout():
+     return "<h1>logout page is a work in progress</h1>"
 
-# TODO: create dashboard page
+# TODO: create dashboard page 
+@app.route("/dashboard")
+def route():
+     return "<h1>dashboard page is a work in progress</h1>"
 
 # view list of recpies
 @app.route("/recipe", methods=["GET"])
@@ -61,6 +73,7 @@ def recipe():
 
 # search page, need to fix and impliment error handling.
 # (will fall on its face if it is not exact match)
+# TODO: may need to rethink implimentation, this is not a good approach
 @app.route("/search", methods=["POST", "GET"])
 def search():
     if request.method == "POST":
