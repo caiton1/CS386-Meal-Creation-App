@@ -1,0 +1,21 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+
+</head>
+
+<body>
+  <script src="{{ url_for('static',filename='script.js') }}"></script>
+  <ul>
+  {% for favorite in user_data %}
+  <li><a href= "recipe/{{user_data[favorite]["href"]}}" >{{user_data[favorite]["caption"]}}</a></li>
+  {% endfor %}
+  </ul>
+</body>
+</html>

@@ -32,24 +32,29 @@ def index():
 # sign up page
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-     if request.method == 'POST':
-          email = request.form['email']
-          password = request.form['pass']
-          try:
-               user_token=auth.create_user_with_email_and_password(email, password)
-               print(user_token)
-               data = {
-                    'favorites':'',
-                    'meal_plan':''
-               }
-               db.child('user').push(data, user_token['idToken'])
-               return redirect(url_for('login'))
-          except:
-               error = 'Invalid email or email already exists! Please also make sure password is atleast 6 characters long.'
-               return render_template('signup.html', msg=error)
-          
+     if(session['token'] == ""):
+          if request.method == 'POST':
+               email = request.form['email']
+               password = request.form['pass']
+               try:
+                    user_token=auth.create_user_with_email_and_password(email, password)
+                    data = {
+                         'favorites':'',
+                         'meal_plan':''
+                    }
+                    db.child('user').child(user_token['localId']).update(data)
+
+                    return redirect(url_for('login'))
+               except:
+                    error = 'Invalid email or email already exists! Please also make sure password is atleast 6 characters long.'
+                    return render_template('signup.html', msg=error)
+               
+          else:
+
+               return render_template('signup.html', msg='')
      else:
-          return render_template('signup.html', msg='')
+          return "<h1>You are already logged in!</h1>"
+          
      
 
 
@@ -59,22 +64,14 @@ def login():
      if request.method == 'POST':
           email = request.form['email']
           password = request.form['pass']
-          if(session['token'] == ""):
-               try:
-                    user_token=auth.sign_in_with_email_and_password(email, password)
-                    session['token'] = user_token['idToken']
-                    return redirect(url_for('dashboard'))
-               except:
-                    error = 'invalid email or password'
-                    return render_template('login.html', msg=error)
-          else:
-               try:
-                    user_token=auth.sign_in_with_email_and_password(email, password)
-                    user_token=auth.refresh(user_token['refreshToken'])
-                    return redirect(url_for('dashboard'))
-               except:
-                    error = 'invalid email or password'
-                    return render_template('login.html', msg=error)
+          try:
+               user_token=auth.sign_in_with_email_and_password(email, password)
+               session['token'] = user_token['localId']
+               user_token=auth.refresh(user_token['refreshToken'])
+               return redirect(url_for('dashboard'))
+          except:
+               error = 'invalid email or password'
+               return render_template('login.html', msg=error)
 
      else:
           return render_template('login.html', msg='')
@@ -95,8 +92,16 @@ def dashboard():
           return redirect(url_for('login'))
      else:
           user = db.child("user").get()
-          return f"<h1>{user}</h1>"
-          #return render_template('dashboard.html')
+          data = {}
+          for favorite in user.val()[token]['favorites']:
+               data.update({
+                    favorite:{
+                         'href':favorite.replace(' ', '+'),
+                         'caption':favorite
+                    }
+               })
+          print(data)
+          return render_template('dashboard.html', user_data=data)
 
 
 # view list of recpies
@@ -130,12 +135,37 @@ def search():
     
 
 # view recipe
-@app.route('/recipe/<selection>')
+@app.route('/recipe/<selection>', methods=['POST', 'GET'])
 def viewRecipe(selection):
+     favorite_flag = 'favorite'
      selection = selection.replace('+', ' ')
      data = db.child('Recipes').child(selection).get()
-     return render_template('selection.html', 
-                            dataInput=data.val(), recipeName=selection)
+     token = session.get('token', 'session error')
+     user = db.child("user").get()
+
+     favorite_list = []
+     for favorite in user.val()[token]['favorites']:
+          if favorite == selection:
+               favorite_flag = 'unfavorite'
+          else:
+               favorite_list.append(favorite)
+
+     if request.method == 'POST':
+          # check for token
+          if token != '':
+               if favorite_flag == 'favorite':
+                    favorite_list.append(selection)
+                    db.child('user').child(token).update({'favorites':favorite_list})
+               else:
+                    db.child('user').child(token).update({'favorites':favorite_list})
+
+               return redirect(url_for('viewRecipe', selection=selection))
+          else:
+               return redirect(url_for('login'))
+          
+     else:
+          return render_template('selection.html', 
+                              dataInput=data.val(), recipeName=selection, fav=favorite_flag)
 
 
 if __name__ == '__main__':
