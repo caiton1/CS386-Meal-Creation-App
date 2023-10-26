@@ -44,10 +44,8 @@ def search():
 @app.route("/recipe/<selection>")
 def viewRecipe(selection):
      selection = selection.replace("+", " ")
-     print("DEBUG: " + selection)
      data = testdict[selection]
-     print(data)
-     return render_template("selection.html", dataInput=data.items())
+     return render_template("selection.html", dataInput=data, recipeName=selection)
 
 if __name__ == "__main__":
     app.run()
