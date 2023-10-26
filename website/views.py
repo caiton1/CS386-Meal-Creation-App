@@ -32,19 +32,6 @@ auth = firebase.auth()
 # database refernce
 db = firebase.database()
 
-# TODO: testing session IGNORE
-@app.route("/set/<value>")
-def set_session(value):
-     session["key"] = value
-     return "<h1>Ok</h1>"
-
-
-@app.route("/get/")
-def get_session():
-     stored_session = session.get("key", "No session was set")
-     return f"<h3>{stored_session}</h3>"
-# end testing session
-
 
 # Defining the home page of our site
 @app.route("/")  # this sets the route to this page d
@@ -52,9 +39,9 @@ def index():
 	return render_template('index.html')
 
 
-# need to add and/or read users from db and store session accross pages
+# TODO: need to add and/or read users from db and store session accross pages
 # impliment passwords and cryptogrophy later
-# TODO: create a signup page
+# sign up page
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
      if request.method == "POST":
@@ -76,7 +63,7 @@ def signup():
      
 
 
-# TODO: create a login page 
+# login page
 @app.route("/login", methods=["GET","POST"])
 def login():
      if request.method == "POST":
@@ -92,18 +79,20 @@ def login():
      else:
           return render_template('login.html', msg="")
 
-# TODO: create logout page, look into ending session
+# TODO: create logout page
 @app.route("/logout")
 def logout():
-     session.remove()
-     return "<h1>logout page is a work in progress</h1>"
+     session["token"] = ""
+     return redirect(url_for("index"))
 
 # TODO: create dashboard page 
 @app.route("/dashboard")
 def dashboard():
      token = session.get("token", "session error")
-     print(token)
-     return "<h1>dashboard page is a work in progress</h1>"
+     if token == "":
+          return redirect(url_for("login"))
+     else:
+          return render_template('dashboard.html')
 
 # view list of recpies
 @app.route("/recipe", methods=["GET"])
