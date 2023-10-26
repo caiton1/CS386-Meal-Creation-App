@@ -5,7 +5,7 @@ from flask_session import Session
 import config
 
 
-# TODO: impliment cryptography if adding passwords ALSO look into flask_login
+# TODO: impliment cryptography if adding passwords
 
 app = Flask(__name__)
 
@@ -28,8 +28,7 @@ def index():
 	return render_template('index.html')
 
 
-# TODO: need to add and/or read users from db and store session accross pages
-# impliment passwords and cryptogrophy later
+# impliment cryptogrophy later
 # sign up page
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -68,11 +67,13 @@ def login():
      else:
           return render_template('login.html', msg='')
 
+
 # TODO: create logout page
 @app.route('/logout')
 def logout():
      session['token'] = ''
      return redirect(url_for('index'))
+
 
 # TODO: create dashboard page 
 @app.route('/dashboard')
@@ -83,11 +84,12 @@ def dashboard():
      else:
           return render_template('dashboard.html')
 
+
 # view list of recpies
 @app.route('/recipe', methods=['GET'])
 def recipe():
     # TODO: to reduce db reads and 'cost', 
-    # impliment sessions and store the db data
+    # impliment sessions and store the db data in there
     recipe_list = db.child('Recipes').get()
     title_list = {}
 
@@ -101,7 +103,7 @@ def recipe():
 
 
 # search page, need to fix and impliment error handling.
-# (will fall on its face if it is not exact match)
+# (will fall on its face if it is not exact match, use python string magic or something idk)
 # TODO: may need to rethink implimentation, this is not a good approach
 @app.route('/search', methods=['POST', 'GET'])
 def search():
