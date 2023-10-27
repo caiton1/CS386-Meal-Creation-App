@@ -3,6 +3,7 @@ import pyrebase
 from flask_session import Session
 import functions.config as config
 import functions.user as user
+from functions.favorite import is_favorited, update_favorites
 
 
 
@@ -82,16 +83,8 @@ def dashboard():
      if token == '':
           return redirect(url_for('login'))
      else:
-          user = db.child("user").get()
-          data = {}
-          for favorite in user.val()[token]['favorites']:
-               data.update({
-                    favorite:{
-                         'href':favorite.replace(' ', '+'),
-                         'caption':favorite
-                    }
-               })
-          return render_template('dashboard.html', user_data=data)
+          recipe_links = user.user_recipies_to_links(db, token, 'favorites')
+          return render_template('dashboard.html', user_data=recipe_links)
 
 
 # view list of recpies
@@ -117,28 +110,18 @@ def search():
 # view recipe
 @app.route('/recipe/<selection>', methods=['POST', 'GET'])
 def viewRecipe(selection):
-     favorite_flag = 'favorite'
      selection = selection.replace('+', ' ')
 
-     data = db.child('Recipes').child(selection).get()
+     recipe_data = user.get_recipe_data(db, selection)
      token = session.get('token', 'session error')
-     user = db.child("user").get()
-     favorite_list = []
+     user_data = user.get_user_data(db)
 
-     for favorite in user.val()[token]['favorites']:
-          if favorite == selection:
-               favorite_flag = 'unfavorite'
-          else:
-               favorite_list.append(favorite)
+     button_display, favorites = is_favorited(user_data, token, selection)
 
      if request.method == 'POST':
           # check for token
           if token != '':
-               if favorite_flag == 'favorite':
-                    favorite_list.append(selection)
-                    db.child('user').child(token).update({'favorites':favorite_list})
-               else:
-                    db.child('user').child(token).update({'favorites':favorite_list})
+               update_favorites(db, button_display, token, favorites, selection)
 
                return redirect(url_for('viewRecipe', selection=selection))
           else:
@@ -146,7 +129,7 @@ def viewRecipe(selection):
           
      else:
           return render_template('selection.html', 
-                              dataInput=data.val(), recipeName=selection, fav=favorite_flag)
+                              dataInput=recipe_data.val(), recipeName=selection, fav=button_display)
 
 
 if __name__ == '__main__':

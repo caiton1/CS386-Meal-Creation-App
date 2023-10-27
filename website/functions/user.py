@@ -7,20 +7,12 @@ from flask_session import Session
 class UserData:
     def __init__(self):
         self.data = {
-            'favorites':[],
-            'meal_plan':[]
-        }
-
-
-    #--------------------------Data Minipulation---------------------------#
-    # clears data to for next use if used again
-    def clear_data(self):
-        self.data = {
             'favorites':'',
             'meal_plan':''
         }
 
 
+    #--------------------------Data Minipulation---------------------------#
     # turns recipies stored in user database into a dictionary to display as links
     def user_recipies_to_links(self, db, token, list):
         self.links = {}
@@ -66,7 +58,7 @@ class UserData:
     def forms(self, form):
         self.email = form['email']
         self.password = form['pass']
-    
+
 
     #---------------------------User Management----------------------------#
     # creates user on authenticator and pushes user into database for persistant storage
