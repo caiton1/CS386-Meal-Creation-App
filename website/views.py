@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import pyrebase
 from flask_session import Session
-import website.functions.config as config
-import website.function.pybase as pybase
+import functions.config as config
+import functions.user as user
 
 
 
@@ -20,7 +20,8 @@ firebase = pyrebase.initialize_app(config.firebaseConf)
 auth = firebase.auth()
 # database refernce
 db = firebase.database()
-
+# initialize user class
+user = user.UserData()
 
 # Defining the home page of our site
 @app.route('/')  # this sets the route to this page d
@@ -34,24 +35,15 @@ def index():
 def signup():
      if(session['token'] == ""):
           if request.method == 'POST':
-               email = request.form['email']
-               password = request.form['pass']
-               
+               user.forms(request.form)
                try:
-                    user_token=auth.create_user_with_email_and_password(email, password)
-                    data = {
-                         'favorites':'',
-                         'meal_plan':''
-                    }
-                    db.child('user').child(user_token['localId']).update(data)
-
+                    user.create_user(auth, db)
                     return redirect(url_for('login'))
                except:
                     error = 'Invalid email or email already exists! Please also make sure password is atleast 6 characters long.'
                     return render_template('signup.html', msg=error)
                
           else:
-
                return render_template('signup.html', msg='')
      else:
           return "<h1>You are already logged in!</h1>"
@@ -63,17 +55,14 @@ def signup():
 @app.route('/login', methods=['GET','POST'])
 def login():
      if request.method == 'POST':
-          email = request.form['email']
-          password = request.form['pass']
+          user.forms(request.form)
           try:
-               user_token=auth.sign_in_with_email_and_password(email, password)
-               session['token'] = user_token['localId']
-               user_token=auth.refresh(user_token['refreshToken'])
+               user.login(auth)
+               session['token'] = user.user_token['localId']
                return redirect(url_for('dashboard'))
           except:
                error = 'invalid email or password'
                return render_template('login.html', msg=error)
-
      else:
           return render_template('login.html', msg='')
 
@@ -82,6 +71,7 @@ def login():
 @app.route('/logout')
 def logout():
      session['token'] = ''
+     user.logoff()
      return redirect(url_for('index'))
 
 
@@ -107,18 +97,8 @@ def dashboard():
 # view list of recpies
 @app.route('/recipe', methods=['GET'])
 def recipe():
-    # TODO: to reduce db reads and 'cost', 
-    # impliment sessions and store the db data in there
-    recipe_list = db.child('Recipes').get()
-    title_list = {}
-
-    for recipe in recipe_list:
-        title_list.update({recipe.key():{
-             'href':recipe.key().replace(' ', '+'),
-             'caption':recipe.key()
-        }})
-          
-    return render_template('recipe.html', recipes=title_list)
+    recipe_links = user.recipe_to_links(db)
+    return render_template('recipe.html', recipes=recipe_links)
 
 
 # search page, need to fix and impliment error handling.

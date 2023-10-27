@@ -79,3 +79,5 @@ class UserData:
     def login(self, auth):
         self.user_token = auth.sign_in_with_email_and_password(self.email, self.password)
     
+    def logoff(self):
+        self.user_token = ''
