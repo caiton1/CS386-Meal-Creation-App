@@ -1,21 +1,21 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-import requests
 import pyrebase
 from flask_session import Session
-import config
+import website.functions.config as config
+import website.function.pybase as pybase
+
 
 
 # TODO: impliment cryptography if adding passwords
 
 app = Flask(__name__)
 
-SESSION_TYPE = 'filesystem' # TODO: put in config file
+SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
 Session(app) # user sessions stored server side for now
 
 # connect app to firebase
 firebase = pyrebase.initialize_app(config.firebaseConf)
-
 # auth reference
 auth = firebase.auth()
 # database refernce
@@ -36,6 +36,7 @@ def signup():
           if request.method == 'POST':
                email = request.form['email']
                password = request.form['pass']
+               
                try:
                     user_token=auth.create_user_with_email_and_password(email, password)
                     data = {
@@ -100,7 +101,6 @@ def dashboard():
                          'caption':favorite
                     }
                })
-          print(data)
           return render_template('dashboard.html', user_data=data)
 
 
@@ -139,11 +139,12 @@ def search():
 def viewRecipe(selection):
      favorite_flag = 'favorite'
      selection = selection.replace('+', ' ')
+
      data = db.child('Recipes').child(selection).get()
      token = session.get('token', 'session error')
      user = db.child("user").get()
-
      favorite_list = []
+
      for favorite in user.val()[token]['favorites']:
           if favorite == selection:
                favorite_flag = 'unfavorite'
