@@ -1,20 +1,19 @@
-# @author: caiton1
+'''@author: caiton1'''
+from flask import Flask, render_template, request, redirect, url_for, session
+import pyrebase
+from flask_session import Session
+
+
 class UserData:
     def __init__(self):
         self.data = {
-            'favorites':[],
-            'meal_plan':[]
-        }
 
-
-    #--------------------------Data Minipulation---------------------------#
-    # clears data to for next use if used again
-    def clear_data(self):
-        self.data = {
             'favorites':'',
             'meal_plan':''
         }
 
+
+    #--------------------------Data Minipulation---------------------------#
 
     # turns recipies stored in user database into a dictionary to display as links
     def user_recipies_to_links(self, db, token, list):
@@ -61,8 +60,8 @@ class UserData:
     def forms(self, form):
         self.email = form['email']
         self.password = form['pass']
-    
 
+        
     #---------------------------User Management----------------------------#
     # creates user on authenticator and pushes user into database for persistant storage
     def create_user(self, auth, db):
@@ -73,10 +72,7 @@ class UserData:
     # logs user in
     def login(self, auth):
         self.user_token = auth.sign_in_with_email_and_password(self.email, self.password)
-        self.user_token= auth.refresh(self.user_token['refreshToken'])
 
-
-    # log out
+    
     def logoff(self):
         self.user_token = ''
-    

@@ -3,13 +3,14 @@ import pyrebase
 from flask_session import Session
 import functions.config as config
 import functions.user as user
+from functions.favorite import is_favorited, update_favorites
 
 
 # TODO: impliment cryptography if adding passwords
 
 app = Flask(__name__)
 
-SESSION_TYPE = 'filesystem' # TODO: put in config file
+SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
 Session(app) # user sessions stored server side for now
 
@@ -33,20 +34,23 @@ def index():
 # sign up page
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-     if request.method == 'POST':
-          user.forms(request.form)
-          try:
-               user.create_user(auth, db)
-               return redirect(url_for('login'))
-          except:
-               error = 'Invalid email or email already exists! Please also make sure password is atleast 6 characters long.'
-               return render_template('signup.html', msg=error)
-          
+     if(session['token'] == ""):
+          if request.method == 'POST':
+               user.forms(request.form)
+               try:
+                    user.create_user(auth, db)
+                    return redirect(url_for('login'))
+               except:
+                    error = 'Invalid email or email already exists! Please also make sure password is atleast 6 characters long.'
+                    return render_template('signup.html', msg=error)
+               
+          else:
+               return render_template('signup.html', msg='')
+
      else:
-          return render_template('signup.html', msg='')
+          return "<h1>You are already logged in!</h1>"
+          
      
-
-
 # login page
 @app.route('/login', methods=['GET','POST'])
 def login():
@@ -54,7 +58,7 @@ def login():
           user.forms(request.form)
           try:
                user.login(auth)
-               session['token'] = user.user_token['idToken']
+               session['token'] = user.user_token['localId']
                return redirect(url_for('dashboard'))
           except:
                error = 'invalid email or password'
@@ -78,16 +82,15 @@ def dashboard():
      if token == '':
           return redirect(url_for('login'))
      else:
-          #data = user.get_user_data(db)
-          #return f"<h1>{data.val()}</h1>"
-          return render_template('dashboard.html')
+          recipe_links = user.user_recipies_to_links(db, token, 'favorites')
+          return render_template('dashboard.html', user_data=recipe_links)
 
 
 # view list of recpies
 @app.route('/recipe', methods=['GET'])
 def recipe():
-    title_list = user.recipe_to_links(db)
-    return render_template('recipe.html', recipes=title_list)
+    recipe_links = user.recipe_to_links(db)
+    return render_template('recipe.html', recipes=recipe_links)o
 
 
 # search page, need to fix and impliment error handling.
@@ -104,12 +107,29 @@ def search():
     
 
 # view recipe
-@app.route('/recipe/<selection>')
+@app.route('/recipe/<selection>', methods=['POST', 'GET'])
 def viewRecipe(selection):
      selection = selection.replace('+', ' ')
-     data = user.get_recipe_data(db, selection)
-     return render_template('selection.html', 
-                            dataInput=data.val(), recipeName=selection)
+
+     recipe_data = user.get_recipe_data(db, selection)
+     token = session.get('token', 'session error')
+     user_data = user.get_user_data(db)
+
+     button_display, favorites = is_favorited(user_data, token, selection)
+
+     if request.method == 'POST':
+          # check for token
+          if token != '':
+               update_favorites(db, button_display, token, favorites, selection)
+
+               return redirect(url_for('viewRecipe', selection=selection))
+          else:
+               return redirect(url_for('login'))
+          
+     else:
+          return render_template('selection.html', 
+                              dataInput=recipe_data.val(), recipeName=selection, fav=button_display)
+
 
 
 if __name__ == '__main__':

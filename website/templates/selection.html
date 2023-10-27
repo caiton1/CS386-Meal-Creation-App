@@ -1,4 +1,8 @@
 <h1>{{recipeName}}</h1>
+<script src="{{ url_for('static',filename='script.js') }}"></script>
+<form action="" method="post">
+  <p><input type="submit" value="{{fav}}" \ /></p>
+</form>
 <h2>Ingredients</h2>
 <ul>
   {% for ingredient in dataInput.Ingredients %}
