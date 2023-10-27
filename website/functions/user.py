@@ -1,18 +1,20 @@
+'''@author: caiton1'''
 from flask import Flask, render_template, request, redirect, url_for, session
 import pyrebase
 from flask_session import Session
 
 
-# @author: caiton1
 class UserData:
     def __init__(self):
         self.data = {
+
             'favorites':'',
             'meal_plan':''
         }
 
 
     #--------------------------Data Minipulation---------------------------#
+
     # turns recipies stored in user database into a dictionary to display as links
     def user_recipies_to_links(self, db, token, list):
         self.links = {}
@@ -59,7 +61,7 @@ class UserData:
         self.email = form['email']
         self.password = form['pass']
 
-
+        
     #---------------------------User Management----------------------------#
     # creates user on authenticator and pushes user into database for persistant storage
     def create_user(self, auth, db):
@@ -70,6 +72,7 @@ class UserData:
     # logs user in
     def login(self, auth):
         self.user_token = auth.sign_in_with_email_and_password(self.email, self.password)
+
     
     def logoff(self):
         self.user_token = ''

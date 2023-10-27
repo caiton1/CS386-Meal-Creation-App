@@ -6,7 +6,6 @@ import functions.user as user
 from functions.favorite import is_favorited, update_favorites
 
 
-
 # TODO: impliment cryptography if adding passwords
 
 app = Flask(__name__)
@@ -23,6 +22,7 @@ auth = firebase.auth()
 db = firebase.database()
 # initialize user class
 user = user.UserData()
+
 
 # Defining the home page of our site
 @app.route('/')  # this sets the route to this page d
@@ -46,12 +46,11 @@ def signup():
                
           else:
                return render_template('signup.html', msg='')
+
      else:
           return "<h1>You are already logged in!</h1>"
           
      
-
-
 # login page
 @app.route('/login', methods=['GET','POST'])
 def login():
@@ -76,7 +75,7 @@ def logout():
      return redirect(url_for('index'))
 
 
-# TODO: create dashboard page 
+# TODO: create dashboard page, impliment favorite feature here
 @app.route('/dashboard')
 def dashboard():
      token = session.get('token', 'session error')
@@ -91,7 +90,7 @@ def dashboard():
 @app.route('/recipe', methods=['GET'])
 def recipe():
     recipe_links = user.recipe_to_links(db)
-    return render_template('recipe.html', recipes=recipe_links)
+    return render_template('recipe.html', recipes=recipe_links)o
 
 
 # search page, need to fix and impliment error handling.
@@ -130,6 +129,7 @@ def viewRecipe(selection):
      else:
           return render_template('selection.html', 
                               dataInput=recipe_data.val(), recipeName=selection, fav=button_display)
+
 
 
 if __name__ == '__main__':
