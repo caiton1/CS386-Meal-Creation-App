@@ -90,7 +90,7 @@ def dashboard():
 @app.route('/recipe', methods=['GET'])
 def recipe():
     recipe_links = user.recipe_to_links(db)
-    return render_template('recipe.html', recipes=recipe_links)o
+    return render_template('recipe.html', recipes=recipe_links)
 
 
 # search page, need to fix and impliment error handling.
