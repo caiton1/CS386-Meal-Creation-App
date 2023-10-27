@@ -54,17 +54,20 @@ def signup():
 # login page
 @app.route('/login', methods=['GET','POST'])
 def login():
-     if request.method == 'POST':
-          user.forms(request.form)
-          try:
-               user.login(auth)
-               session['token'] = user.user_token['localId']
-               return redirect(url_for('dashboard'))
-          except:
-               error = 'invalid email or password'
-               return render_template('login.html', msg=error)
+     if(session['token'] == ""):
+          if request.method == 'POST':
+               user.forms(request.form)
+               try:
+                    user.login(auth)
+                    session['token'] = user.user_token['localId']
+                    return redirect(url_for('dashboard'))
+               except:
+                    error = 'invalid email or password'
+                    return render_template('login.html', msg=error)
+          else:
+               return render_template('login.html', msg='')
      else:
-          return render_template('login.html', msg='')
+          return "<h1>You are already logged in!</h1>"
 
 
 # TODO: create logout page
