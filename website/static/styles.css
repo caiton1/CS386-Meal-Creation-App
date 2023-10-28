@@ -1,14 +1,26 @@
+html{
+    margin: -.5em;
+}
 body{
-    background-color:bisque;
+    background-color:#F0F4EF;
     text-align: center;
+    margin: .5em .5em 0 .5em;
 }
 
-header, footer
+header
 {
     margin: 0 auto;
-	padding: 5em 3em;
+	padding: 1em 3em;
 	text-align: center;
     
+}
+footer{
+    margin: 0 auto;
+    background: #0A0908; 
+    text-align: center;     
+}
+footer h6{
+    color: #839073;
 }
 
 div.navigation
@@ -16,11 +28,11 @@ div.navigation
     margin: 0 auto;
 	padding: 1em 4em;
 	text-align: center;
-    background: #555;
+    background: #0D1821;
 }
 div.navigation a
 {
-    color: #FFF;
+    color: white;
     text-decoration: none;
     font: 20px;
     margin: 0px 10px;
@@ -60,4 +72,10 @@ div.highlight a:hover:before
 p.errorMsg
 {
     color:red !important;
+}
+.license{
+    margin: 0 auto;
+	padding: 1em 4em;
+	text-align: center;
+    background: #0A0908;
 }
