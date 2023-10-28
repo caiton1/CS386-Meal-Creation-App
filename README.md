@@ -29,7 +29,7 @@ Testing on our product will begin soon
     * windows: python website/views.py
     * linux:  python3 website/views.py
 4. Setup firebase real time database
-5. create a web app on firebase, copy the app info given by firebase into the config file.
+5. create a web app on firebase, copy the app info given by firebase into the config.py inside website folder.
 ### License
 This projected is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file.
 
