@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}"/>
     <meta charset="UTF-8" />
     <title>Pick My Meals</title>
-    <h1>Main page</h1>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static',filename='styles.css') }}"
-    />
+
+    <div class="navigation highlight">
+      <a class = "selected" href="/">Home</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/search">Search</a>
+      <a href="/recipe">Recipes</a>  
+      <a href="/login">Login</a>
+      <a href="/logout">Signout</a>  
+    </div>
+    
+    <header>
+      <h1>Main page</h1>
+    </header>
   </head>
+
   <body>
     <script src="{{ url_for('static',filename='script.js') }}"></script>
+    <footer></footer>
   </body>
+
 </html>
