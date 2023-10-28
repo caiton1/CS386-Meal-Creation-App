@@ -122,7 +122,7 @@ def viewRecipe(selection):
 
      if request.method == 'POST':
           # check for token
-          if token != '':
+          if 'token' in locals():
                update_favorites(db, button_display, token, favorites, selection)
 
                return redirect(url_for('viewRecipe', selection=selection))
