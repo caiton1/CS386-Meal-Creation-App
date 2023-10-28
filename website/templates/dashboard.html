@@ -2,20 +2,24 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-
-  <title></title>
-
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+  <meta charset="utf-8">
+  <title>Dashboard</title>
+
+  <div class="navigation highlight">
+    <a href="/">Home</a>
+    <a class = "selected" href="/dashboard">Dashboard</a>
+    <a href="/search">Search</a>
+    <a href="/login">Login</a> 
+    <a href="/logout">Signout</a>             
+  </div>
 
 </head>
 
 <body>
   <script src="{{ url_for('static',filename='script.js') }}"></script>
-  <ul>
   {% for favorite in user_data %}
-  <li><a href= "recipe/{{user_data[favorite]["href"]}}" >{{user_data[favorite]["caption"]}}</a></li>
+  <p><a href= "recipe/{{user_data[favorite]["href"]}}" >{{user_data[favorite]["caption"]}}</a></p>
   {% endfor %}
-  </ul>
 </body>
 </html>

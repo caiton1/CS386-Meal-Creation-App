@@ -2,15 +2,18 @@
 
 <html lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}"/>
     <meta charset="utf-8" />
 
-    <title></title>
+    <title>search</title>
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static',filename='styles.css') }}"
-    />
+    <div class="navigation highlight">
+      <a href="/">Home</a>
+      <a href="/dashboard">Dashboard</a>
+      <a class = "selected" href="/search">Search</a>
+      <a href="/login">Login</a>   
+      <a href="/logout">Signout</a>       
+    </div>
   </head>
 
   <body>

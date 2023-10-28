@@ -1,3 +1,59 @@
 body{
     background-color:bisque;
+    text-align: center;
 }
+
+header, footer
+{
+    margin: 0 auto;
+	padding: 5em 3em;
+	text-align: center;
+    
+}
+
+div.navigation
+{
+    margin: 0 auto;
+	padding: 1em 4em;
+	text-align: center;
+    background: #555;
+}
+div.navigation a
+{
+    color: #FFF;
+    text-decoration: none;
+    font: 20px;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+a
+{
+    transition: all 0.3s;
+}
+
+div.highlight a:before
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    bottom: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+div.highlight a.selected::before
+{
+    height: 6px;
+}
+
+div.highlight a:hover:before
+{
+    height: 100%;
+}
+
+
