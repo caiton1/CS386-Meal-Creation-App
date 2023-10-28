@@ -88,6 +88,7 @@ p.errorMsg
     justify-content: center;
     align-items: center;
     background-color: #BFCC94;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .recipe-box a{
     font-size: 1.1em;
@@ -98,4 +99,15 @@ h1{
 }
 h2, h3{
     color:#7F557D
+}
+#recipe-info{
+    width: 30em;
+    margin: auto;
+    text-align: left;
+}
+.button{
+    width:125px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border-radius:4px;
 }

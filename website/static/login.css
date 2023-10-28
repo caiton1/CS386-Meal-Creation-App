@@ -10,6 +10,7 @@ body {
   margin: 0 auto 0 auto;
   padding: 0px 0px 70px 0px;
   border:#726E97 4px solid;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .input {
   background: #ecf0f1;
