@@ -24,7 +24,7 @@ Testing on our product will begin soon
 
 ## installation
 1. install python3 if you do not have it 
-2. execute: pip -r requirements.txt 
+2. execute: pip install -r requirements.txt 
 3. Depending on your system you will run:
     * windows: python website/views.py
     * linux:  python3 website/views.py
