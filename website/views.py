@@ -41,7 +41,7 @@ def signup():
                     user.create_user(auth, db)
                     return redirect(url_for('login'))
                except:
-                    error = 'Invalid email or email already exists! Please also make sure password is atleast 6 characters long.'
+                    error = '*Invalid email or email already exists! Please also make sure password is atleast 6 characters long.'
                     return render_template('signup.html', msg=error)
                
           else:
@@ -62,7 +62,7 @@ def login():
                     session['token'] = user.user_token['localId']
                     return redirect(url_for('dashboard'))
                except:
-                    error = 'invalid email or password'
+                    error = '*invalid email or password'
                     return render_template('login.html', msg=error)
           else:
                return render_template('login.html', msg='')
@@ -113,12 +113,12 @@ def search():
 @app.route('/recipe/<selection>', methods=['POST', 'GET'])
 def viewRecipe(selection):
      selection = selection.replace('+', ' ')
-
+     button_display = 'favorite'
      recipe_data = user.get_recipe_data(db, selection)
-     token = session.get('token', 'session error')
-     user_data = user.get_user_data(db)
-
-     button_display, favorites = is_favorited(user_data, token, selection)
+     if(session['token'] != ""):
+          token = session.get('token', 'session error')
+          user_data = user.get_user_data(db)
+          button_display, favorites = is_favorited(user_data, token, selection)
 
      if request.method == 'POST':
           # check for token

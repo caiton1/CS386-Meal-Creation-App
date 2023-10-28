@@ -57,3 +57,7 @@ div.highlight a:hover:before
 }
 
 
+p.errorMsg
+{
+    color:red !important;
+}

@@ -8,16 +8,18 @@
 
   <div class="navigation highlight">
     <a href="/">Home</a>
-    <a class = "selected" href="/dashboard">Dashboard</a>
+    <a href="/dashboard" class = "selected" >Dashboard</a>
     <a href="/search">Search</a>
-    <a href="/login">Login</a> 
-    <a href="/logout">Signout</a>             
+    <a href="/recipe">Recipes</a>  
+    <a href="/login">Login</a>
+    <a href="/logout">Signout</a>  
   </div>
 
 </head>
 
 <body>
   <script src="{{ url_for('static',filename='script.js') }}"></script>
+  <h2>favorites</h2>
   {% for favorite in user_data %}
   <p><a href= "recipe/{{user_data[favorite]["href"]}}" >{{user_data[favorite]["caption"]}}</a></p>
   {% endfor %}
