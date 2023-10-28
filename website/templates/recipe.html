@@ -21,7 +21,7 @@
   <script src="{{ url_for('static',filename='script.js') }}"></script>
   <ul>
   {% for recipe in recipes %}
-  <li><a href= "recipe/{{recipes[recipe]["href"]}}" >{{recipes[recipe]["caption"]}}</a></li>
+  <div class="recipe-box"><a  href= "recipe/{{recipes[recipe]["href"]}}" >{{recipes[recipe]["caption"]}}</a></div>
   {% endfor %}
   </ul>
 </body>

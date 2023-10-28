@@ -78,3 +78,13 @@ p.errorMsg
 	text-align: center;
     background: #0A0908;
 }
+.recipe-box{
+    border-radius: 6px;
+    border:#726E97 4px solid;
+    margin: 1em auto 0 auto;
+    width: 20em;
+    height: 5em
+}
+.recipe-box a{
+    vertical-align: middle;
+}
