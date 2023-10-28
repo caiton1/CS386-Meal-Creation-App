@@ -93,3 +93,9 @@ p.errorMsg
     font-size: 1.1em;
     flex: 0 0 20em;
 }
+h1{
+    color:#726E97;
+}
+h2, h3{
+    color:#7F557D
+}
