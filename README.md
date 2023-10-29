@@ -18,9 +18,11 @@ So far we have decided on using google cloud as our backend and use mainly pytho
 - **Elleana Negrelli** - [enegrelli](https://github.com/enegrelli)
 
 
-
 ## Testing
 Testing on our product will begin soon
+
+## Disclaimer
+This product is not intended to be used in production and only as a project. There may still be security flaws such as XSS.
 
 ## installation
 1. install python3 if you do not have it 
