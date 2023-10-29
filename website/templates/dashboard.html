@@ -19,8 +19,13 @@
 <body>
   <script src="{{ url_for('static',filename='script.js') }}"></script>
   <h2>Favorites</h2>
-  {% for favorite in user_data %}
-  <div class="recipe-box"><a href= "recipe/{{user_data[favorite]["href"]}}" >{{user_data[favorite]["caption"]}}</a></div>
+  {% for favorite in fav_data %}
+  <div class="recipe-box"><a href= "recipe/{{fav_data[favorite]["href"]}}" >{{fav_data[favorite]["caption"]}}</a></div>
+  {% endfor %}
+
+  <h2>Planned</h2>
+  {% for planned in plan_data %}
+  <div class="recipe-box"><a href= "recipe/{{plan_data[planned]["href"]}}" >{{plan_data[planned]["caption"]}}</a></div>
   {% endfor %}
 </body>
 </html>

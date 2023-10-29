@@ -4,6 +4,7 @@ from flask_session import Session
 import functions.config as config
 import functions.user as user
 from functions.favorite import add_favorite, remove_favorite, is_favorited
+from functions.meal_plan import is_planned, add_planned, remove_planned
 
 
 # TODO: impliment cryptography if adding passwords
@@ -87,9 +88,10 @@ def dashboard():
      if token == '':
           return redirect(url_for('login'))
      else:
-          recipe_links = user.user_recipies_to_links(db, token, 'favorites')
+          fav_links = user.user_recipies_to_links(db, token, 'favorites')
+          plan_links = user.user_recipies_to_links(db, token, 'meal_plan')
 
-          return render_template('dashboard.html', user_data=recipe_links)
+          return render_template('dashboard.html', fav_data=fav_links, plan_data=plan_links)
 
 
 # view list of recpies
@@ -114,6 +116,7 @@ def viewRecipe(selection):
           user_data = user.get_user_data(db)
           # check favorited or not
           check_box_fav, favorites = is_favorited(user_data, token, selection)
+          check_box_planned, planned = is_planned(user_data, token, selection)
      
      # user clicks submit button
      if request.method == 'POST':
@@ -125,10 +128,12 @@ def viewRecipe(selection):
                else:
                     remove_favorite(db, token, favorites, selection)
 
-               # TODO: check if planned 
+               #  check if planned 
                if request.form.get('plan'):
-                    print('planned!')
-
+                    add_planned(db, token, planned, selection)
+               else:
+                    remove_planned(db, token, planned, selection)
+                    
                return redirect(url_for('viewRecipe', selection=selection))
           else:
                return redirect(url_for('login'))
