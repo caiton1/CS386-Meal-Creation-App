@@ -10,10 +10,10 @@
     <title>Pick My Meals</title>
 
     <div class="navigation highlight">
-      <a class="selected" href="/">Home</a>
+      <a href="/">Home</a>
       <a href="/dashboard">Dashboard</a>
       <a href="/search">Search</a>
-      <a href="/recipe" class="selected">Recipes</a>  
+      <a href="/recipe" class="selected">Recipes</a>
       <a href="/login">Login</a>
       <a href="/logout">Signout</a>
     </div>
@@ -25,22 +25,22 @@
 
   <body>
     <script src="{{ url_for('static',filename='script.js') }}"></script>
-    <form action="" method="post">
-      <p><input type="submit" value="{{fav}}" \ /></p>
-    </form>
+    <div id="recipe-info">
     <h2>Ingredients</h2>
-    <ul>
-      {% for ingredient in dataInput.Ingredients %}
-      <li>{{ingredient}}</li>
-      {% endfor %}
-    </ul>
-    <h2>Directions</h2>
-    <ol>
-      {% for direction in dataInput.Directions %}
-      <li>{{direction}}</li>
-      {% endfor %}
-    </ol>
-
-    <footer></footer>
+      <ul>
+        {% for ingredient in dataInput.Ingredients %}
+        <li>{{ingredient}}</li>
+        {% endfor %}
+      </ul>
+      <h2>Directions</h2>
+      <ol>
+        {% for direction in dataInput.Directions %}
+        <li>{{direction}}</li>
+        {% endfor %}
+      </ol>
+    </div>
+    <form action="" method="post">
+      <p><input class="button" type="submit" value="{{fav}}" \ /></p>
+    </form>
   </body>
 </html>
