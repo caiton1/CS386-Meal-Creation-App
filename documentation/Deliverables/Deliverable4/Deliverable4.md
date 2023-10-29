@@ -10,13 +10,13 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 ### Implemented Requirement #1
 
-**Requirement:**
+**Requirement:** As a young mom, I want to plan what I will be cooking throughout the week to better focus on other family tasks.
 
-**Issue:**
+**Issue:**# https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/issues/30
 
 **Pull request:**
 
-**Implemented by:**
+**Implemented by:** Aiden Seay
 
 **Approved by:**
 
