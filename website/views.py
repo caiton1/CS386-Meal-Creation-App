@@ -115,17 +115,31 @@ def search():
 @app.route('/recipe/<selection>', methods=['POST', 'GET'])
 def viewRecipe(selection):
      selection = selection.replace('+', ' ')
-     button_display = 'favorite'
-     recipe_data = user.get_recipe_data(db, selection)
+     check_box_fav = ''
+     check_box_planned = '' # for Aidan
+     # get recipies
+     recipe_data = user.get_recipe_data(db, selection) 
+
+     # get user data if exists
      if(session['token'] != ""):
           token = session.get('token', 'session error')
           user_data = user.get_user_data(db)
-          button_display, favorites = is_favorited(user_data, token, selection)
-
+          # check favorited or not
+          check_box_fav, favorites = is_favorited(user_data, token, selection)
+     
+     # user clicks submit button
      if request.method == 'POST':
+          # get form data
+          check_box_fav = request.form['plan']
+          check_box_planned = request.form['favorite']
           # check for token
-          if session['token'] != "":
-               update_favorites(db, button_display, token, favorites, selection)
+          if session['token'] != '':
+               # check if favorited
+               if request.form.get('favorite'):
+                    update_favorites(db, check_box_fav, token, favorites, selection)
+               # TODO: check if planned 
+               if request.form.get('plan'):
+                    print('planned!')
 
                return redirect(url_for('viewRecipe', selection=selection))
           else:
@@ -133,7 +147,7 @@ def viewRecipe(selection):
           
      else:
           return render_template('selection.html', 
-                              dataInput=recipe_data.val(), recipeName=selection, fav=button_display)
+                              dataInput=recipe_data.val(), recipeName=selection, favorited=check_box_fav, planned=check_box_planned)
 
 
 
