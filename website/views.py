@@ -116,7 +116,7 @@ def search():
 def viewRecipe(selection):
      selection = selection.replace('+', ' ')
      check_box_fav = ''
-     check_box_planned = '' # for Aidan
+     check_box_planned = '' # for Aiden
      # get recipies
      recipe_data = user.get_recipe_data(db, selection) 
 
