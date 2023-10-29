@@ -3,7 +3,7 @@ import pyrebase
 from flask_session import Session
 import functions.config as config
 import functions.user as user
-from functions.favorite import is_favorited, update_favorites
+from functions.favorite import add_favorite, remove_favorite, is_favorited
 
 
 # TODO: impliment cryptography if adding passwords
@@ -88,6 +88,7 @@ def dashboard():
           return redirect(url_for('login'))
      else:
           recipe_links = user.user_recipies_to_links(db, token, 'favorites')
+
           return render_template('dashboard.html', user_data=recipe_links)
 
 
@@ -97,19 +98,6 @@ def recipe():
     recipe_links = user.recipe_to_links(db)
     return render_template('recipe.html', recipes=recipe_links)
 
-
-# search page, need to fix and impliment error handling.
-# (will fall on its face if it is not exact match, use python string magic or something idk)
-# TODO: may need to rethink implimentation, this is not a good approach
-@app.route('/search', methods=['POST', 'GET'])
-def search():
-    if request.method == 'POST':
-        search_recipe = request.form['nm']
-        search_recipe = search_recipe.replace(' ', '+')
-        return redirect(f'/recipe/{search_recipe}')
-    else:      
-        return render_template('search.html')
-    
 
 # view recipe
 @app.route('/recipe/<selection>', methods=['POST', 'GET'])
@@ -129,14 +117,14 @@ def viewRecipe(selection):
      
      # user clicks submit button
      if request.method == 'POST':
-          # get form data
-          check_box_fav = request.form['plan']
-          check_box_planned = request.form['favorite']
           # check for token
           if session['token'] != '':
                # check if favorited
                if request.form.get('favorite'):
-                    update_favorites(db, check_box_fav, token, favorites, selection)
+                    add_favorite(db, token, favorites, selection)
+               else:
+                    remove_favorite(db, token, favorites, selection)
+
                # TODO: check if planned 
                if request.form.get('plan'):
                     print('planned!')
