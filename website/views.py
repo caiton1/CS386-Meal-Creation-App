@@ -99,19 +99,6 @@ def recipe():
     return render_template('recipe.html', recipes=recipe_links)
 
 
-# search page, need to fix and impliment error handling.
-# (will fall on its face if it is not exact match, use python string magic or something idk)
-# TODO: may need to rethink implimentation, this is not a good approach
-@app.route('/search', methods=['POST', 'GET'])
-def search():
-    if request.method == 'POST':
-        search_recipe = request.form['nm']
-        search_recipe = search_recipe.replace(' ', '+')
-        return redirect(f'/recipe/{search_recipe}')
-    else:      
-        return render_template('search.html')
-    
-
 # view recipe
 @app.route('/recipe/<selection>', methods=['POST', 'GET'])
 def viewRecipe(selection):
