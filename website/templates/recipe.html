@@ -7,14 +7,21 @@
   <title></title>
 
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
-
+  <div class="navigation highlight">
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/search">Search</a>
+    <a href="/recipe" class = "selected">Recipes</a>  
+    <a href="/login">Login</a>   
+    <a href="/logout">Signout</a>       
+  </div>
 </head>
 
 <body>
   <script src="{{ url_for('static',filename='script.js') }}"></script>
   <ul>
   {% for recipe in recipes %}
-  <li><a href= "recipe/{{recipes[recipe]["href"]}}" >{{recipes[recipe]["caption"]}}</a></li>
+  <div class="recipe-box"><a  href= "recipe/{{recipes[recipe]["href"]}}" >{{recipes[recipe]["caption"]}}</a></div>
   {% endfor %}
   </ul>
 </body>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, flash, url_for, session
 import pyrebase
 from flask_session import Session
 import functions.config as config
@@ -27,50 +27,55 @@ user = user.UserData()
 # Defining the home page of our site
 @app.route('/')  # this sets the route to this page d
 def index():
-	return render_template('index.html')
+     # passing empty token, do not want to check for login
+     return render_template('index.html', tokenTest='')
 
 
 # impliment cryptogrophy later
 # sign up page
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-     if(session['token'] == ""):
+     if(session['token'] == ''):
           if request.method == 'POST':
                user.forms(request.form)
                try:
                     user.create_user(auth, db)
                     return redirect(url_for('login'))
                except:
-                    error = 'Invalid email or email already exists! Please also make sure password is atleast 6 characters long.'
+                    error = '*Invalid email or email already exists! Please also make sure password is atleast 6 characters long.'
                     return render_template('signup.html', msg=error)
                
           else:
                return render_template('signup.html', msg='')
 
      else:
-          return "<h1>You are already logged in!</h1>"
+          return render_template('index.html', tokentTest=session['token'])
           
      
 # login page
 @app.route('/login', methods=['GET','POST'])
 def login():
-     if request.method == 'POST':
-          user.forms(request.form)
-          try:
-               user.login(auth)
-               session['token'] = user.user_token['localId']
-               return redirect(url_for('dashboard'))
-          except:
-               error = 'invalid email or password'
-               return render_template('login.html', msg=error)
+     if(session['token'] == ""):
+          if request.method == 'POST':
+               user.forms(request.form)
+               try:
+                    user.login(auth)
+                    session['token'] = user.user_token['localId']
+                    return redirect(url_for('dashboard'))
+               except:
+                    error = '*invalid email or password'
+                    return render_template('login.html', msg=error)
+          else:
+               return render_template('login.html', msg='')
      else:
-          return render_template('login.html', msg='')
+          return render_template('index.html', tokenTest=session['token'])
 
 
 # TODO: create logout page
 @app.route('/logout')
 def logout():
      session['token'] = ''
+     session['alert'] = ''
      user.logoff()
      return redirect(url_for('index'))
 
@@ -110,16 +115,16 @@ def search():
 @app.route('/recipe/<selection>', methods=['POST', 'GET'])
 def viewRecipe(selection):
      selection = selection.replace('+', ' ')
-
+     button_display = 'favorite'
      recipe_data = user.get_recipe_data(db, selection)
-     token = session.get('token', 'session error')
-     user_data = user.get_user_data(db)
-
-     button_display, favorites = is_favorited(user_data, token, selection)
+     if(session['token'] != ""):
+          token = session.get('token', 'session error')
+          user_data = user.get_user_data(db)
+          button_display, favorites = is_favorited(user_data, token, selection)
 
      if request.method == 'POST':
           # check for token
-          if token != '':
+          if session['token'] != "":
                update_favorites(db, button_display, token, favorites, selection)
 
                return redirect(url_for('viewRecipe', selection=selection))

@@ -18,17 +18,20 @@ So far we have decided on using google cloud as our backend and use mainly pytho
 - **Elleana Negrelli** - [enegrelli](https://github.com/enegrelli)
 
 
-
 ## Testing
 Testing on our product will begin soon
 
+## Disclaimer
+This product is not intended to be used in production and only as a project. There may still be security flaws such as XSS.
+
 ## installation
 1. install python3 if you do not have it 
-2. execute: pip -r requirements.txt 
+2. execute: pip install -r requirements.txt 
 3. Depending on your system you will run:
     * windows: python website/views.py
     * linux:  python3 website/views.py
-
+4. Setup firebase real time database
+5. create a web app on firebase, copy the app info given by firebase into the config.py inside website folder.
 ### License
 This projected is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file.
 
