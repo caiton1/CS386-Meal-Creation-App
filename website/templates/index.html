@@ -3,6 +3,8 @@
   <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}"/>
     <meta charset="UTF-8" />
+    <script type="text/javascript">var token = {{tokenTest|tojson}}</script>
+    <script src="{{ url_for('static',filename='script.js') }}"></script>
     <title>Pick My Meals</title>
 
     <div class="navigation highlight">
@@ -19,8 +21,7 @@
     </header>
   </head>
 
-  <body>
-    <script src="{{ url_for('static',filename='script.js') }}"></script>
+  <body onload="alertUser()">
     <h2>Welcome!</h2>
     <p>Our product Pick-My-Meals is a free website that allows users to personally curate meals that fulfill their dietary needs through the use of custom filters. More features are to come later!</p>
 

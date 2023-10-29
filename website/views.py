@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, flash, url_for, session
 import pyrebase
 from flask_session import Session
 import functions.config as config
@@ -27,14 +27,15 @@ user = user.UserData()
 # Defining the home page of our site
 @app.route('/')  # this sets the route to this page d
 def index():
-	return render_template('index.html')
+     # passing empty token, do not want to check for login
+     return render_template('index.html', tokenTest='')
 
 
 # impliment cryptogrophy later
 # sign up page
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-     if(session['token'] == ""):
+     if(session['token'] == ''):
           if request.method == 'POST':
                user.forms(request.form)
                try:
@@ -48,7 +49,7 @@ def signup():
                return render_template('signup.html', msg='')
 
      else:
-          return "<h1>You are already logged in!</h1>"
+          return render_template('index.html', tokentTest=session['token'])
           
      
 # login page
@@ -67,13 +68,14 @@ def login():
           else:
                return render_template('login.html', msg='')
      else:
-          return "<h1>You are already logged in!</h1>"
+          return render_template('index.html', tokenTest=session['token'])
 
 
 # TODO: create logout page
 @app.route('/logout')
 def logout():
      session['token'] = ''
+     session['alert'] = ''
      user.logoff()
      return redirect(url_for('index'))
 
