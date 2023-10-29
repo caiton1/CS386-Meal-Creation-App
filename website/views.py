@@ -3,7 +3,7 @@ import pyrebase
 from flask_session import Session
 import functions.config as config
 import functions.user as user
-from functions.favorite import is_favorited, update_favorites
+from functions.favorite import add_favorite, remove_favorite, is_favorited
 
 
 # TODO: impliment cryptography if adding passwords
@@ -88,6 +88,7 @@ def dashboard():
           return redirect(url_for('login'))
      else:
           recipe_links = user.user_recipies_to_links(db, token, 'favorites')
+
           return render_template('dashboard.html', user_data=recipe_links)
 
 
@@ -98,34 +99,35 @@ def recipe():
     return render_template('recipe.html', recipes=recipe_links)
 
 
-# search page, need to fix and impliment error handling.
-# (will fall on its face if it is not exact match, use python string magic or something idk)
-# TODO: may need to rethink implimentation, this is not a good approach
-@app.route('/search', methods=['POST', 'GET'])
-def search():
-    if request.method == 'POST':
-        search_recipe = request.form['nm']
-        search_recipe = search_recipe.replace(' ', '+')
-        return redirect(f'/recipe/{search_recipe}')
-    else:      
-        return render_template('search.html')
-    
-
 # view recipe
 @app.route('/recipe/<selection>', methods=['POST', 'GET'])
 def viewRecipe(selection):
      selection = selection.replace('+', ' ')
-     button_display = 'favorite'
-     recipe_data = user.get_recipe_data(db, selection)
+     check_box_fav = ''
+     check_box_planned = '' # for Aidan
+     # get recipies
+     recipe_data = user.get_recipe_data(db, selection) 
+
+     # get user data if exists
      if(session['token'] != ""):
           token = session.get('token', 'session error')
           user_data = user.get_user_data(db)
-          button_display, favorites = is_favorited(user_data, token, selection)
-
+          # check favorited or not
+          check_box_fav, favorites = is_favorited(user_data, token, selection)
+     
+     # user clicks submit button
      if request.method == 'POST':
           # check for token
-          if session['token'] != "":
-               update_favorites(db, button_display, token, favorites, selection)
+          if session['token'] != '':
+               # check if favorited
+               if request.form.get('favorite'):
+                    add_favorite(db, token, favorites, selection)
+               else:
+                    remove_favorite(db, token, favorites, selection)
+
+               # TODO: check if planned 
+               if request.form.get('plan'):
+                    print('planned!')
 
                return redirect(url_for('viewRecipe', selection=selection))
           else:
@@ -133,7 +135,7 @@ def viewRecipe(selection):
           
      else:
           return render_template('selection.html', 
-                              dataInput=recipe_data.val(), recipeName=selection, fav=button_display)
+                              dataInput=recipe_data.val(), recipeName=selection, favorited=check_box_fav, planned=check_box_planned)
 
 
 
