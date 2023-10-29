@@ -1,5 +1,5 @@
 '''@author: caiton1'''
-# check if current recipe is favorited
+# check if current recipe is favorited 
 def is_favorited(user_data, token, selection):
     box_display = ''
     favorite_list = []
@@ -10,18 +10,21 @@ def is_favorited(user_data, token, selection):
             box_display = 'checked' # display checked
     return [box_display, favorite_list]
     
-# update database when favorite button is clicked
-def update_favorites(db, box_display, token, favorites,selection):
-    # in favorite list AND  not checked
-    if selection in favorites and box_display != 'checked':
-        # remove from list
-        favorites.remove(selection)
-        db.child('user').child(token).update({'favorites':favorites})
+# update database by adding favorite 
+def add_favorite(db, token, favorites, selection):
     # not in favorite list AND checked
-    if selection not in favorites and box_display == 'checked':
+    if selection not in favorites:
         # add to list
         favorites.append(selection)
-        db.child('user').child(token).update({'favorites':favorites})
+    db.child('user').child(token).update({'favorites':favorites})
+    
+# update database by removing favorite
+def remove_favorite(db, token, favorites, selection):
+        # in favorite list AND  not checked
+    if selection in favorites:
+        # remove from list
+        favorites.remove(selection)
+    db.child('user').child(token).update({'favorites':favorites})
         
 
 
