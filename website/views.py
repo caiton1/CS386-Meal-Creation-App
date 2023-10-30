@@ -5,6 +5,10 @@ import functions.config as config
 import functions.user as user
 from functions.favorite import add_favorite, remove_favorite, is_favorited
 from functions.meal_plan import is_planned, add_planned, remove_planned
+<<<<<<< HEAD
+from functions.preferenceFilter import filter_recipes
+=======
+>>>>>>> b8f6bba32ad13ea442efc1ccc755bec328e2a82b
 
 
 # TODO: impliment cryptography if adding passwords
@@ -97,11 +101,20 @@ def dashboard():
           return render_template('dashboard.html', fav_data=fav_links, plan_data=plan_links)
 
 
-# view list of recpies
-@app.route('/recipe', methods=['GET'])
+# view list of recipes
+@app.route('/recipe', methods=['POST', 'GET'])
 def recipe():
-    recipe_links = user.recipe_to_links(db)
-    return render_template('recipe.html', recipes=recipe_links)
+    if request.method == 'POST':
+        preference = request.form['preference']
+        filtered_list = []
+        filter_recipes(preference, filtered_list)
+        return render_template('recipe.html', recipes=filtered_list)
+    else:
+        # If it's a GET request, render the recipe.html template without filtering
+        recipe_links = user.recipe_to_links(db)
+        return render_template('recipe.html', recipes=recipe_links)
+
+
 
 
 # view recipe
