@@ -105,7 +105,7 @@ def recipe():
     if request.method == 'POST':
         preference = request.form['preference']
         filtered_list = []
-        filter_recipes(preference, filtered_list)
+        filter_recipes(db, preference, filtered_list)
         return render_template('recipe.html', recipes=filtered_list)
     else:
         # If it's a GET request, render the recipe.html template without filtering

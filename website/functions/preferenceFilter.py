@@ -1,17 +1,4 @@
-import pyrebase
-import os;
-import config
-import pyrebase
-import user
-
-# connect app to firebase
-firebase = pyrebase.initialize_app(config.firebaseConf)
-# auth reference
-auth = firebase.auth()
-# database refernce
-db = firebase.database()
-
-def filter_recipes(preference, filtered_list):
+def filter_recipes(db, preference, filtered_list):
     # Get recipes from the database
     recipes = db.child("Recipes").get()
     if recipes is not None:
