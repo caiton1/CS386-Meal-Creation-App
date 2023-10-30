@@ -1,10 +1,10 @@
 function reloadPage() {
-    window.location.reload();
+  window.location.reload();
 }
 
 function alertUser() {
-    if (tokenTest != ''){
-        alert("You have already logged in!");
-        window.location.replace("/");
-    } 
+  if (tokenTest != "") {
+    alert("You have already logged in!");
+    window.location.replace("/");
+  }
 }

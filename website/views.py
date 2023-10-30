@@ -5,7 +5,10 @@ import functions.config as config
 import functions.user as user
 from functions.favorite import add_favorite, remove_favorite, is_favorited
 from functions.meal_plan import is_planned, add_planned, remove_planned
+<<<<<<< HEAD
 from functions.preferenceFilter import filter_recipes
+=======
+>>>>>>> b8f6bba32ad13ea442efc1ccc755bec328e2a82b
 
 
 # TODO: impliment cryptography if adding passwords
@@ -29,6 +32,9 @@ user = user.UserData()
 # Defining the home page of our site
 @app.route('/')  # this sets the route to this page d
 def index():
+     # handle new users with no token (avoiding key error)
+     if session.get('token') is None:
+          session['token'] = ''
      # passing empty token, do not want to check for login
      return render_template('index.html', tokenTest='')
 
@@ -107,6 +113,8 @@ def recipe():
         # If it's a GET request, render the recipe.html template without filtering
         recipe_links = user.recipe_to_links(db)
         return render_template('recipe.html', recipes=recipe_links)
+
+
 
 
 # view recipe
