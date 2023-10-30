@@ -49,7 +49,11 @@ class UserData:
         self.data = db.child('Recipes').child(selection).get()
         return self.data
     
-
+    # for allergy.py
+    def get_recipes(self, db):
+        self.data = db.child('Recipes').get().val()
+        return self.data
+    
     # gets user data
     def get_user_data(self, db):
         self.user = db.child("user").get()
