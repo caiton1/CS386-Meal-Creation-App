@@ -1,6 +1,6 @@
 '''@author: aidenseay'''
 
-# This tests all of the functions for meal_plan.py
+# This tests all the functions for meal_plan.py
 
 # initialize the server for local tests  ---------------------------
 
@@ -13,7 +13,7 @@ import user
 firebase = pyrebase.initialize_app(config.firebaseConf)
 # auth reference
 auth = firebase.auth()
-# database refernce
+# database reference
 db = firebase.database()
 # initialize user class
 user = user.UserData()
@@ -24,6 +24,7 @@ user.login(auth)
 token = user.user_token['localId']
 
 # -----------------------------------------------------------------
+
 
 # test add planned
 def test_add_planned():
@@ -66,6 +67,7 @@ def test_remove_planned():
     # assert
     assert plan_list == ['Chinese Beef and Broccoli']
 
+
 # test remove plan when not there
 def test_remove_nothing():
     # add a plan entry
@@ -91,6 +93,7 @@ def test_is_planned():
     # clean up
     db.child('user').child(token).child('meal_plan').remove()
     assert (button == 'checked') and (list == ['Chinese Beef and Broccoli', '2 Meat Meatloaf'])
+
 
 # test a few random recipe names on is_not_planned
 def test_not_planned():

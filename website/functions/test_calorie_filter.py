@@ -2,8 +2,6 @@ import os
 import pyrebase
 import calorieFilter
 
-
-
 # Retrieve Firebase configuration from environment variable
 firebase_api_key = os.environ.get('FIREBASEKEY')
 
@@ -19,10 +17,10 @@ firebase_config = {
     "measurementId": "G-DVZP5XDVHR"
 }
 
-
 firebase = pyrebase.initialize_app(firebase_config)
 
 db = firebase.database()
+
 
 def test_get_recipe_data():
     recipes_data = db.child("Recipes").get().val()
@@ -40,8 +38,8 @@ def test_get_recipe_data():
 
 
 def test_sort_calories():
-    calorieData = calorieFilter.get_caloric_data()
-    sorted_recipes = calorieFilter.sort_calories(calorieData)
+    calorie_data = calorieFilter.get_caloric_data()
+    sorted_recipes = calorieFilter.sort_calories(calorie_data)
 
     calories_list = []
 

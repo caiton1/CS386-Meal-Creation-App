@@ -10,6 +10,3 @@ def filter_recipes(db, preference, filtered_list):
             if any(preference.lower() in keyword.lower() for keyword in description):
                 # append to list
                 filtered_list.append(recipe.key())
-
-
-
