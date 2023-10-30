@@ -20,7 +20,7 @@ firebase = pyrebase.initialize_app(firebase_config)
 db = firebase.database()
 
 # Function to get recipe data from Firebase
-def get_recipe_data():
+def get_caloric_data():
     recipes_data = db.child("Recipes").get().val()
     recipes = []
     for recipe_name, recipe_details in recipes_data.items():
@@ -33,16 +33,18 @@ def get_recipe_data():
         })
     return recipes
 
-# Get recipe data from Firebase
-recipes = get_recipe_data()
 
-# Sort recipes by "Calories per serving" from highest to lowest
-sorted_recipes = sorted(recipes, key=lambda x: x['Calories per serving'], reverse=True)
+def sort_calories(recipes):
+    # Sort recipes by "Calories per serving" from highest to lowest
+    return sorted(recipes, key=lambda x: x['Calories per serving'], reverse=True)
 
-# Print recipe names and "Calories per serving" in descending order
+
+sorted_recipes = sort_calories(get_caloric_data())
+calories_list = []
+
 for recipe in sorted_recipes:
-    recipe_name = recipe['Name']
-    calories_per_serving = recipe['Calories per serving']
-    print(f"Recipe Name: {recipe_name}")
-    print(f"Calories per serving: {calories_per_serving}")
-    print("===")  # Separator between recipes
+    calories_list.append(recipe['Calories per serving'])
+
+
+
+print(calories_list)
