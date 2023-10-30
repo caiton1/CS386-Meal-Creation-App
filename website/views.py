@@ -28,6 +28,9 @@ user = user.UserData()
 # Defining the home page of our site
 @app.route('/')  # this sets the route to this page d
 def index():
+     # handle new users with no token (avoiding key error)
+     if session.get('token') is None:
+          session['token'] = ''
      # passing empty token, do not want to check for login
      return render_template('index.html', tokenTest='')
 
