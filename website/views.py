@@ -141,7 +141,7 @@ def view_recipe(selection):
             else:
                 remove_planned(db, token, planned, selection)
                     
-            return redirect(url_for('viewRecipe', selection=selection))
+            return redirect(url_for('view_recipe', selection=selection))
         else:
             return redirect(url_for('login'))
           
