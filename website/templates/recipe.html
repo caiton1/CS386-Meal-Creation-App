@@ -1,5 +1,4 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -17,6 +16,31 @@
 </head>
 
 <body>
+  <form action="" method="post">
+    <!-- <input type="text" id="search" name="search" placeholder="Search..."><br> implement later! -->
+    <br>
+    <input type="radio" id="calories" name="selection" value="calories">
+    <lable for="calories">Calories</lable>
+    <input type="radio" id="cost" name="selection" value="cost">
+    <lable for="cost">Cost</lable>
+
+    <input type="text" id="allergies" name="allergies" placeholder="allergies? (bread, nuts, ...)"><br>
+
+    <label>Food type?
+      <input list="preference" name="preference" /></label>
+      <datalist id="preference">
+        <option value="Quick">
+        <option value="Easy">
+        <option value="Cheap">
+        <option value="Dinner">
+        <option value="Dessert">
+        <option value="Vegetarian">
+      </datalist>
+    
+      <input class="button" type="submit" value="search" \ />
+
+  </form>
+
   <script src="{{ url_for('static',filename='script.js') }}"></script>
   <ul>
   {% for recipe in recipes %}

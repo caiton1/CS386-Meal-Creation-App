@@ -27,8 +27,8 @@
     <div id="recipe-info">
     <h2>Ingredients</h2>
       <ul>
-        {% for ingredient in dataInput.Ingredients %}
-        <li>{{ingredient}}</li>
+        {% for ingredient, amount in dataInput.Ingredients.items()%}
+        <li>{{ingredient}}, {{amount}}</li>
         {% endfor %}
       </ul>
       <h2>Directions</h2>
@@ -37,7 +37,14 @@
         <li>{{direction}}</li>
         {% endfor %}
       </ol>
+
+      <h2>Serving Size</h2>
+      <p>Calories per serving: {{dataInput.get('Serving Size').get('Calories per serving')}}</p>
+      <p>Servings: {{dataInput.get('Serving Size').get('People served')}}</p>
     </div>
+    
+   
+
     <form action="" method="post">
       <p>Add to plan: <input type="checkbox" name="plan" {{planned}}></p>
       <p>Add to favorite: <input type="checkbox" name="favorite" {{favorited}}></p>
