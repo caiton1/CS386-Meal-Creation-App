@@ -91,9 +91,11 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Print screen:** 
 
-Database showing the user data with favorites. Each recipe page has a favorite button that will add itself to this list (blacked out section is the unique id used to identify users, this database does not store password or username).
+Database showing the user data with favorites. Each recipe page has a favorite button that will add itself to this list (blacked out section is the unique id used to identify users, this database does not store password or username).  
 
-[NEED TO PUT PHOTO HERE]
+![Print screen of favorites output](favoritesPrintScreen.png)  
+**Unit Test:**  
+![Print screen of favorites pytest](favoritesPytest.png)  
 
 ### Implemented Requirement #6
 
@@ -109,17 +111,20 @@ Database showing the user data with favorites. Each recipe page has a favorite b
 
 **Print screen:**
 
-This is the result of my sort low to high function
+This is the result of my sort low to high function  
 
-[NEED TO PUT PHOTO HERE]
+![Print screen of price output](pricePrintScreen.png)   
 
 This is the result of my sort high to low function
 
 [NEED TO PUT PHOTO HERE]
 
-This is the result of me doing a low to high sort while using my filter_by_cost_range function to limit the search to within $10 - $17
+This is the result of me doing a low to high sort while using my filter_by_cost_range function to limit the search to within $10 - $17  
 
-[NEED TO PUT PHOTO HERE]
+![Print screen of price output](pricePrintScreen2.png)   
+
+**Unit Test:**  
+![Print screen of price pytest](pricePytest.png) 
 
 ## Tests
 
