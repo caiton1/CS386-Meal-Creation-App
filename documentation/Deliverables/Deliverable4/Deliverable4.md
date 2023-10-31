@@ -37,7 +37,12 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Approved by:** Connor Aiton
 
-**Print screen:**
+**Print screen:**  
+![Print screen of nutrition output](nutrition1.png)  
+![Print screen of nutrition output](nutrition2.png)  
+**Unit Test:**  
+![Print screen of nutrition pytest](nutritionPytest.png)  
+![Print screen of nutrition output](nutritionPytest2.png)  
 
 ### Implemented Requirement #3
 
@@ -51,7 +56,9 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Approved by:** Elleana Negrelli
 
-**Print screen:**
+**Print screen:**  
+
+
 
 ### Implemented Requirement #4
 
