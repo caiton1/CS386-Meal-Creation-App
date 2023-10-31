@@ -128,7 +128,17 @@ This is the result of me doing a low to high sort while using my filter_by_cost_
 
 ## Tests
 
-https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/dev/website/unit_tests
+We used Pytest for our unit testing as it is best fit for our use case. Most of our functions are written in python. We will put all tests in a test folder: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/main/website/unit_tests
+
+### Example test case
+**Here we are testing the favorite function from: [favorite.py](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/functions/favorite.py)**
+
+**By using the test file: [test_favorite.py](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/unit_tests/test_favorite.py
+)**
+
+This is the result of the automated test. It checks for whether or not something is favorited and its ability to upload/remove a favorite recipe. It does this by referencing the database (under a predefined test user ID) and comparing what it expects to what the database has. Finally it will wipe the user data to be tested again in the future without leaving old data behind.
+
+![Print screen of favorites pytest](favoritesPytest.png)  
 
 ## Adopted Technologies
 ### Hosting - Python Anywhere
@@ -160,11 +170,13 @@ https://connman4027.pythonanywhere.com/
 License: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/LICENSE.md
 We adopted this license to be open source for commercial and educational use while also limiting the liability and warranty to the project owners. We also would like to be informed about licensing and copyright claims relating to our project.
 
-## README File
+## README Files
 
 **README File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/README.md
 
 **CONTRIBUTING File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/CONTRIBUTING.md
+
+**LICENSE File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/LICENSE.md
 
 **CODE_OF_CONDUCT File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/LICENSE.md 
 
@@ -172,7 +184,14 @@ We adopted this license to be open source for commercial and educational use whi
 
 Our design will be simple and minimalistic with a bit of color to make it more interesting. We plan on possibly adding photos that users can upload and associate with the recipes to populate the page. For now we are mostly interested in getting the functionality to work.
 
-[INCLUDE ALL OF THE SCREENSHOTS] 
+![web feel](webPic1.PNG)
+
+![web feel](webPic2.PNG)
+
+![web feel](webPic3.PNG)
+
+![web feel](webPic4.PNG)
+
 
 ## Lessons Learned
 
