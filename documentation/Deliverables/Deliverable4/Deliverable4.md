@@ -156,7 +156,7 @@ Our design will be simple and minimalistic with a bit of color to make it more i
 
 ## Lessons Learned
 
-In retrospect, while we are happy with the implementation of our project, there are definetly some things we learned. The biggest aspect we took away from this is that we need more cohesion when it comes to how the work load is divided. While as a team we tried to play to each members strengths, this left more work on some members as different aspects took more time. Another lesson we learned was how important communication is when working on a project, especilly where not everyone is in the same room. For the second implementation we plan to have more intentional and intensive meetings going forward to better plan and breakdown what needs to be done. Along with having a daily check-in on what got done and the problems we are running into as we work to better brainstorm solutions.
+In retrospect, while we are happy with the implementation of our project, there are definitely some things we learned. The biggest aspect we took away from this is that we need more cohesion when it comes to how the workload is divided. While as a team we tried to play to each member's strengths, this left more work on some members as different aspects took more time. Another lesson we learned was how important communication is when working on a project, especially where not everyone is in the same room. For the second implementation we plan to have more intentional and intensive meetings going forward to better plan and breakdown what needs to be done. Along with having a daily check-in on what got done and the problems we are running into as we work to better brainstorm solutions.
 
 ## Demo
 
