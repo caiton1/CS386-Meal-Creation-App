@@ -20,7 +20,10 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Approved by:** Elleana Negrelli
 
-**Print screen:** Shows the calories per serving listed from highest to lowest [NEED TO PUT IMAGE HERE]
+**Print screen:** Shows the calories per serving listed from highest to lowest   
+![Calorie sort print screen](caloriePrintScreen.png)  
+**Unit Test:**  
+![Calorie filter pytest](pytest.png)
 
 ### Implemented Requirement #2
 
