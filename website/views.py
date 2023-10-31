@@ -105,7 +105,6 @@ def recipe():
         preference = request.form.get('preference')
         selection = request.form.get('selection')
         allergies = str(request.form.get('allergies'))
-        allergies = allergies.split(', ')
         print(allergies)
         
         if preference != '':
@@ -121,7 +120,9 @@ def recipe():
                 cost = low_to_high(cost)
                 filtered_list = [name.get('Name') for name in cost]
         
-        if not allergies:
+        if allergies:
+                print("list not empty")
+                allergies = allergies.split(', ')
                 allergy_list = allergy.get_recipe_data(recipes)
                 allergy_list = allergy.filter_by_allergies(allergy_list, allergies)
                 filtered_list = [name.get('Name') for name in allergy_list]
