@@ -3,7 +3,8 @@
 # This tests all the functions for meal_plan.py
 
 # initialize the server for local tests  ---------------------------
-
+import sys
+sys.path.append('../functions')
 import meal_plan
 import config
 import pyrebase

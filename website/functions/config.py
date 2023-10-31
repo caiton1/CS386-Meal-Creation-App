@@ -1,5 +1,4 @@
 import os
-# TODO: change key storage approach when deploying to server 
 secret = os.environ['FIREBASEKEY']
 
 firebaseConf = {

@@ -1,5 +1,6 @@
 '''@author: caiton1'''
-# TODO: need to update
+import sys
+sys.path.append('../functions')
 import favorite
 import config
 import pyrebase

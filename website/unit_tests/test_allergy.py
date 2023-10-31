@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../functions')
 import allergy
 import pyrebase
 import config
