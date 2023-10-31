@@ -125,7 +125,6 @@ def recipe():
                 allergy_list = allergy.get_recipe_data(recipes)
                 allergy_list = allergy.filter_by_allergies(allergy_list, allergies)
                 filtered_list = [name.get('Name') for name in allergy_list]
-                print("alergy overwrite")
                 
         filtered_list = user.list_to_links(filtered_list)
         return render_template('recipe.html', recipes=filtered_list)

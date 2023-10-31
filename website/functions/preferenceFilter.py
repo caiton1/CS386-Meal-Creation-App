@@ -6,6 +6,5 @@ def filter_recipes(recipe_data, preference, filtered_list):
             # Check if the preference is in the description
             description = [keyword.lower() for keyword in description]
             if preference.lower() in description:
-                print(f'appending {recipe.key()}')
                 # append to list
                 filtered_list.append(recipe.key())
