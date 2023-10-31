@@ -41,8 +41,18 @@ class UserData:
                 'href': recipe.key().replace(' ', '+'),
                 'caption': recipe.key()
             }})
-
+            
         return self.title_list
+
+    def list_to_links(self, list):
+        self.title_list = {}
+        for recipe in list:
+            self.title_list.update({recipe : {
+                'href': recipe.replace(' ', '+'),
+                'caption': recipe
+            }})
+        return self.title_list
+        
 
     # ---------------------------Data Retrieval-----------------------------#
     # gets data from a selected recipe
@@ -60,7 +70,7 @@ class UserData:
         return self.user
 
     # gets login/signup form data from webpage
-    def forms(self, form):
+    def login_info(self, form):
         self.email = form['email']
         self.password = form['pass']
 

@@ -58,7 +58,7 @@ def signup():
 def login():
     if session['token'] == '':
         if request.method == 'POST':
-            user.forms(request.form)
+            user.login_info(request.form)
             try:
                 user.login(auth)
                 session['token'] = user.user_token['localId']
@@ -96,9 +96,11 @@ def dashboard():
 @app.route('/recipe', methods=['POST', 'GET'])
 def recipe():
     if request.method == 'POST':
-        preference = request.form['preference']
-        filtered_list = []
-        filter_recipes(db, preference, filtered_list)
+        recipes = db.child("Recipes").get()
+        filtered_list=[]
+        preference = request.form.get('preference')
+        filter_recipes(recipes, preference, filtered_list)
+        filtered_list = user.list_to_links(filtered_list)
         return render_template('recipe.html', recipes=filtered_list)
     else:
         # If it's a GET request, render the recipe.html template without filtering

@@ -49,7 +49,7 @@ def filter_by_allergies( recipes, allergies ):
 
         # iterate through the allergies list 
         for allergy in allergies:
-            description = [desc.lower() for desc in recipe.get("Description")]
+            description = [desc.lower() for desc in recipe.get('Description')]
             #check if the current allergy is the the description or ingredients
             if allergy.lower() in description:
                 # set the allergy flag to True
@@ -57,7 +57,7 @@ def filter_by_allergies( recipes, allergies ):
                 break
                 
 
-            ingredients = [ingredient.lower() for ingredient in recipe.get("Ingredients")]
+            ingredients = [ingredient.lower() for ingredient in recipe.get('Ingredients')]
             if allergy in ingredients:
                 has_allergy = True
                 break
