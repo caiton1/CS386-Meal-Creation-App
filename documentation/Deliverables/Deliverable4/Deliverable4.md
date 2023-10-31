@@ -131,32 +131,34 @@ This is the result of me doing a low to high sort while using my filter_by_cost_
 https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/dev/website/unit_tests
 
 ## Adopted Technologies
-### Cloud Infrastructure - Google Cloud 
+### Hosting - Python Anywhere
+Very simple hosting service to use that allows you to run a python web app in quick notice with a simple setup.
 
-[PUT REASONING HERE]
+### Cloud Infrastructure - Google Cloud 
+Google cloud will be the backbone for the project that firebase will also be running off of. Possible plans to also migrate the hosting of the web service to a google service such as google app engine
 
 ### Database - Firebase Realtime Database
+To store user data we are going to use Firebase Realtime Database. It is simple to use and should integrate fast into code.
 
-[PUT REASONING HERE]
-
-### Web Framework (Backend) - Python (flask + jinja)
-
-[PUT REASONING HERE]
+### Web Framework (Backend) - Python (Flask + Jinja)
+We are using Python with Flask because we are most familiar with using python, the Flask library should have everything that we need.
 
 ### Front end - HTML/CSS/JS
-
-[PUT REASONING HERE]
+We are using basic HTML/CSS/JS because our client side impilmentation of the website will be simple and minimalistic
 
 ## Learning/Training
 In order to learn the adopted technologies, some of the resources we will be utilizing are Youtube and material from our ongoing course curriculum. Since Connor has more experience with some of the technologies we will be using, he will be able to assist in training the team. We also have a “useful links” channel on our Discord server that allows team members to share resources they have found to be helpful.
 
 ## Deployment
 
-[PUT LINK FOR THE SYSTEM IN PRODUCTION] 
+Currently we are deploying the python app on python anywhere while we have a small user base for ease of use and due to time constraints. We will later plan on using google app engine to serve our web app. Another solution that we might consider is using Microsoft azure.
+https://connman4027.pythonanywhere.com/
+
 
 ## Licensing
 
-[TO DO]
+License: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/LICENSE.md
+We adopted this license to be open source for commercial and educational use while also limiting the liability and warranty to the project owners. We also would like to be informed about licensing and copyright claims relating to our project.
 
 ## README File
 
