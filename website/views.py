@@ -24,7 +24,7 @@ user = user.UserData()
 
 
 # Defining the home page of our site
-@app.route('/')  # this sets the route to this page d
+@app.route('/') 
 def index():
     # handle new users with no token (avoiding key error)
     if session.get('token') is None:
@@ -71,8 +71,7 @@ def login():
     else:
         return render_template('index.html', tokenTest=session['token'])
 
-
-# TODO: create logout page
+# logout page
 @app.route('/logout')
 def logout():
     session['token'] = ''
@@ -80,8 +79,7 @@ def logout():
     user.logoff()
     return redirect(url_for('index'))
 
-
-# TODO: create dashboard page, implement favorite feature here
+# user dashboard
 @app.route('/dashboard')
 def dashboard():
     token = session.get('token', 'session error')
@@ -94,7 +92,7 @@ def dashboard():
         return render_template('dashboard.html', fav_data=fav_links, plan_data=plan_links)
 
 
-# view list of recipes
+# view list of recipes TODO: ADD SEARCH FUNCTION
 @app.route('/recipe', methods=['POST', 'GET'])
 def recipe():
     if request.method == 'POST':
