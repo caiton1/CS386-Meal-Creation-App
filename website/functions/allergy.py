@@ -33,20 +33,20 @@ def input_to_allergies(user_input):
     # return the allergies list
     return allergies
 
+#TODO : fix
 # Filtering  Allergy Function
 def filter_by_allergies( recipes, allergies ):
     # if there are no allergies, return all the recipes
     if allergies == '0' or None:
         return recipes
 
-    
     # create an empty list for the recipes without the allegies
     filtered_recipes = []
+
     # iterate through the recipes
     for recipe in recipes:
         # allergy flag for the current recipe
         has_allergy = False
-
         # iterate through the allergies list 
         for allergy in allergies:
             description = [desc.lower() for desc in recipe.get('Description')]
@@ -58,7 +58,7 @@ def filter_by_allergies( recipes, allergies ):
                 
 
             ingredients = [ingredient.lower() for ingredient in recipe.get('Ingredients')]
-            if allergy in ingredients:
+            if allergy.lower() in ingredients:
                 has_allergy = True
                 break
         

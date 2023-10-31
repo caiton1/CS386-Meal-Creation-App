@@ -6,6 +6,10 @@ import functions.user as user
 from functions.favorite import add_favorite, remove_favorite, is_favorited
 from functions.meal_plan import is_planned, add_planned, remove_planned
 from functions.preferenceFilter import filter_recipes
+from functions.calorieFilter import get_caloric_data, sort_calories
+import functions.calc_total_cost as calc_cost
+from functions.sort_by_cost import low_to_high
+import functions.allergy as allergy
 
 app = Flask(__name__)
 
@@ -99,7 +103,30 @@ def recipe():
         recipes = db.child("Recipes").get()
         filtered_list=[]
         preference = request.form.get('preference')
-        filter_recipes(recipes, preference, filtered_list)
+        selection = request.form.get('selection')
+        allergies = str(request.form.get('allergies'))
+        allergies = allergies.split(', ')
+        
+        
+        if preference is not '':
+            filter_recipes(recipes, preference, filtered_list)
+            
+        if selection is not None: 
+            if selection == 'calories':
+                calorie_list = get_caloric_data(db)
+                calorie_list = sort_calories(calorie_list)
+                filtered_list = [name.get('Name') for name in calorie_list]
+            elif selection == 'cost':
+                cost = calc_cost.get_recipe_data(db, recipes.val())
+                cost = low_to_high(cost)
+                filtered_list = [name.get('Name') for name in cost]
+        
+        if allergies is not None:
+                allergy_list = allergy.get_recipe_data(recipes)
+                allergy_list = allergy.filter_by_allergies(allergy_list, allergies)
+                filtered_list = [name.get('Name') for name in allergy_list]
+                print(filtered_list)
+                
         filtered_list = user.list_to_links(filtered_list)
         return render_template('recipe.html', recipes=filtered_list)
     else:
