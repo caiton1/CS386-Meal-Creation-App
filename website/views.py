@@ -42,7 +42,7 @@ def index():
 def signup():
     if session['token'] == '':
         if request.method == 'POST':
-            user.forms(request.form)
+            user.login_info(request.form)
             try:
                 user.create_user(auth, db)
                 return redirect(url_for('login'))
