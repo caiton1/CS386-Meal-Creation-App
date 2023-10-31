@@ -117,7 +117,7 @@ This is the result of my sort low to high function
 
 This is the result of my sort high to low function
 
-[NEED TO PUT PHOTO HERE]
+![Print screen of price output](pricePrintScreen3.PNG)
 
 This is the result of me doing a low to high sort while using my filter_by_cost_range function to limit the search to within $10 - $17  
 
