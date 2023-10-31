@@ -180,4 +180,6 @@ In retrospect, while we are happy with the implementation of our project, there 
 
 ## Demo
 
-[INSERT VIDEO LINK HERE]
+I demonstrate the login/authentication system (along with checks for if user is logged in for login only functions) and database storage, dashboard which shows the favoriting/planning feature result (Aiden and Connor), The recipe page which allows you to favorite and plan recipes, then finally the recipe search page which implements sorting by calorie, cost, preferences and allergies (Sophia, Jared, Elleana and Isaiah).
+https://youtu.be/DVLrEdZ2_OE
+
