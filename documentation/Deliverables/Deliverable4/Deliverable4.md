@@ -20,7 +20,10 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Approved by:** Elleana Negrelli
 
-**Print screen:** Shows the calories per serving listed from highest to lowest [NEED TO PUT IMAGE HERE]
+**Print screen:** Shows the calories per serving listed from highest to lowest   
+![Calorie sort print screen](caloriePrintScreen.png)  
+**Unit Test:**  
+![Calorie filter pytest](pytest.png)
 
 ### Implemented Requirement #2
 
@@ -28,13 +31,18 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Issue:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/issues/28
 
-**Pull request:**
+**Pull request:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/pull/77 
 
 **Implemented by:** Elleana Negrelli
 
-**Approved by:**
+**Approved by:** Connor Aiton
 
-**Print screen:**
+**Print screen:**  
+![Print screen of nutrition output](nutrition1.png)  
+![Print screen of nutrition output](nutrition2.png)  
+**Unit Test:**  
+![Print screen of nutrition pytest](nutritionPytest.png)  
+![Print screen of nutrition output](nutritionPytest2.png)  
 
 ### Implemented Requirement #3
 
@@ -42,13 +50,17 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Issue:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/issues/34
 
-**Pull request:**
+**Pull request:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/pull/74
 
 **Implemented by:** Isaiah Swank
 
-**Approved by:**
+**Approved by:** Elleana Negrelli
 
-**Print screen:**
+**Print screen:**  
+![Print screen of allergy output](allergyPrintScreen.png)  
+**Unit Test:**   
+![Print screen of allergy pytest](allergyPytest.png)  
+
 
 ### Implemented Requirement #4
 
@@ -62,7 +74,8 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Approved by:** Elleana Negrelli
 
-**Print screen:** [NEED TO PUT PHOTO HERE]
+**Print screen:**  
+![Print screen of meal planning pytest](mealPlanUnitTest.png)  
 
 ### Implemented Requirement #5
 
@@ -78,9 +91,11 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Print screen:** 
 
-Database showing the user data with favorites. Each recipe page has a favorite button that will add itself to this list (blacked out section is the unique id used to identify users, this database does not store password or username).
+Database showing the user data with favorites. Each recipe page has a favorite button that will add itself to this list (blacked out section is the unique id used to identify users, this database does not store password or username).  
 
-[NEED TO PUT PHOTO HERE]
+![Print screen of favorites output](favoritesPrintScreen.png)  
+**Unit Test:**  
+![Print screen of favorites pytest](favoritesPytest.png)  
 
 ### Implemented Requirement #6
 
@@ -96,55 +111,72 @@ Database showing the user data with favorites. Each recipe page has a favorite b
 
 **Print screen:**
 
-This is the result of my sort low to high function
+This is the result of my sort low to high function  
 
-[NEED TO PUT PHOTO HERE]
+![Print screen of price output](pricePrintScreen.png)   
 
 This is the result of my sort high to low function
 
-[NEED TO PUT PHOTO HERE]
+![Print screen of price output](pricePrintScreen3.PNG)
 
-This is the result of me doing a low to high sort while using my filter_by_cost_range function to limit the search to within $10 - $17
+This is the result of me doing a low to high sort while using my filter_by_cost_range function to limit the search to within $10 - $17  
 
-[NEED TO PUT PHOTO HERE]
+![Print screen of price output](pricePrintScreen2.png)   
+
+**Unit Test:**  
+![Print screen of price pytest](pricePytest.png) 
 
 ## Tests
 
-[PUT LINK TO GITHUB FOLDER OF TESTS HERE]
+We used Pytest for our unit testing as it is best fit for our use case. Most of our functions are written in python. We will put all tests in a test folder: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/main/website/unit_tests
+
+### Example test case
+**Here we are testing the favorite function from: [favorite.py](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/functions/favorite.py)**
+
+**By using the test file: [test_favorite.py](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/unit_tests/test_favorite.py
+)**
+
+This is the result of the automated test. It checks for whether or not something is favorited and its ability to upload/remove a favorite recipe. It does this by referencing the database (under a predefined test user ID) and comparing what it expects to what the database has. Finally it will wipe the user data to be tested again in the future without leaving old data behind.
+
+![Print screen of favorites pytest](favoritesPytest.png)  
 
 ## Adopted Technologies
-### Cloud Infrastructure - Google Cloud 
+### Hosting - Python Anywhere
+Very simple hosting service to use that allows you to run a python web app in quick notice with a simple setup.
 
-[PUT REASONING HERE]
+### Cloud Infrastructure - Google Cloud 
+Google cloud will be the backbone for the project that firebase will also be running off of. Possible plans to also migrate the hosting of the web service to a google service such as google app engine
 
 ### Database - Firebase Realtime Database
+To store user data we are going to use Firebase Realtime Database. It is simple to use and should integrate fast into code.
 
-[PUT REASONING HERE]
-
-### Web Framework (Backend) - Python (flask + jinja)
-
-[PUT REASONING HERE]
+### Web Framework (Backend) - Python (Flask + Jinja)
+We are using Python with Flask because we are most familiar with using python, the Flask library should have everything that we need.
 
 ### Front end - HTML/CSS/JS
-
-[PUT REASONING HERE]
+We are using basic HTML/CSS/JS because our client side impilmentation of the website will be simple and minimalistic
 
 ## Learning/Training
 In order to learn the adopted technologies, some of the resources we will be utilizing are Youtube and material from our ongoing course curriculum. Since Connor has more experience with some of the technologies we will be using, he will be able to assist in training the team. We also have a “useful links” channel on our Discord server that allows team members to share resources they have found to be helpful.
 
 ## Deployment
 
-[PUT LINK FOR THE SYSTEM IN PRODUCTION] 
+Currently we are deploying the python app on python anywhere while we have a small user base for ease of use and due to time constraints. We will later plan on using google app engine to serve our web app. Another solution that we might consider is using Microsoft azure.
+https://connman4027.pythonanywhere.com/
+
 
 ## Licensing
 
-[TO DO]
+License: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/LICENSE.md
+We adopted this license to be open source for commercial and educational use while also limiting the liability and warranty to the project owners. We also would like to be informed about licensing and copyright claims relating to our project.
 
-## README File
+## README Files
 
 **README File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/README.md
 
 **CONTRIBUTING File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/CONTRIBUTING.md
+
+**LICENSE File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/LICENSE.md
 
 **CODE_OF_CONDUCT File:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/LICENSE.md 
 
@@ -152,12 +184,21 @@ In order to learn the adopted technologies, some of the resources we will be uti
 
 Our design will be simple and minimalistic with a bit of color to make it more interesting. We plan on possibly adding photos that users can upload and associate with the recipes to populate the page. For now we are mostly interested in getting the functionality to work.
 
-[INCLUDE ALL OF THE SCREENSHOTS] 
+![web feel](webPic1.PNG)
+
+![web feel](webPic2.PNG)
+
+![web feel](webPic3.PNG)
+
+![web feel](webPic4.PNG)
+
 
 ## Lessons Learned
 
-[TO DO]
+In retrospect, while we are happy with the implementation of our project, there are definitely some things we learned. The biggest aspect we took away from this is that we need more cohesion when it comes to how the workload is divided. While as a team we tried to play to each member's strengths, this left more work on some members as different aspects took more time. Another lesson we learned was how important communication is when working on a project, especially where not everyone is in the same room. For the second implementation we plan to have more intentional and intensive meetings going forward to better plan and breakdown what needs to be done. Along with having a daily check-in on what got done and the problems we are running into as we work to better brainstorm solutions.
 
 ## Demo
 
-[INSERT VIDEO LINK HERE]
+I demonstrate the login/authentication system (along with checks for if user is logged in for login only functions) and database storage, dashboard which shows the favoriting/planning feature result (Aiden and Connor), The recipe page which allows you to favorite and plan recipes, then finally the recipe search page which implements sorting by calorie, cost, preferences and allergies (Sophia, Jared, Elleana and Isaiah).
+https://youtu.be/DVLrEdZ2_OE
+

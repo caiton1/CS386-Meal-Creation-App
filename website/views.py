@@ -42,7 +42,7 @@ def index():
 def signup():
     if session['token'] == '':
         if request.method == 'POST':
-            user.forms(request.form)
+            user.login_info(request.form)
             try:
                 user.create_user(auth, db)
                 return redirect(url_for('login'))
@@ -105,10 +105,9 @@ def recipe():
         preference = request.form.get('preference')
         selection = request.form.get('selection')
         allergies = str(request.form.get('allergies'))
-        allergies = allergies.split(', ')
+        print(allergies)
         
-        
-        if preference is not '':
+        if preference != '':
             filter_recipes(recipes, preference, filtered_list)
             
         if selection is not None: 
@@ -121,11 +120,12 @@ def recipe():
                 cost = low_to_high(cost)
                 filtered_list = [name.get('Name') for name in cost]
         
-        if allergies is not None:
+        if allergies:
+                print("list not empty")
+                allergies = allergies.split(', ')
                 allergy_list = allergy.get_recipe_data(recipes)
                 allergy_list = allergy.filter_by_allergies(allergy_list, allergies)
                 filtered_list = [name.get('Name') for name in allergy_list]
-                print(filtered_list)
                 
         filtered_list = user.list_to_links(filtered_list)
         return render_template('recipe.html', recipes=filtered_list)
