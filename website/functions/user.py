@@ -21,7 +21,7 @@ class UserData:
     # turns recipies stored in user database into a dictionary to display as links
     def user_recipies_to_links(self, db, token, list):
         self.links = {}
-        self.user = db.child("user").get()
+        self.user = db.child('user').get()
         for favorite in self.user.val()[token][list]:
             self.links.update({
                 favorite: {

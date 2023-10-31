@@ -1,6 +1,6 @@
 # Function to get recipe data from Firebase
 def get_caloric_data(db):
-    recipes_data = db.child("Recipes").get().val()
+    recipes_data = db.child('Recipes').get().val()
     recipes = []
     for recipe_name, recipe_details in recipes_data.items():
         # Extracting "Calories per serving" from "Serving Size"

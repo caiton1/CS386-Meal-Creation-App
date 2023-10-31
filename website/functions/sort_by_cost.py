@@ -13,10 +13,10 @@ def high_to_low(recipes):
 
 # Function to print sorted recipes
 def print_sorted_recipes(recipes, order):
-    print(f"{order}:")
+    print(f'{order}:')
     for recipe in recipes:
         recipe_name = recipe['Name']
         total_cost = calculate_total_cost(recipe['Ingredients'])
-        print(f"Recipe Name: {recipe_name}")
-        print(f"Total Cost: ${total_cost:.2f}")
-        print("===")  # Separator between recipes
+        print(f'Recipe Name: {recipe_name}')
+        print(f'Total Cost: ${total_cost:.2f}')
+        print('===')  # Separator between recipes

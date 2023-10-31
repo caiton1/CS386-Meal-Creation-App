@@ -30,7 +30,7 @@ def add_planned( db, token, planned, selection ):
 
         # append to the list
         planned.append(selection)
-    db.child('user').child(token).update({"meal_plan":planned})
+    db.child('user').child(token).update({'meal_plan':planned})
 
 
 # updates the planned db when something is removed
@@ -41,4 +41,4 @@ def remove_planned( db, token, planned, selection ):
 
         # remove from the list
         planned.remove(selection)
-    db.child('user').child(token).update({"meal_plan":planned})
+    db.child('user').child(token).update({'meal_plan':planned})
