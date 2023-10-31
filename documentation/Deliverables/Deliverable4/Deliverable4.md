@@ -57,7 +57,9 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 **Approved by:** Elleana Negrelli
 
 **Print screen:**  
-
+![Print screen of allergy output](allergyPrintScreen.png)  
+**Unit Test:**   
+![Print screen of allergy pytest](allergyPytest.png)  
 
 
 ### Implemented Requirement #4
@@ -72,7 +74,8 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Approved by:** Elleana Negrelli
 
-**Print screen:** [NEED TO PUT PHOTO HERE]
+**Print screen:**  
+![Print screen of meal planning pytest](mealPlanUnitTest.png)  
 
 ### Implemented Requirement #5
 
