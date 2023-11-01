@@ -12,7 +12,25 @@
 **Missing participants:** None
 **Project repo:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-  
 
-# 2. Project Retrospective  
+## 1. Summary of Activities
+
+**Group:** Talked about how we can do better on our next deliverable. We worked on reviewing each other's code and made sure we were all on the same page. This is to make sure everyone knows how every part of the website works.
+
+**Connor Aiton:** Created infrastructure for the project to run on including hosting service, database and authorization. Helped integrate everyone's code into the website and backend code. Created initial backend code to serve web pages dynamically.
+
+**Jared Brotamonte:** Looked into the provided example diagrams for the “Architecture” portion of deliverable 5 and planned how to take those examples and apply them to our own project.
+
+**Sophia Ingram:** Researched UML sequence diagrams that way I can accurately create one for deliverable 5, and uploaded the report to GitHub
+
+**Elleana Negrelli:** Started working on design characteristics section for deliverable 5. Implemented the preference filter for the website.
+
+**Aiden Seay:** Worked on the CONTRIBUTING file and edited the README file so that it is most up to date. Implemented the favoriting feature for deliverable 4 and implemented it into the website.
+
+**Isaiah Swank:** Implemented the allergies search for the website and helped organized what person does what for the next deliverable so we are more successful.
+
+
+
+## 2. Project Retrospective  
 1. Appreciations: highlights of contributions from team members  
     * Connor did very well setting up the infrastructure of the website. He also helped everyone with their requirements they had to complete.   
 
