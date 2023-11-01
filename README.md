@@ -4,7 +4,7 @@ Our product Pick-My-Meals is a free website that allows users to personally cura
 ## Getting Started
 
 ### Prerequisites
-1. Instal python3
+1. Install python3
 
 ### Installation
 1. Execute: pip install -r requirements.txt 
