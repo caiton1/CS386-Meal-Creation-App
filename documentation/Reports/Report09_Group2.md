@@ -10,6 +10,7 @@
 * Isaiah Swank (Manager)  
 
 **Missing participants:** None
+
 **Project repo:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-  
 
 ## 1. Summary of Activities
