@@ -27,7 +27,7 @@
 
 **Aiden Seay:** Worked on the CONTRIBUTING file and edited the README file so that it is most up to date. Implemented the favoriting feature for deliverable 4 and implemented it into the website.
 
-**Isaiah Swank:** Implemented the allergies search for the website and helped organized what person does what for the next deliverable so we are more successful.
+**Isaiah Swank:** Implemented the allergies search for the website and helped organized what person does what for the next deliverable so we are more successful. Created the instructions documents and markdown files for Deliverables 5 and 6, as well as set up and organized the Zoom meeting so those missing could still get their needed information. 
 
 
 
