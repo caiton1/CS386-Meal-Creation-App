@@ -30,5 +30,5 @@ Violations of the Code of Conduct may be reported by sending an email to cna93@n
 
 We hold the right and responsibility to remove comments or other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any members for other behaviours that they deem inappropriate, threatening, offensive, or harmful.
 
-##Attribution
+## Attribution
 This Code of Conduct is adapted from dev.to.
