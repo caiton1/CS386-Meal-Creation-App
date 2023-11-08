@@ -27,23 +27,23 @@
 
 **Aiden Seay:** I worked on design patterns for deliverable 5. I also figured out what issue I would need to solve for deliverable 6. I need to work on the rating system for the website to determine how good a recipe is. 
 
-**Isaiah Swank:** 
+**Isaiah Swank:** Checked the progress of everyone’s work for Deliverable 5 and organized how to help each team member. Created the updated class diagram with the new functions. Updated the database with the information of the stores for the user’s to choose from. Helped the team organize who was doing what issue for Deliverable 6.
 
 ## 2. Project Retrospective  
 1. Appreciations: Highlights of contributions from team members
    * Everyone worked well together to help each other figure out what issues needed to be addressed in Deliverable 6 and who needed help in Deliverable 5.
 
 2. Successes: What went well
-   * Working ahead on the deliverables so that we are not crunched for time
+   * Working ahead on the deliverables so that we are not crunched for time.
 
 4. Failures: What did not go well
-   * 
+   * N/A
 
 6. Barriers: Things that are blocking the maximum performance of the team
-   * We had a hard time with some of our issues. A lot of them had to be updated in order to be relevant towards our project
+   * We had a hard time with some of our issues. A lot of them had to be updated in order to be relevant towards our project.
       
 7. What we should try next time.
-   * 
+   * Keep meeting on Monday’s as well as Wednesday throughout the week if necessary.
 
 
 # 3. Next Steps
