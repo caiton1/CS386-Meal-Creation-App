@@ -3,8 +3,8 @@
 **Date and location:** November 8th, 2023, Cline Library  
 **Present Participants:**   
 * Connor Aiton (Quality Assurance)  
-* Jared Brotamonte (Presenter) (Attended via Zoom)  
-* Sophia Ingram (Product Owner) (Attended via Zoom)  
+* Jared Brotamonte (Presenter) 
+* Sophia Ingram (Product Owner)
 * Elleana Negrelli (Archivist)  
 * Aiden Seay (Minute Taker)  
 * Isaiah Swank (Manager)  
