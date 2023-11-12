@@ -57,3 +57,5 @@ LINK:
 Disclaimer: This project doesn't use classes so we are stretching these examples to best fit the design patterns. 
 
 ## Design Principles (Elleana Negrelli)
+Our design observes the SOLID principles to a considerable extent. One instance in which our code follows the Single Responsibility Principle is in ‘favorite.py’. Each function, ‘add_favorite’, ‘remove_favorite’, and ‘is_favorited’, only has one single responsibility. This principle is adhered to in ‘preferenceFilter.py’ as well since the ‘filter_recipes’ function’s sole responsibility is to filter the recipes based on preference. This function also observes the Open/Closed Principle, seeing as it is closed for modification for the most part although it could be improved upon for extensibility. The Liskov Substitution Principle and Interface Segregation Principle are loosely demonstrated in the ‘UserData’ class within ‘user.py’. The class is open to data source substitutions without breaking the application, and each class and function has a specific responsibility without unnecessary methods although it does not explicitly use interfaces. 
+
