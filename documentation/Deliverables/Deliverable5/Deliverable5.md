@@ -23,7 +23,7 @@ The implementation of our created functions is seen in the updated class diagram
 * user.py : creates the user profile and captures data that needs to be updated the user in the database
 
 **Not Yet Implemented Functions:**
-*__calc_serving_size.py : calculates the amount of ingredients needed by the user indicated serving size
+* __calc_serving_size.py : calculates the amount of ingredients needed by the user indicated serving size
 * __choose_recipe.py : appends the chosen recipe to the shopping list
 * __choose_store.py : returns integer value based off of the store the user chooses
 * __rate_recipe.py : updates the database for the rating the user gives a recipe
