@@ -3,9 +3,9 @@
 ## Description
 Pick-My-Meals is a free meal-planning website. Our targets are those with busy lives and dietary needs like vegetarianism, or gluten-free. It allows users to pick curated recipes that fit their lifestyles and meet their dietary needs. Filters allow the user to specify whether they want recipes with specific ingredients, quick and easy meals, high protein, etc. We take care of calculating a detailed grocery list of what to buy, how much to get, and what it will cost. Pick-My-Meals stands out for the vast amount of recipes to choose from, unique filters, and the lack of subscription and shipping fees. While other products may ship the groceries to you, the uptick in porch pirates and the worry of food spoiling at your door brings unneeded stress. With us users know where their ingredients come from, it allows users to shop on a budget, or support local businesses. 
 
-## Architecture (Jared Brotmonte)
+## Architecture
 
-## Class Diagram (Isaiah Swank)
+## Class Diagram
 
 ![Updated Class Diagram with Function Implementation](class_diagram_deliverable_5.png)
 
@@ -33,9 +33,9 @@ The implementation of our created functions is seen in the updated class diagram
 
 
 
-## Sequence Diagram (Sophia Ingram)
+## Sequence Diagram
 
-## Design Patterns (Aiden Seay)
+## Design Patterns
 
 ### Structural Design Pattern
 The design pattern used here is the adapter design pattern. This design pattern is like a converter so multiple classes can interact with each other. While in this specific example, we don’t use classes, it is the same idea. In order to store all of our data, we need a cloud database (Firebase). In order to get all of the information we need to use, we made user.py. user.py is responsible for converting information into data we can use on the website. This would best fit the adapter design pattern as the adapter from the database to the website is user.py.
@@ -56,6 +56,6 @@ LINK:
 
 Disclaimer: This project doesn't use classes so we are stretching these examples to best fit the design patterns. 
 
-## Design Principles (Elleana Negrelli)
+## Design Principles
 Our design observes the SOLID principles to a considerable extent. One instance in which our code follows the Single Responsibility Principle is in ‘favorite.py’. Each function, ‘add_favorite’, ‘remove_favorite’, and ‘is_favorited’, only has one single responsibility. This principle is adhered to in ‘preferenceFilter.py’ as well since the ‘filter_recipes’ function’s sole responsibility is to filter the recipes based on preference. This function also observes the Open/Closed Principle, seeing as it is closed for modification for the most part although it could be improved upon for extensibility. The Liskov Substitution Principle and Interface Segregation Principle are loosely demonstrated in the ‘UserData’ class within ‘user.py’. The class is open to data source substitutions without breaking the application, and each class and function has a specific responsibility without unnecessary methods although it does not explicitly use interfaces. 
 
