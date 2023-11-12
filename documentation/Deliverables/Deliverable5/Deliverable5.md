@@ -1,6 +1,7 @@
 # Deliverable 5 Design : Group 2
 
 ## Description
+Pick-My-Meals is a free meal-planning website. Our targets are those with busy lives and dietary needs like vegetarianism, or gluten-free. It allows users to pick curated recipes that fit their lifestyles and meet their dietary needs. Filters allow the user to specify whether they want recipes with specific ingredients, quick and easy meals, high protein, etc. We take care of calculating a detailed grocery list of what to buy, how much to get, and what it will cost. Pick-My-Meals stands out for the vast amount of recipes to choose from, unique filters, and the lack of subscription and shipping fees. While other products may ship the groceries to you, the uptick in porch pirates and the worry of food spoiling at your door brings unneeded stress. With us users know where their ingredients come from, it allows users to shop on a budget, or support local businesses. 
 
 ## Architecture (Jared Brotmonte)
 
