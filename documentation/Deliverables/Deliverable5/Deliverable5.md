@@ -6,6 +6,8 @@
 
 ## Class Diagram (Isaiah Swank)
 
+![Updated Class Diagram with Function Implementation](class_diagram_deliverable_5.png)
+
 ## Sequence Diagram (Sophia Ingram)
 
 ## Design Patterns (Aiden Seay)
