@@ -40,7 +40,7 @@ The implementation of our created functions is seen in the updated class diagram
 ### Structural Design Pattern
 The design pattern used here is the adapter design pattern. This design pattern is like a converter so multiple classes can interact with each other. While in this specific example, we don’t use classes, it is the same idea. In order to store all of our data, we need a cloud database (Firebase). In order to get all of the information we need to use, we made user.py. user.py is responsible for converting information into data we can use on the website. This would best fit the adapter design pattern as the adapter from the database to the website is user.py.
 
-![AdapterDesign](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/9ed33c14-ce21-4d43-b644-84d776336bad)
+![adapter](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/6c447091-1694-48bf-8aaf-523440db26dc)
 
 LINKS:
 * [views.py](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/views.py)
