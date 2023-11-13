@@ -40,7 +40,7 @@ The implementation of our created functions is seen in the updated class diagram
 
 ## Sequence Diagram
 
-![Sequence Diagram](UMLSequence_5.png)
+![Sequence Diagram](UMLSequence.png)
 
 The developers will create an easy way to search for recipes. They will do this by adding a filter option. The filter will have set options for users to select things such specific ingredients or diet specifications. After that recipes will be shown to the users for them to pick and choose from.
 
