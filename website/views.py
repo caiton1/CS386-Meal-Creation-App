@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
-Session(app) # user sessions stored server side for now
+Session(app)  # user sessions stored server side for now
 
 # connect app to firebase
 firebase = pyrebase.initialize_app(config.firebaseConf)
@@ -27,19 +27,26 @@ db = firebase.database()
 user = user.UserData()
 
 
-# Defining the home page of our site
 @app.route('/') 
 def index():
-    # handle new users with no token (avoiding key error)
+    """Main page, should have a check that
+
+    Dynamic content variables:
+    tokenTest -- the session ID (also stored on the database), used in JS for alerting user if necessary
+    """
     if session.get('token') is None:
         session['token'] = ''
-    # passing empty token, do not want to check for login
     return render_template('index.html', tokenTest='')
 
 
-# sign up page
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    """Signup process that will check if the user is already logged in and ensure proper input to database
+
+    Dynamic content variables:
+    msg -- feedback to the user that will be shown below the signup dialog "box"
+    tokenTest -- user session ID that gets checked and alerts the user they are already signed in
+    """
     if session['token'] == '':
         if request.method == 'POST':
             user.login_info(request.form)
@@ -47,8 +54,8 @@ def signup():
                 user.create_user(auth, db)
                 return redirect(url_for('login'))
             except:
-                error = '*Invalid email or email already exists! Please also make ' \
-                            'sure password is at least 6 characters long.'
+                error = '*Invalid email or email already exists! ' \
+                        'Please also make sure password is at least 6 characters long.'
 
                 return render_template('signup.html', msg=error)
         else:
@@ -56,10 +63,15 @@ def signup():
     else:
         return render_template('index.html', tokentTest=session['token'])
           
-     
-# login page
-@app.route('/login', methods=['GET','POST'])
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    """Login process that also checks if the user is already logged in
+
+    Dynamic content variables:
+    msg -- feedback to the user that will be shown below the signup dialog "box"
+    tokenTest -- user session ID that gets checked and alerts the user they are already signed in
+    """
     if session['token'] == '':
         if request.method == 'POST':
             user.login_info(request.form)
@@ -75,17 +87,24 @@ def login():
     else:
         return render_template('index.html', tokenTest=session['token'])
 
-# logout page
+
 @app.route('/logout')
 def logout():
+    """Logout process, empty and reset session and user class variables"""
     session['token'] = ''
     session['alert'] = ''
     user.logoff()
     return redirect(url_for('index'))
 
-# user dashboard
+
 @app.route('/dashboard')
 def dashboard():
+    """Dashboard page, contains favorite meals and planned meals for registered users
+
+    Dynamic content variables:
+    fav_data -- a dictionary containing the link and name to be displayed
+    plan_data -- a dictionary containing the link and name to be displayed
+    """
     token = session.get('token', 'session error')
     if token == '':
         return redirect(url_for('login'))
@@ -96,12 +115,18 @@ def dashboard():
         return render_template('dashboard.html', fav_data=fav_links, plan_data=plan_links)
 
 
-# view list of recipes TODO: ADD SEARCH FUNCTION
+# TODO: ADD SEARCH FUNCTION
 @app.route('/recipe', methods=['POST', 'GET'])
 def recipe():
+    """The recipe page will be the core component of the website.
+    list recipes and give the user the ability to search and filter
+
+    Dynamic content variables:
+    recipes -- dictionary (of dictionaries) of recipies to be displayed
+    """
     if request.method == 'POST':
         recipes = db.child("Recipes").get()
-        filtered_list=[]
+        filtered_list = []
         preference = request.form.get('preference')
         selection = request.form.get('selection')
         allergies = str(request.form.get('allergies'))
@@ -121,11 +146,11 @@ def recipe():
                 filtered_list = [name.get('Name') for name in cost]
         
         if allergies:
-                print("list not empty")
-                allergies = allergies.split(', ')
-                allergy_list = allergy.get_recipe_data(recipes)
-                allergy_list = allergy.filter_by_allergies(allergy_list, allergies)
-                filtered_list = [name.get('Name') for name in allergy_list]
+            print("list not empty")
+            allergies = allergies.split(', ')
+            allergy_list = allergy.get_recipe_data(recipes)
+            allergy_list = allergy.filter_by_allergies(allergy_list, allergies)
+            filtered_list = [name.get('Name') for name in allergy_list]
                 
         filtered_list = user.list_to_links(filtered_list)
         return render_template('recipe.html', recipes=filtered_list)
@@ -138,6 +163,16 @@ def recipe():
 # view recipe
 @app.route('/recipe/<selection>', methods=['POST', 'GET'])
 def view_recipe(selection):
+    """The actual recipe page
+
+    Keyword arguments:
+    selection -- the link to the recipe that will get transformed into what it is put under in the database
+    Dynamic content variables:
+    dataInput -- the recipe data to be parsed and displayed on the page
+    recipeName -- the recipe name
+    favorited -- a string value used to load the favorite box as checked or not ('', 'checked')
+    planned -- a string value used to load the planned box as checked or not ('', 'checked')
+    """
     selection = selection.replace('+', ' ')
     check_box_fav = ''
     check_box_planned = ''
@@ -154,7 +189,6 @@ def view_recipe(selection):
      
     # user clicks submit button
     if request.method == 'POST':
-        # check for token
         if session['token'] != '':
             # check if favorite
             if request.form.get('favorite'):

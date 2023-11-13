@@ -79,9 +79,9 @@ Github Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 **Print screen:**  
 ### Implemented Requirement #6
 
-**Requirement:** 
+**Requirement:** As someone who values eating and using high quality ingredients, I want to be able to pick which store I get my ingredients from.
 
-**Issue:** 
+**Issue:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/issues/81
 
 **Pull request:** 
 
