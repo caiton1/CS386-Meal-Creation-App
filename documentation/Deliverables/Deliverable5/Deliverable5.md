@@ -5,6 +5,8 @@ Pick-My-Meals is a free meal-planning website. Our targets are those with busy l
 
 ## Architecture
 
+![Architecture Diagram](architecture_deliverable_5.png)
+
 ## Class Diagram
 
 ![Updated Class Diagram with Function Implementation](class_diagram_deliverable_5.png)
