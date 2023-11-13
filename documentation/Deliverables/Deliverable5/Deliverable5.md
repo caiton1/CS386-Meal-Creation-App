@@ -5,7 +5,10 @@ Pick-My-Meals is a free meal-planning website. Our targets are those with busy l
 
 ## Architecture
 
-![Architecture Diagram](architecture_deliverable_5.png)
+![Architecture Diagram](multi-layered_UML_Diagram.png)  
+The website could be easily separated into four layers, the infrastructure layer, the application layer, the domain layer, and the presentation layer. The infrastructure layer is responsible for handling external integrations, data storage and other infrastructure-related concerns thus why the related packages are the Firebase and Database packages. The application layer contains the core application logic and business rules, thus all of the application and function packages stem from the “python” package. The domain layer contains the business entities and data structures that represent the concepts of our applications. Thus why it includes the entities of the Recipes, Users and Shopping Cart, because those are the structures that our applications function around. Lastly we have the presentation layer which is responsible for handling the user interface and user interactions. It includes the HTML templates that define the structure of all the webpages, while the user interface package includes all of the various features and interactions the user might encounter with the website. 
+  
+In the multi-layered UML package diagram, both the infrastructure layer and the domain layer are connected to the application layer. This is due to the application layer requiring information and input from both the infrastructure and domain layer. The infrastructure layer provides the application layer the data for the applications to work with, while the domain layer defines classes for the applications to be represented as. Then the applications are run through the interface layer, where the physical website will be presented, and through user interaction with the interface layer, the various packages within the application layer will be called upon.
 
 ## Class Diagram
 
