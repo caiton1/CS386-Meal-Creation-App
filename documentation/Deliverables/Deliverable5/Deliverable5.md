@@ -37,6 +37,13 @@ The implementation of our created functions is seen in the updated class diagram
 
 ## Sequence Diagram
 
+![Sequence Diagram](sequence_deliverable_5.png)
+
+The developers will create an easy way to search for recipes. They will do this by adding a filter option. The filter will have set options for users to select things such specific ingredients or diet specifications. After that recipes will be shown to the users for them to pick and choose from.
+
+The developers will create a shopping cart for the user based on the recipes that they choose. After the user reviews the cart they will have the option to change what store they shop from as well as modify any ingredients in the cart. The shopping cart will be adjusted based on these changes and provided to the user again.
+
+
 ## Design Patterns
 
 ### Structural Design Pattern
