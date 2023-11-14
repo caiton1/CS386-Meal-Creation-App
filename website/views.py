@@ -1,15 +1,8 @@
 from flask import Flask, render_template, request, redirect, flash, url_for, session
 import pyrebase
 from flask_session import Session
-import functions.config as config
-import functions.user as user
-from functions.favorite import add_favorite, remove_favorite, is_favorited
-from functions.meal_plan import is_planned, add_planned, remove_planned
-from functions.preferenceFilter import filter_recipes
-from functions.calorieFilter import get_caloric_data, sort_calories
-import functions.calc_total_cost as calc_cost
-from functions.sort_by_cost import low_to_high
-import functions.allergy as allergy
+
+from functions import *
 
 app = Flask(__name__)
 
@@ -115,7 +108,6 @@ def dashboard():
         return render_template('dashboard.html', fav_data=fav_links, plan_data=plan_links)
 
 
-# TODO: ADD SEARCH FUNCTION
 @app.route('/recipe', methods=['POST', 'GET'])
 def recipe():
     """The recipe page will be the core component of the website.

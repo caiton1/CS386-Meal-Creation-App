@@ -1,6 +1,6 @@
 '''@author: JKBrotamonte'''
 
-from .calc_total_cost import get_recipe_data, calculate_total_cost
+from calc_total_cost import get_recipe_data, calculate_total_cost
 
 # Function to sort recipes by total cost from low to high
 def low_to_high(recipes):
