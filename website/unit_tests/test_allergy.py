@@ -1,35 +1,38 @@
 import sys
 sys.path.append('../functions')
 import allergy
-import pyrebase
 import config
 import user
+import pyrebase
+
 
 # connect app to firebase
 firebase = pyrebase.initialize_app(config.firebaseConf)
 # auth reference
 auth = firebase.auth()
-# database refernce
+# database reference
 db = firebase.database()
 # initialize user class
 user = user.UserData()
 
 def test_get_recipe_data():
-    recipes_data = dict(user.get_recipes(db))
+    recipes_data = user.get_recipes(db)
     recipes = []
 
-    for recipe_name, recipe_details in recipes_data.items():
-        # Extracting ingredients as a list
-        ingredients = list(recipe_details.get('Ingredients', {}).keys())
-        #Extract the description as a list
-        descriptions = recipe_details.get('Description', [])
+    for recipe in recipes_data.each():
+        # extracting data from database
+        recipe_data = recipe.val()
+        recipe_name = recipe.key()
+        ingredients = list(recipe_data['Ingredients'])  # don't care about values
+        description = recipe_data['Description']
 
-        # Appending the needed recipe details to the list
+        # append recipe details to list
         recipes.append({
             'Name': recipe_name,
-            'Description': descriptions,
+            'Description': description,
             'Ingredients': ingredients,
         })
+
     assert allergy.get_recipe_data(user.get_recipes(db)) == recipes
 
 
@@ -70,3 +73,5 @@ def test_filter__by_allergies():
             # Add recipe to the filtered list
             filtered_recipes.append(recipe)
     assert filtered_recipes == allergy.filter_by_allergies(recipes, allergies)
+
+
