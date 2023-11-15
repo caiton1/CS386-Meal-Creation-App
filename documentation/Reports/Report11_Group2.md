@@ -27,26 +27,27 @@
 
 **Aiden Seay:**  
 
-**Isaiah Swank:** 
+**Isaiah Swank:** Reconfigured the data for stores in the database to be more modular with the rest of the data types. Worked on the “choose_store” function that gets the wanted store from the user. Helped make sure everyone on the team was getting the help they needed. Uploaded the Github with the Report 11 file.
 
 ## 2. Project Retrospective  
 1. Appreciations: Highlights of contributions from team members
-   * 
+   * Each team member came ready to the meeting to discuss their progress on the deliverable. 
 
 2. Successes: What went well
-   *
+   * Good communication with how each member was doing on their issue, problems were identified to multiple people so that we could solve them sooner.
 
 4. Failures: What did not go well
-   * 
+   * Harder tasks in Deliverable 5 took time away to work on Deliverable 6.
 
 6. Barriers: Things that are blocking the maximum performance of the team
-   * 
+   * Some of the functions and issues for this Deliverable intersect in code, making a couple group members need to work alot more along side each other.
       
 7. What we should try next time.
-   * 
+   * Possibly schedule another meeting for the weekend to check and make sure everyone's work will get done.
 
 
 # 3. Next Steps
 We will:  
-* 
+* Help each team member with issues they might have.
+* Finish Deliverable 6.
 
