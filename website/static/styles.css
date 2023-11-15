@@ -84,6 +84,19 @@ p.errorMsg {
   background-color: #bfcc94;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
+.recipe-swipe {
+  border-radius: 6px;
+  border: #726e97 4px solid;
+  margin: 1em auto 0 auto;
+  width: 20em;
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #CA907E;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
 .recipe-box a {
   font-size: 1.1em;
   flex: 0 0 20em;

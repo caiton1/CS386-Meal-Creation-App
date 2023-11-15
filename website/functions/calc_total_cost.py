@@ -1,7 +1,7 @@
 '''@author: JKBrotamonte'''
 # Function to get recipe data from Firebase
 def get_recipe_data(db, recipe_data):
-    recipes_data = dict(recipe_data.val())
+    recipes_data = dict(recipe_data)
     recipes = []
     for recipe_name, recipe_details in recipes_data.items():
         # Extracting ingredients as a dictionary

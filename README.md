@@ -40,7 +40,7 @@ Version 0.2.0
 - **Elleana Negrelli** - [enegrelli](https://github.com/enegrelli)
 
 ## Disclaimer
-This product is not intended to be used in production and only as a project. There may still be security flaws such as XSS.
+This product is not intended to be used in production and only as a project. There may still be security flaws such as XSS. There is also a lot of optimization to be done, such as how data is accessed. Our main concern is to have a working product by a deadline and scalability is not a top priority.
 
 ### License
 This projected is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file.
