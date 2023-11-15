@@ -243,6 +243,9 @@ def swipe():
             return render_template('swipe.html', data=random_data)
 
 
+def start_app():
+    app.run()
+
 
 if __name__ == '__main__':
-    app.run()
+    start_app()

@@ -1,6 +1,5 @@
 import random
-from .calc_total_cost import calculate_total_cost
-
+from .calc_total_cost import calculate_total_cost as calc_total_cost
 
 def random_recipe(recipe_data):
     """ generates a random recipe and returns a dict of relevant item"""
@@ -13,7 +12,7 @@ def random_recipe(recipe_data):
     # description/tags
     description = recipe[1]['Description']
     rating = recipe[1]['Rating']
-    cost = calculate_total_cost(recipe[1]['Ingredients'])
+    cost = calc_total_cost(recipe[1]['Ingredients'])
     # servings, will only be used for calculating per serving cost
     servings = recipe[1]['Serving Size'].get('People served')
     serving_cost = ''
