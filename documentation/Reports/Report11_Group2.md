@@ -15,17 +15,17 @@
 
 ## 1. Summary of Activities
 
-**Group:**   
+**Group:** Worked on combining everyone’s implementations together on the website. 
 
 **Connor Aiton:** 
 
 **Jared Brotamonte:** 
 
-**Sophia Ingram:**    
+**Sophia Ingram:** Created the “Report an Issue” button on the website and also added “Report” to the nav bar. Created the subject and body for users to write their issues.    
 
-**Elleana Negrelli:** 
+**Elleana Negrelli:** Worked on the implementation of a shopping list for deliverable 6. Finished most of the necessary functions and got feedback from the group on how to implement conversions for the list.
 
-**Aiden Seay:**  
+**Aiden Seay:** Worked on my part of the implementation for deliverable 6. Currently working on a rating system for all of the meals. Users will be able to give a thumbs up or thumbs down depending on if the meal is good or not. 
 
 **Isaiah Swank:** Reconfigured the data for stores in the database to be more modular with the rest of the data types. Worked on the “choose_store” function that gets the wanted store from the user. Helped make sure everyone on the team was getting the help they needed. Uploaded the Github with the Report 11 file.
 
