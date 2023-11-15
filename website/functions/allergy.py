@@ -33,7 +33,6 @@ def input_to_allergies(user_input):
     # return the allergies list
     return allergies
 
-#TODO : fix
 # Filtering  Allergy Function
 def filter_by_allergies( recipes, allergies ):
     # if there are no allergies, return all the recipes

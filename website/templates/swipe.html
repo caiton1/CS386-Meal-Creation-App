@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='swipe.css') }}"
+    />
+    <meta charset="UTF-8" />
+    <title>Pick My Meals</title>
+
+    <div class="navigation highlight">
+      <a href="/">Home</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/recipe" class="selected">Recipes</a>
+      <a href="/login">Login</a>
+      <a href="/logout">Signout</a>
+    </div>
+
+    <header>
+      <h1>{{recipeName}}</h1>
+    </header>
+  </head>
+
+  <body>
+    <script src="{{ url_for('static',filename='swipe.js') }}"></script>
+    <div class="box">
+        <h2>{{data.get('name')}}</h2>
+
+        <span>
+            {% for tag in data.get('description') %}
+            <a href="/recipe">#{{tag}}</a>
+            {% endfor %}
+        </span>
+
+        <p>Rating: {{data.get('rating')}}</p>
+        <p>Cost Per Serving: ${{data.get('serving_cost')}}</p>
+
+        <form action="" method="post">
+          <button class="yes" type="submit" name="submit_button" value="checked">✔</button>
+          <button class="no" type="submit" name="submit_button" value="">✘</button>
+          <input type="hidden" name="recipe_name" value="{{data.get('name')}}"></input>
+        </form>
+    </div>
+
+  </body>
+</html>
