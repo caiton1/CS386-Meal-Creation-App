@@ -4,3 +4,4 @@ requests
 flask_session
 pyrebase4  
 pytest
+setuptools

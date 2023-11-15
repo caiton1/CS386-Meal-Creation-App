@@ -1,28 +1,6 @@
 '''@author: JKBrotamonte'''
-import os
-import pyrebase
-
-# Retrieve Firebase configuration from environment variable
-firebase_api_key = os.environ.get('FIREBASEKEY')
-
-# Firebase configuration
-firebase_config = {
-    "apiKey": firebase_api_key,
-    "authDomain": "cspickmymeals.firebaseapp.com",
-    "databaseURL": "https://cspickmymeals-default-rtdb.firebaseio.com",
-    "projectId": "cspickmymeals",
-    "storageBucket": "cspickmymeals.appspot.com",
-    "messagingSenderId": "906324121880",
-    "appId": "1:906324121880:web:9ff3c7693d9b124192266d",
-    "measurementId": "G-DVZP5XDVHR"
-}
-
-firebase = pyrebase.initialize_app(firebase_config)
-db = firebase.database()
-
 # Function to get recipe data from Firebase
-def get_recipe_data():
-    recipes_data = db.child("Recipes").get().val()
+def get_recipe_data(db, recipes_data):
     recipes = []
     for recipe_name, recipe_details in recipes_data.items():
         # Extracting ingredients as a dictionary
