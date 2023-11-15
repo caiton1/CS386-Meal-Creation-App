@@ -1,5 +1,7 @@
 import os
 secret = os.environ['FIREBASEKEY']
+import pyrebase
+
 
 firebaseConf = {
      'apiKey': secret,
@@ -11,4 +13,3 @@ firebaseConf = {
      'appId': '1:906324121880:web:9ff3c7693d9b124192266d',
      'measurementId': 'G-DVZP5XDVHR'
 }
-
