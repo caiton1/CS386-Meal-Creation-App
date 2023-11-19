@@ -17,9 +17,9 @@
 
 **Group:** Worked on combining everyone’s implementations together on the website. 
 
-**Connor Aiton:** 
+**Connor Aiton:** Created and implemented the meal swipe feature For deliverable 6. Helped others better understand the backend code and possible approaches for accessing data from our database. Spent more time improving the quality of the repo and fixing any warnings or errors that were previously present, particularly in the unit testing.
 
-**Jared Brotamonte:** 
+**Jared Brotamonte:** Worked on the implementation of adjusting recipe information based on the desired serving size for deliverable 6. Almost done with testing as well just working out a few bugs.
 
 **Sophia Ingram:** Created the “Report an Issue” button on the website and also added “Report” to the nav bar. Created the subject and body for users to write their issues.    
 
