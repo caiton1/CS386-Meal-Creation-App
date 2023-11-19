@@ -8,7 +8,7 @@ GitHub Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 ## Implemented Requirements
 ============================================================
-### Implemented Requirement #1
+### Implemented Requirement #1 - Connor Aiton
 
 **Requirement:** As a user, I want a simple way to look through and select recipes so that I can explore recipes easier.
 
@@ -27,7 +27,7 @@ GitHub Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 
 ============================================================
-### Implemented Requirement #2
+### Implemented Requirement #2 - Jared Brotamonte
 
 **Requirement:** As a mother of 6, I want a recipe calculator so I don't have to tediously calculate how much I need for each recipe for my whole family.
 
@@ -46,7 +46,7 @@ GitHub Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 
 ============================================================
-### Implemented Requirement #3
+### Implemented Requirement #3 - Sophia Ingram
 
 **Requirement:** As a user who is a slight perfectionist, when I notice an issue with a website I want some sort of way to contact the developers so the issue can be fixed.
 
@@ -66,7 +66,7 @@ GitHub Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 
 ============================================================
-### Implemented Requirement #4
+### Implemented Requirement #4 - Elleana Negrelli
 
 **Requirement:** As a user of the website, I want a page on the website that will keep track of all the recipes I want to shop ingredients for and keeps track of total cost so I don't have to do the calculations in my head.
 
@@ -86,7 +86,7 @@ GitHub Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 
 ============================================================
-### Implemented Requirement #5
+### Implemented Requirement #5 - Aiden Seay
 
 **Requirement:** As a cook, I want to have a rating system so that I can see what meals are good or not.
 
@@ -107,7 +107,7 @@ GitHub Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 
 ============================================================
-### Implemented Requirement #6
+### Implemented Requirement #6 - Isaiah Swank
 
 **Requirement:** As someone who values eating and using high quality ingredients, I want to be able to pick which store I get my ingredients from.
 
