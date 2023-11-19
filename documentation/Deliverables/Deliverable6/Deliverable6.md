@@ -22,8 +22,17 @@ GitHub Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Print screen:** 
 
-[INSERT IMAGES HERE]
+The recipe page shows a random generated recipe with quick data. When the user clicks green, it gets added to their planned recipes. When the user clicks red, it gets removed from their planned recipes
 
+![Screenshot 2023-11-19 153031](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/7d4553b4-9216-42b9-a7a8-926b74ff2409)
+
+Here I am showing the initial GET request followed by the user POSTing their decision to the server, which then will generate another recipe via a redirected GET request to itself:
+
+![Screenshot 2023-11-19 153226](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/02fbf639-37d8-4b19-8889-34189ee2a4e7)
+
+Result after deciding
+
+![Screenshot 2023-11-19 153254](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/ae2bdec8-9804-4f9a-af72-4b656703320e)
 
 
 ============================================================
@@ -41,8 +50,13 @@ GitHub Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Print screen:**
 
-[INSERT IMAGES HERE]
+This is the implementation of adjusting recipe's via a desired serving size
 
+![Screenshot 2023-11-19 153434](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/d82f938f-928a-4dd7-ad81-4c6e341a871b)
+
+Unit Testing:
+
+![Screenshot 2023-11-19 153630](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/a1b4ab17-01c6-49fc-b700-f7a33601b025)
 
 
 ============================================================
@@ -60,7 +74,16 @@ GitHub Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 
 **Print screen:**  
 
-[INSERT IMAGES HERE]
+Screen where issue is reported on the website:
+
+![Screenshot 2023-11-19 153759](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/225e948f-01ca-4337-97dc-afdca1cce7a0)
+
+Unit Test:
+
+![Screenshot 2023-11-19 154019](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/69bc16b8-7084-49bc-b390-8f9f27563f9e)
+
+
+
 
 
 
@@ -101,6 +124,12 @@ GitHub Link: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-
 **Print screen:**  
 
 [INSERT IMAGES HERE]
+
+Unit Testing:
+
+![Screenshot 2023-11-19 154217](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/065fbad7-b134-483a-a18e-e788b0415a2d)
+
+
 
 
 
