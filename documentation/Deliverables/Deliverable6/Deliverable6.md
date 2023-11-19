@@ -138,7 +138,7 @@ Unit Testing:
 ============================================================
 ### Implemented Requirement #6 - Isaiah Swank
 
-**Requirement:** As someone who values eating and using high quality ingredients, I want to be able to pick which store I get my ingredients from.
+**Requirement:** As someone who values eating and using high quality ingredients, I want to be able to pick which store I get my ingredients from so I can use that store's specific ingredients.
 
 **Issue:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/issues/81
 
