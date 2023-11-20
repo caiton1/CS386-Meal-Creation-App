@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../functions')
 from fractions import Fraction
 from list import ingredient_conversion
 

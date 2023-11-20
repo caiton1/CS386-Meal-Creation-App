@@ -217,15 +217,21 @@ def view_recipe(selection):
 @app.route('/report', methods =["GET", "POST"])
 def report():
     if request.method == "POST":
-       subject = request.form.get("subject")
-       body = request.form.get("body") 
+        subject = request.form.get("subject")
+        body = request.form.get("body") 
 
-       file = open("issue.txt","w+")
-       file.write(subject + "\n" + body)
-       file.close()
+        file = open("issue.txt","w+")
+        file.write(subject + "\n" + body)
+        file.close()
 
-       os.system('gcc -Wall emailSend.c -o emailOut')
-       os.system('emailOut.exe')
+        try:
+            os.system('gcc -Wall emailSend.c -o emailOut')
+        except:
+            print("error compiling!")
+        try:
+            os.system('./emailOut')
+        except:
+            print("file does not exist!")
     return render_template('report.html')
 
   
