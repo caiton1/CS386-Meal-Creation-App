@@ -11,7 +11,8 @@ class UserData:
         self.data = {
 
             'favorites': '',
-            'meal_plan': ''
+            'meal_plan': '',
+            'shopping_list': ''
         }
         self.email = ''
         self.password = ''
@@ -123,3 +124,4 @@ class UserData:
 
     def logoff(self):
         self.user_token = ''
+
