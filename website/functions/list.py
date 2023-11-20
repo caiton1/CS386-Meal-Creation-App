@@ -103,6 +103,7 @@ def ingredient_conversion(details):
         unit = split_details[1]
         if unit.lower() in conversion:
             parsed_amount = int(amount) * conversion[unit.lower()]
+            unit = 'tablespoon'
         else:
             parsed_amount = int(amount)
 
