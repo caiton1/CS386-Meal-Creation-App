@@ -11,6 +11,7 @@ import functions.calc_total_cost as calc_cost
 from functions.sort_by_cost import low_to_high
 import functions.allergy as allergy
 import os
+from functions.swipe import random_recipe
 
 app = Flask(__name__)
 
@@ -116,7 +117,7 @@ def dashboard():
         return render_template('dashboard.html', fav_data=fav_links, plan_data=plan_links)
 
 
-# TODO: ADD SEARCH FUNCTION
+
 @app.route('/recipe', methods=['POST', 'GET'])
 def recipe():
     """The recipe page will be the core component of the website.
@@ -126,7 +127,7 @@ def recipe():
     recipes -- dictionary (of dictionaries) of recipies to be displayed
     """
     if request.method == 'POST':
-        recipes = db.child("Recipes").get()
+        recipes = user.get_recipes(db)
         filtered_list = []
         preference = request.form.get('preference')
         selection = request.form.get('selection')
@@ -227,6 +228,42 @@ def report():
        os.system('emailOut.exe')
     return render_template('report.html')
 
+  
+@app.route('/swipe',  methods=['POST', 'GET'])
+def swipe():
+    """ The swipe feature page, here a user will like or dislike a recipe based on quick info and adds it to planned
+
+    Keyword arguments:
+    data -- the recipe data (dict) returned from the random_recipe function
+    """
+    token = session.get('token', 'session error')
+    if token == '':
+        return redirect(url_for('login'))
+    else:
+        recipe_data = user.get_recipes(db).val()
+        if request.method == 'POST':
+            user_data = user.get_user_data(db)
+            recipe_name = request.form.get('recipe_name')
+            print(recipe_name)  # debug
+            # check planned or not
+            check_box_planned, planned = is_planned(user_data, token, recipe_name)
+            if request.form.get('submit_button'):
+                # if not already planned, add to plan
+                add_planned(db, token, planned, recipe_name)
+            else:
+                # if already planned, remove
+                remove_planned(db, token, planned, recipe_name)
+            # generate new recipe through GET
+            return redirect(url_for('swipe'))
+
+        else:
+            random_data = random_recipe(recipe_data)
+            return render_template('swipe.html', data=random_data)
+
+
+def start_app():
+    app.run()
+
 
 if __name__ == '__main__':
-    app.run()
+    start_app()

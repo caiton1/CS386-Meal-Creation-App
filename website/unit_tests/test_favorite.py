@@ -1,5 +1,6 @@
 '''@author: caiton1'''
-# TODO: need to update
+import sys
+sys.path.append('../functions')
 import favorite
 import config
 import pyrebase
@@ -9,7 +10,7 @@ import user
 firebase = pyrebase.initialize_app(config.firebaseConf)
 # auth reference
 auth = firebase.auth()
-# database refernce
+# database reference
 db = firebase.database()
 # initialize user class
 user = user.UserData()
@@ -62,6 +63,7 @@ def test_remove_favorite():
     # assert
     assert favorite_list == ['Chinese Beef and Broccoli']
 
+
 # test remove favorite when not there
 def test_remove_nothing():
     # add a favorite entry
@@ -75,8 +77,6 @@ def test_remove_nothing():
     # assert
     assert favorite_list == ['Chinese Beef and Broccoli']
 
-    
-
 
 # test a few random recipe names on is_favorited
 def test_is_favorited():
@@ -89,6 +89,7 @@ def test_is_favorited():
     # clean up
     db.child('user').child(token).child('favorites').remove()
     assert (button == 'checked') and (list == ['Chinese Beef and Broccoli', '2 Meat Meatloaf'])
+
 
 # test a few random recipe names on is_not_favorited
 def test_not_favorited():
