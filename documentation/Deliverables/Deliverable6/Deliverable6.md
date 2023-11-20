@@ -95,16 +95,19 @@ Unit Test:
 
 **Issue:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/issues/84
 
-**Pull request:** 
+**Pull request:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/pull/96
 
 **Implemented by:** Elleana Negrelli
 
 **Approved by:** Connor Aiton
 
-**Print screen:**
+**Print screen:** Print screen for unit conversion to tablespoons and adding/removing ingredients from shopping list
 
-[INSERT IMAGES HERE]
+![conversion print screen](conversion-test-print-screen.png)
+![list print screen](list-test-print-screen.png)
 
+Unit test for conversions and adding/removing ingredients from shopping list
+![pytest](pytest-passed.png)
 
 
 
