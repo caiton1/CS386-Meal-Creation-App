@@ -170,7 +170,6 @@ Unit Testing:
 **Unit Test Folder:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/main/website/unit_tests
 
 **Example of a test case**
-[INSERT IMAGE HERE]
 
 **Test Output**
 [INSERT IMAGE HERE]
