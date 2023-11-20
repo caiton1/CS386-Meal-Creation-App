@@ -148,7 +148,7 @@ Unit Testing:
 
 **Issue:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/issues/81
 
-**Pull request:** 
+**Pull request:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/pull/95
 
 **Implemented by:** Isaiah Swank
 
