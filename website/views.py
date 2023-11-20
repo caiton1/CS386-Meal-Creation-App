@@ -11,6 +11,7 @@ import functions.calc_total_cost as calc_cost
 from functions.sort_by_cost import low_to_high
 import functions.allergy as allergy
 from functions.swipe import random_recipe
+from functions.list import add_to_shopping_list, remove_from_shopping_list
 
 app = Flask(__name__)
 
@@ -176,32 +177,36 @@ def view_recipe(selection):
     selection = selection.replace('+', ' ')
     check_box_fav = ''
     check_box_planned = ''
-    # get recipies
+
+    # Get recipe data
     recipe_data = user.get_recipe_data(db, selection)
 
-    # get user data if exists
+    # Get user data if exists
     if session['token'] != '':
         token = session.get('token', 'session error')
         user_data = user.get_user_data(db)
-        # check favorite or not
+        
+        # Check if favorite or planned
         check_box_fav, favorites = is_favorited(user_data, token, selection)
         check_box_planned, planned = is_planned(user_data, token, selection)
      
-    # user clicks submit button
     if request.method == 'POST':
         if session['token'] != '':
-            # check if favorite
             if request.form.get('favorite'):
                 add_favorite(db, token, favorites, selection)
             else:
                 remove_favorite(db, token, favorites, selection)
 
-            #  check if planned
             if request.form.get('plan'):
                 add_planned(db, token, planned, selection)
             else:
                 remove_planned(db, token, planned, selection)
-                    
+            
+            if request.form.get('shopping_list'):
+                add_to_shopping_list(db, recipe_data, token)
+            else: 
+                remove_from_shopping_list(db, recipe_data, selection)
+                
             return redirect(url_for('view_recipe', selection=selection))
         else:
             return redirect(url_for('login'))
@@ -209,6 +214,7 @@ def view_recipe(selection):
     else:
         return render_template('selection.html', dataInput=recipe_data.val(), recipeName=selection,
                                favorited=check_box_fav, planned=check_box_planned)
+
 
 
 @app.route('/swipe',  methods=['POST', 'GET'])
