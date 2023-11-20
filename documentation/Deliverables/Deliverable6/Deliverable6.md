@@ -169,10 +169,15 @@ Unit Testing:
 
 **Unit Test Folder:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/main/website/unit_tests
 
-**Example of a test case**
+**Test Case Example**
+
+File Being Tested: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/website/functions/rating.py
+
+Test File: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/website/unit_tests/test_rating.py
 
 **Test Output**
-[INSERT IMAGE HERE]
+![Screenshot 2023-11-19 175108](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/a60e790c-a708-488b-b8f2-bc6777171b3c)
+
 
 
 
