@@ -121,9 +121,15 @@ Unit Test:
 
 **Approved by:** Connor Aiton
 
-**Print screen:**  
+**Print screen:**
 
-[INSERT IMAGES HERE]
+Rating calculation
+
+![Screenshot 2023-11-19 165752](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/8e344dea-7ed9-4f64-af81-ff552cb85ab8)
+
+Toggle functionality: This shows that the user can toggle their vote per meal item. Each user that has a vote per meal item is included in the list.
+
+![Screenshot 2023-11-19 170216](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/b1cfcf70-4d07-4eac-aca1-86223028d5f2)
 
 Unit Testing:
 
