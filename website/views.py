@@ -10,8 +10,8 @@ from functions.calorieFilter import get_caloric_data, sort_calories
 import functions.calc_total_cost as calc_cost
 from functions.sort_by_cost import low_to_high
 import functions.allergy as allergy
+import os
 from functions.swipe import random_recipe
-from functions.list import add_to_shopping_list, remove_from_shopping_list
 
 app = Flask(__name__)
 
@@ -117,6 +117,7 @@ def dashboard():
         return render_template('dashboard.html', fav_data=fav_links, plan_data=plan_links)
 
 
+
 @app.route('/recipe', methods=['POST', 'GET'])
 def recipe():
     """The recipe page will be the core component of the website.
@@ -177,36 +178,32 @@ def view_recipe(selection):
     selection = selection.replace('+', ' ')
     check_box_fav = ''
     check_box_planned = ''
-
-    # Get recipe data
+    # get recipies
     recipe_data = user.get_recipe_data(db, selection)
 
-    # Get user data if exists
+    # get user data if exists
     if session['token'] != '':
         token = session.get('token', 'session error')
         user_data = user.get_user_data(db)
-        
-        # Check if favorite or planned
+        # check favorite or not
         check_box_fav, favorites = is_favorited(user_data, token, selection)
         check_box_planned, planned = is_planned(user_data, token, selection)
      
+    # user clicks submit button
     if request.method == 'POST':
         if session['token'] != '':
+            # check if favorite
             if request.form.get('favorite'):
                 add_favorite(db, token, favorites, selection)
             else:
                 remove_favorite(db, token, favorites, selection)
 
+            #  check if planned
             if request.form.get('plan'):
                 add_planned(db, token, planned, selection)
             else:
                 remove_planned(db, token, planned, selection)
-            
-            if request.form.get('shopping_list'):
-                add_to_shopping_list(db, recipe_data, token)
-            else: 
-                remove_from_shopping_list(db, recipe_data, selection)
-                
+                    
             return redirect(url_for('view_recipe', selection=selection))
         else:
             return redirect(url_for('login'))
@@ -217,6 +214,21 @@ def view_recipe(selection):
 
 
 
+@app.route('/report', methods =["GET", "POST"])
+def report():
+    if request.method == "POST":
+       subject = request.form.get("subject")
+       body = request.form.get("body") 
+
+       file = open("issue.txt","w+")
+       file.write(subject + "\n" + body)
+       file.close()
+
+       os.system('gcc -Wall emailSend.c -o emailOut')
+       os.system('emailOut.exe')
+    return render_template('report.html')
+
+  
 @app.route('/swipe',  methods=['POST', 'GET'])
 def swipe():
     """ The swipe feature page, here a user will like or dislike a recipe based on quick info and adds it to planned
