@@ -11,8 +11,7 @@ class UserData:
         self.data = {
 
             'favorites': '',
-            'meal_plan': '',
-            'shopping_list': ''
+            'meal_plan': ''
         }
         self.email = ''
         self.password = ''
@@ -88,6 +87,14 @@ class UserData:
         self.data = db.child('Recipes').get()
         return self.data
 
+    def get_stores(self, db):
+        """gets store (titles) in database to display
+        :param db: reference to database
+        :returns list of available stores
+        """
+        self.data = db.child('Stores').get()
+        return self.data
+        
     def get_user_data(self, db):
         """gets user data
         WARNING: exploitable approach if not used carefully (not that we store any important info on this database)
@@ -124,4 +131,3 @@ class UserData:
 
     def logoff(self):
         self.user_token = ''
-

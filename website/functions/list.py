@@ -13,8 +13,10 @@ class FractionEncoder(json.JSONEncoder):
             }
         return super().default(o)
 
-def create_shopping_list(recipe_data, desired_serving_size):
-    shopping_list = []
+def create_shopping_list(recipe_data, desired_serving_size, shopping_list=None):
+    if shopping_list is None:
+        shopping_list = []
+    
     total_cost = 0
 
     if recipe_data:
@@ -28,7 +30,7 @@ def create_shopping_list(recipe_data, desired_serving_size):
             if converted_amount is not None:
                 cost = float(ingredient_details.split(", ")[-1].split("$")[-1])
                 total_cost = cost * converted_amount
-                
+
                 found = False
                 for item in shopping_list:
                     if item['ingredient'] == ingredient:
@@ -48,31 +50,19 @@ def create_shopping_list(recipe_data, desired_serving_size):
     return serialized_list, total_cost
 
 
-
 def serialize_shopping_list(shopping_list):
     return json.dumps(shopping_list, cls=FractionEncoder)
 
 
-def add_to_shopping_list(db, recipe_data, token):
-    shopping_list_ref = db.child('user').child(token).child('shopping_list')
-    total_cost_ref = db.child('user').child(token).child('total_cost')
+def add_to_shopping_list(shopping_list, recipe_data):
+    desired_serving_size = 2
+    serialized_list, total_cost = create_shopping_list(recipe_data, desired_serving_size, shopping_list)
+    return serialized_list, total_cost
 
-    serialized_list, total_cost = create_shopping_list(recipe_data)
+def remove_from_shopping_list(shopping_list, recipe_data):
+    ingredients_to_remove = recipe_data.get('Ingredients', {}).keys()
+    shopping_list[:] = [item for item in shopping_list if item.get('ingredient') not in ingredients_to_remove]
 
-    shopping_list_ref.set(serialized_list)
-    total_cost_ref.set(total_cost)
-
-
-def remove_from_shopping_list(db, token, selection):
-    shopping_list_ref = db.child('user').child(token).child('shopping_list')
-
-    shopping_list = shopping_list_ref.get()
-    if shopping_list:
-        shopping_list = shopping_list.val()
-
-        updated_list = [item for item in shopping_list if item.get('recipe') != selection]
-
-        shopping_list_ref.set(json.dumps(updated_list))
 
 
 def ingredient_conversion(details):
@@ -113,12 +103,8 @@ def ingredient_conversion(details):
         unit = split_details[1]
         if unit.lower() in conversion:
             parsed_amount = int(amount) * conversion[unit.lower()]
+            unit = 'tablespoon'
         else:
             parsed_amount = int(amount)
 
     return parsed_amount
-
-    
-
-
-
