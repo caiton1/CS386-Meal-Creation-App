@@ -191,4 +191,6 @@ How did we manage code quality?
 
 ## Lessons Learned
 
-What did we learn?
+What did we learn?  
+We learned that meeting more than once a week to work on deliverables works best for use. It allows us all to communicate and help each other that way we stay on track. It also helped with struggles that some of the group members had such as how to implement our code into the website, this helped ensure that not just one member was taking care of this task. If we were to continue developing the project we would make sure that everyone in the team understands the framework of the website, it would be helpful if everyone was well versed with this. It would make implementing our code and testing it on the website much quicker and easier.
+
