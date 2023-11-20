@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Report Issue</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+  <div class="navigation highlight">
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/recipe">Recipes</a>
+    <a href="/login">Login</a>
+    <a href="/logout">Signout</a>
+    <a href="/report">Report</a> 
+  </div>
+
+  <h2>Report an Issue</h2>
+
+  <form method = "post" >
+    <label for = "subject"> Issue Subject: </label>
+    <br>
+    <input type = "text" id = "subject" name = "subject" required>
+    <br>
+
+    <label for = "body"> Issue Description: </label>
+    <br>
+    <textarea id = "body" name = "body" rows = "4" cols = "50" required></textarea>
+    <br>
+
+    <input class = "button" type = "submit" value = "Submit Issue" onclick="popup()" />
+
+    <script>
+      function popup() 
+      {
+        alert("Your issue has been submitted");
+      }
+      </script>
+  </form>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
