@@ -184,7 +184,7 @@ Unit Testing:
 
 ## Code Quality
 
-How did we manage code quality?
+We managed code quality by changing who was in the quality assurance position, we switched it to someone who has the most knowledge about how the website works, that way we can be extra sure that our code works properly. We also made sure that this time around our pytests produced no warnings, since this could lead to issues within our project. Checking how our code worked with the website when we made a big change was super important, because our code could run with no issues but may not properly work on the website, so constantly checking it ensured good code quality.
 
 
 
