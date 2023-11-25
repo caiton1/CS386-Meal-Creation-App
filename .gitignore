@@ -913,3 +913,5 @@ flask_session
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,windows,macos,linux,visualstudio,visualstudiocode,node,firebase
+
+emailOut
