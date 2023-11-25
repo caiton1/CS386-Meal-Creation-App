@@ -10,6 +10,7 @@ from functions.calorieFilter import get_caloric_data, sort_calories
 import functions.calc_total_cost as calc_cost
 from functions.sort_by_cost import low_to_high
 import functions.allergy as allergy
+import os
 from functions.swipe import random_recipe
 
 app = Flask(__name__)
@@ -116,6 +117,7 @@ def dashboard():
         return render_template('dashboard.html', fav_data=fav_links, plan_data=plan_links)
 
 
+
 @app.route('/recipe', methods=['POST', 'GET'])
 def recipe():
     """The recipe page will be the core component of the website.
@@ -211,6 +213,22 @@ def view_recipe(selection):
                                favorited=check_box_fav, planned=check_box_planned)
 
 
+
+@app.route('/report', methods =["GET", "POST"])
+def report():
+    if request.method == "POST":
+       subject = request.form.get("subject")
+       body = request.form.get("body") 
+
+       file = open("issue.txt","w+")
+       file.write(subject + "\n" + body)
+       file.close()
+
+       os.system('gcc -Wall emailSend.c -o emailOut')
+       os.system('emailOut.exe')
+    return render_template('report.html')
+
+  
 @app.route('/swipe',  methods=['POST', 'GET'])
 def swipe():
     """ The swipe feature page, here a user will like or dislike a recipe based on quick info and adds it to planned
