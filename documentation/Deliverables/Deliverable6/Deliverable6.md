@@ -159,7 +159,7 @@ Unit Testing:
 
 **Print screen:**
 
-[INSERT IMAGES HERE]
+No images to be printed
 
 
 
