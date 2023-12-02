@@ -38,7 +38,11 @@ def remove_planned( db, token, planned, selection ):
 
         # check to see if it is in the planned list
     if selection in planned:
-
         # remove from the list
         planned.remove(selection)
+
+    if not planned:
+        # setting empty string to avoid deletion of key due to no value
+        planned = ''
+
     db.child('user').child(token).update({'meal_plan':planned})
