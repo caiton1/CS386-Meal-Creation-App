@@ -252,7 +252,7 @@ def swipe():
                 add_planned(db, token, planned, recipe_name)
             else:
                 # if already planned, remove
-                remove_planned(db, token, planned, recipe_name)
+                remove_planned(db, token, planned, recipe_name) # causes issue, deletes key all together in DB
             # generate new recipe through GET
             return redirect(url_for('swipe'))
 

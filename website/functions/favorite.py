@@ -28,6 +28,9 @@ def remove_favorite(db, token, favorites, selection):
     if selection in favorites:
         # remove from list
         favorites.remove(selection)
+    if not favorites:
+        # setting empty string to avoid deletion of key
+        favorites = ''
     db.child('user').child(token).update({'favorites':favorites})
         
 
