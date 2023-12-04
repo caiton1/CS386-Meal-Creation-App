@@ -16,6 +16,18 @@ https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/functi
 ![Screenshot 2023-11-19 175108](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/ba0d43cc-66da-4b82-b568-9b0069b50d09)
 
 ## Acceptance Test  
+**Framework Used**
+For the acceptance test, we decided to develop the tests through Selenium because that was the best option to test our website. 
+
+**Automated Tests Folder:** [INSERT LINK OF TEST FOLDER HERE]
+
+**Automated Test Example:**
+[LIST EXPLIANTION OF TESTED FEATURE HERE]
+
+Test: [INSERT LINK OF TEST HERE]
+
+Execution Video: https://youtu.be/Q2Fv6mVV_U8
+
 
 ## Validation  
 **Verification #2**  
