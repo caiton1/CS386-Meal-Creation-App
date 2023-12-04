@@ -48,15 +48,22 @@ Execution Video: [Execution Video](https://youtu.be/Q2Fv6mVV_U8)
 - Thoughts on layout and issues reported  
 
 What could improve our website?  
-*  
+* Nice to know if you are logged in - hard to tell if logged in or not
+* Would like to incorporate all search methods into one. Make the search function better
+* Checkoff meals you have all already made so you don’t mix meals up
   
 What did you like about our website?  
-*  
+*  It was very easy to navigate through the website
+* Liked how there were prices for each ingredient but it needs to be accurate to the actual prices around town
   
 Did you find the website easy to use?    
-*  
+*  Yes, the user found the website easy to use. She strongly agrees!
+* The only thing hard to find was the meal recommender. It should be at the top of the dashboard, not at the bottom
+
   
 **Reflection:**  
+The user's successful engagement with various features of the website, such as creating an account, logging in, and saving favorite recipes, reflects the site's intuitive design. However, the notes reveal that the meal recommender's location at the bottom of the dashboard posed a minor navigational challenge. Relocating this feature to the top could optimize user accessibility, ensuring that users easily discover and utilize the meal recommender, a tool likely central to their experience.
+The user was also talking about how the website needs to have more recipes. This was a feature we didn’t get to implement this semester. Once that is complete we would have a more solid website with more options the user can choose from. Another aspect that can be improved is the search functionality. They would like to combine search functionalities so we can search based on price and allergies.  
 
 
 ### User Evaluation #2
