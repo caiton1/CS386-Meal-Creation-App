@@ -26,7 +26,7 @@ For the acceptance test, we decided to develop the tests through Selenium becaus
 
 Test: [INSERT LINK OF TEST HERE]
 
-Execution Video: https://youtu.be/Q2Fv6mVV_U8
+Execution Video: [Execution Video](https://youtu.be/Q2Fv6mVV_U8)
 
 
 ## Validation  
