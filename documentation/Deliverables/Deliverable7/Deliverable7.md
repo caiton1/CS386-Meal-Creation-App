@@ -54,3 +54,38 @@ Did you find the website easy to use?
   
 **Reflection:**  
 Through watching the user navigate the website and complete the given tasks I found that our website is easy to use and has features that users like. My tester got excited when he saw that the ingredients all had their estimated cost next to them, but he wished there was a total cost provided as well. He also liked the filters that we had since they are unique and convenient, being able to easily find affordable and high-calorie meals. However, he did say that he would have preferred it if it said specifically “sort from high to low” or vice versa. I would say that we have accomplished our value proposition. The website was user-friendly and offered unique features. My tester especially liked the random meal suggestions, he said it is a good way to easily discover new meals without having to put in any effort.  
+
+**Verification #3**  
+**Script:**  
+1. Create an account
+1. Use the recipe filter to sort for their allergies
+1. Find a recipe and add it to favorites or plan
+1. Report an issue about the site
+
+**Data Collected**
+- Account created and user data space set in database
+- Added recipes to favorites list
+- Thoughts on layout and issues reported
+
+
+What could improve our website?  
+*  Display calorie and allergy information on the meal plan page
+*  Add more recipes and add pictures
+*  Have allergies stored upon second use
+
+  
+What did you like about our website?  
+* Quick and easy to create account and get started
+* The filtering system
+* Favorite list made it easy to find wanted recipes
+* Easy to report an issue or request
+
+  
+What stood out to you about our website?  
+*  Easy to use and navigate
+*  Relaxing color palette
+*  Dedicated spot to report issues and ideas
+*  Cool random recipe suggester
+ 
+**Reflection:**  
+I had my roommate Nate who I interviewed previously this semester about what he would want in Pick My Meals so we had a frame of reference from a user who would be interested in a product like this. He made an account easily and went directly to the recipe page. He enjoyed looking through the recipes and found the allergy filter easy to use to sort the recipes that would be available to him. He wished there were more recipes because after accounting for his allergy there was a fairly limited amount of available recipes. He reported that he liked the colors that we used for the website but noted that it could look a bit sharper with the fonts on the recipes. Overall he enjoyed the base website and is excited for what is to come. At the end of the day, while we are in the infancy of software deployment for our website I believe we have satisfied our value proposition. The website offers easy to use filtering and favoriting features that the testing user enjoyed, while still feeling unique from other competing websites. While there are some aspects that can be cleaned up, I like the sport where we are at. 
