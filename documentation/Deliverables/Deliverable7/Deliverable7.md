@@ -7,7 +7,7 @@ What sets us apart further are our advanced filters. In addition to traditional 
 
 ## Verification
 **Testing Framework:** pytest  
-**Automated Tests:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/main/website/unit_tests  
+**Automated Tests:** [Unit Tests Folder](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/main/website/unit_tests)  
 **Test Case:**
 
 This test case is an example of a test that uses mock objects. This test file uses local variables that are not taken from anywhere else. This file doesn’t depend on any of the other classes besides the class it is being tested on. Mock objects are used instead of getting them from other classes. This specific test tests the rating system and the rating calculation. The user token and ratings for a meal are mock objects used to make the tests work. 
@@ -15,7 +15,7 @@ This test case is an example of a test that uses mock objects. This test file us
 https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/unit_tests/test_rating.py
 
 **File Tested:**  
-https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/functions/rating.py  
+[rating.py](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/functions/rating.py) 
 
 **Unit Test Execution:**
 ![Screenshot 2023-11-19 175108](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/ba0d43cc-66da-4b82-b568-9b0069b50d09)
