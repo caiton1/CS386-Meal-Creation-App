@@ -34,7 +34,31 @@ Test: https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/website/a
 Execution Video: [Execution Video](https://youtu.be/Q2Fv6mVV_U8)
 
 
-## Validation  
+## Validation
+### User Evaluation #1
+**Script:**  
+1. Look through the recipes and see if there are any that interest you.  
+1. After finding a recipe try to favorite it or add it to your planned list.  
+1. Try using our recipe recommender.  
+1. Report an issue.
+
+**Data Collected**
+- Account created and user data space set in database
+- Added recipes to favorites list
+- Thoughts on layout and issues reported  
+
+What could improve our website?  
+*  
+  
+What did you like about our website?  
+*  
+  
+Did you find the website easy to use?    
+*  
+  
+**Reflection:**  
+
+
 ### User Evaluation #2
 **Script:**  
 1. Look through the recipes and see if there are any that interest you.  
