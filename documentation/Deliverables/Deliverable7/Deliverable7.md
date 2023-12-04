@@ -8,7 +8,12 @@ What sets us apart further are our advanced filters. In addition to traditional 
 ## Verification
 **Testing Framework:** pytest  
 **Automated Tests:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/main/website/unit_tests  
-**Test Case:** https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/unit_tests/test_rating.py  
+**Test Case:**
+
+This test case is an example of a test that uses mock objects. This test file uses local variables that are not taken from anywhere else. This file doesn’t depend on any of the other classes besides the class it is being tested on. Mock objects are used instead of getting them from other classes. This specific test tests the rating system and the rating calculation. The user token and ratings for a meal are mock objects used to make the tests work. 
+
+https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/unit_tests/test_rating.py
+
 **File Tested:**  
 https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/functions/rating.py  
 
@@ -30,12 +35,17 @@ Execution Video: [Execution Video](https://youtu.be/Q2Fv6mVV_U8)
 
 
 ## Validation  
-**Verification #2**  
+### User Evaluation #2
 **Script:**  
 1. Look through the recipes and see if there are any that interest you.  
 1. After finding a recipe try to favorite it or add it to your planned list.  
 1. Try using our recipe recommender.  
-1. Report an issue.  
+1. Report an issue.
+
+**Data Collected**
+- Account created and user data space set in database
+- Added recipes to favorites list
+- Thoughts on layout and issues reported  
 
 What could improve our website?  
 *  Add the cost totals to the recipes  
@@ -55,7 +65,7 @@ Did you find the website easy to use?
 **Reflection:**  
 Through watching the user navigate the website and complete the given tasks I found that our website is easy to use and has features that users like. My tester got excited when he saw that the ingredients all had their estimated cost next to them, but he wished there was a total cost provided as well. He also liked the filters that we had since they are unique and convenient, being able to easily find affordable and high-calorie meals. However, he did say that he would have preferred it if it said specifically “sort from high to low” or vice versa. I would say that we have accomplished our value proposition. The website was user-friendly and offered unique features. My tester especially liked the random meal suggestions, he said it is a good way to easily discover new meals without having to put in any effort.  
 
-**Verification #3**  
+### User Evaluation #3
 **Script:**  
 1. Create an account
 1. Use the recipe filter to sort for their allergies
@@ -67,19 +77,16 @@ Through watching the user navigate the website and complete the given tasks I fo
 - Added recipes to favorites list
 - Thoughts on layout and issues reported
 
-
 What could improve our website?  
 *  Display calorie and allergy information on the meal plan page
 *  Add more recipes and add pictures
 *  Have allergies stored upon second use
-
   
 What did you like about our website?  
 * Quick and easy to create account and get started
 * The filtering system
 * Favorite list made it easy to find wanted recipes
 * Easy to report an issue or request
-
   
 What stood out to you about our website?  
 *  Easy to use and navigate
