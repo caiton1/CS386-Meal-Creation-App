@@ -12,7 +12,8 @@ What sets us apart further are our advanced filters. In addition to traditional 
 **File Tested:**  
 https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/functions/rating.py  
 
-**Unit Test Execution:**    
+**Unit Test Execution:**
+![Screenshot 2023-11-19 175108](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/assets/116912057/ba0d43cc-66da-4b82-b568-9b0069b50d09)
 
 ## Acceptance Test  
 
