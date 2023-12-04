@@ -12,7 +12,7 @@ BASE_URL = "http://127.0.0.1:5000"
 EMAIL = "testemail1234@gmail.com"
 PASSWORD = "12341234"
 
-# Set up Selenium WebDriver (assuming Chrome for this example)
+# Set up Selenium WebDriver
 driver = webdriver.Chrome()
 
 try:
@@ -41,7 +41,7 @@ try:
     )
     submit_button.click()
 
-    # Give some time for the login process to complete (you might want to use WebDriverWait)
+    # Give some time for the login process to complete
     time.sleep(2)
 
     # Step 4: Click on the recipes button
@@ -58,10 +58,10 @@ try:
         EC.presence_of_element_located((By.NAME, "allergies"))
     )
     allergies_input.clear()  # Clear any existing text
-    allergies_input.send_keys("beef")  # Type "nuts" into the field
+    allergies_input.send_keys("beef")  # Type "beef" into the field
     allergies_input.send_keys(Keys.RETURN)  # Press Enter
 
-    # Give some time for the search process to complete (you might want to use WebDriverWait)
+    # Give some time for the search process to complete
     time.sleep(2)
 
     # Step 6: Click on the cost checkbox
@@ -72,7 +72,7 @@ try:
 
     # Step 7: Click on the search button
     search_button = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CLASS_NAME, "button"))  # Adjust to match your actual link text
+        EC.presence_of_element_located((By.CLASS_NAME, "button"))
     )
     search_button.click()
 
@@ -87,13 +87,13 @@ try:
 
     # Step 9: Click on the favorite checkbox
     favorite_checkbox = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.NAME, "favorite"))  # Replace with the actual ID attribute of the favorite checkbox
+        EC.presence_of_element_located((By.NAME, "favorite"))
     )
     favorite_checkbox.click()
 
     # Step 10: Click on the planned checkbox
     planned_checkbox = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.NAME, "plan"))  # Replace with the actual ID attribute of the planned checkbox
+        EC.presence_of_element_located((By.NAME, "plan"))
     )
     planned_checkbox.click()
 
@@ -102,7 +102,7 @@ try:
 
     # Step 11: Click on the submit button
     submit_button = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CLASS_NAME, "button"))  # Replace with the actual class attribute of the submit button
+        EC.presence_of_element_located((By.CLASS_NAME, "button")
     )
     submit_button.click()
 
