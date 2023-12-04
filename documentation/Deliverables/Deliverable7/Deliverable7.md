@@ -24,7 +24,7 @@ https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/main/website/functi
 **Framework Used**
 For the acceptance test, we decided to develop the tests through Selenium because that was the best option to test our website. 
 
-**Automated Tests Folder:** [Automated Tests](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/dev/website/acceptance_tests)
+**Automated Tests Folder:** [Automated Tests Folder](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/tree/dev/website/acceptance_tests)
 
 **Automated Test Example:**
 This acceptance test is to see if the user can log onto the website. Once onto the website with an account it tests the searching feature. It will add meals to the favorite and planned lists. After all the tasks are completed, the test logs itself out. 
