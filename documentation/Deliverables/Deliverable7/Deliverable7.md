@@ -29,7 +29,7 @@ For the acceptance test, we decided to develop the tests through Selenium becaus
 **Automated Test Example:**
 This acceptance test is to see if the user can log onto the website. Once onto the website with an account it tests the searching feature. It will add meals to the favorite and planned lists. After all the tasks are completed, the test logs itself out. 
 
-Test: [Automated Test](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/website/acceptance_tests/acceptance_test.py)
+Test: [Acceptance Test](https://github.com/caiton1/CS386-Meal-Creation-App-WIP-/blob/dev/website/acceptance_tests/acceptance_test.py)
 
 Execution Video: [Execution Video](https://youtu.be/Q2Fv6mVV_U8)
 
